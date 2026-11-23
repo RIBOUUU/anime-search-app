@@ -100,6 +100,8 @@ Exemples de familles prêtes à l'emploi : *-o* (bateau, château, gâteau, cade
 | `seed` | change les variations de l'instru (charleston, rolls) |
 | `audio` | chemin d'une instru perso (mp3/wav) au lieu de l'instru générée |
 | `audio_offset` | instant (s) dans ce fichier du **1er temps fort** voulu pour la case 1 de l'intro |
+| `start_before_drop` | la vidéo démarre N s avant la 1re ligne de mots (le « drop ») ; l'écran titre comble le temps avant l'intro |
+| `lead` | (avancé) délai en s avant le 1er temps de l'intro, 1 temps par défaut |
 | `tick` | ajoute un petit « toc » à chaque rebond (utile pour débuter) |
 | `title_mode` | `always` ou `intro` (le titre disparaît quand les mots commencent) |
 | `footer` | petit texte sous la grille (ex. `@toncompte`) |
@@ -112,6 +114,13 @@ Exemples de familles prêtes à l'emploi : *-o* (bateau, château, gâteau, cade
 2. Mettre `bpm` et `audio_offset` dans la config. Le 1er rebond de la balle
    (case 1 de la 1re ligne d'intro) tombera sur `audio_offset`.
 3. Vérifier la synchro sur la vidéo rendue ; ajuster `audio_offset` de ±0,02 s.
+
+**Caler le drop de l'instru sur la 1re ligne de mots** (ex. « commence 3 s avant le drop ») :
+repérer l'instant du drop (montée brutale des basses < 100 Hz, ex. via ffmpeg
+`lowpass=f=90` + enveloppe RMS), puis
+`audio_offset = drop - intro_bars × (240 / bpm)` et `start_before_drop = 3`.
+À 130 BPM une mesure = 1,85 s : avec 3 s il faut `intro_bars: 1`
+(compte à rebours 3-2-1 sur les temps 1 à 3).
 
 ⚠️ Une instru commerciale (type beat YouTube, son d'artiste) peut être
 coupée par TikTok. Privilégier l'instru générée, une instru achetée avec

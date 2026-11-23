@@ -233,8 +233,16 @@ class Timeline:
         self.bpm = float(cfg.get("bpm", 89))
         self.spb = 60.0 / self.bpm
         self.bar = 4 * self.spb
-        self.lead = self.spb                          # 1 temps : la balle tombe dans la 1re case
+        # délai avant le 1er temps de l'intro (s). Par défaut 1 temps : la balle tombe dans la 1re case.
+        # Utiliser 'start_before_drop' pour que la vidéo démarre N s avant le drop
+        # (= 1re ligne de mots) : lead = N - intro_bars * mesure.
         self.intro = int(cfg.get("intro_bars", 2))
+        self.lead = float(cfg.get("lead", self.spb))
+        if cfg.get("start_before_drop") is not None:
+            self.lead = float(cfg["start_before_drop"]) - self.intro * self.bar
+            if self.lead < 0:
+                raise SystemExit(f"start_before_drop trop court : l'intro de {self.intro} mesure(s) dure "
+                                 f"{self.intro * self.bar:.2f}s ; réduire intro_bars")
         self.n_words = len(cfg["_words"])
         self.rows = self.intro + self.n_words
         self.last_beat = self.rows * 4 - 1
@@ -298,8 +306,10 @@ class Renderer:
     def ball_pos(self, t):
         tl = self.tl
         b = tl.beat(t)
-        if b < 0:                             # chute d'entrée
+        if b < 0:                             # chute d'entrée (dernier temps avant l'intro)
             u = b + 1
+            if u <= 0:
+                return CELL_CX[0], LAND_Y - 420, 0.0
             return CELL_CX[0], LAND_Y - 420 * (1 - u * u), min(1.0, u * 3)
         if b >= tl.last_beat:                 # sortie : la balle s'envole et disparaît
             u = min((b - tl.last_beat) / 2, 1.0)
