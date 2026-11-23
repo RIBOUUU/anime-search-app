@@ -1,0 +1,16 @@
+{
+  "title": "RAPPE EN RYTHME !",
+  "title_mode": "intro",
+  "bpm": 89,
+  "beat_style": "boombap",
+  "groups": [
+    ["légende", "bande"],
+    ["têtard", "star"],
+    ["étape", "rap"],
+    ["rumba", "combat"],
+    ["grimace", "place"],
+    ["soupir", "délire"],
+    ["chaîne", "scène"],
+    ["micro", "impro"]
+  ]
+}

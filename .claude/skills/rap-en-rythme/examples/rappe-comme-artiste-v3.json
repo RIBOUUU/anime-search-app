@@ -1,0 +1,13 @@
+{
+  "title": "RAPPE COMME : [ARTISTE]",
+  "title_color": "#ffb21f",
+  "title_mode": "intro",
+  "bpm": 134,
+  "beat_style": "drill",
+  "groups": [
+    ["robot", "corbeau", "lavabo", "flambeau"],
+    ["matin", "satin", "lutin", "destin"],
+    ["four", "Singapour", "retour", "parcours"],
+    ["pot", "peau", "capot", "dépôt"]
+  ]
+}
