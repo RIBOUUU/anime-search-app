@@ -101,6 +101,7 @@ Exemples de familles prêtes à l'emploi : *-o* (bateau, château, gâteau, cade
 | `audio` | chemin d'une instru perso (mp3/wav) au lieu de l'instru générée |
 | `audio_offset` | instant (s) dans ce fichier du **1er temps fort** voulu pour la case 1 de l'intro |
 | `start_before_drop` | la vidéo démarre N s avant la 1re ligne de mots (le « drop ») ; l'écran titre comble le temps avant l'intro |
+| `blank_rows` | nombre de lignes de 4 cases vides (sans mot) juste après l'intro/le drop, pour laisser le temps de se lancer (recommandé : 1) |
 | `lead` | (avancé) délai en s avant le 1er temps de l'intro, 1 temps par défaut |
 | `tick` | ajoute un petit « toc » à chaque rebond (utile pour débuter) |
 | `title_mode` | `always` ou `intro` (le titre disparaît quand les mots commencent) |

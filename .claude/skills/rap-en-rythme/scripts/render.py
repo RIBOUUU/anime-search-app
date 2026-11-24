@@ -244,7 +244,10 @@ class Timeline:
                 raise SystemExit(f"start_before_drop trop court : l'intro de {self.intro} mesure(s) dure "
                                  f"{self.intro * self.bar:.2f}s ; réduire intro_bars")
         self.n_words = len(cfg["_words"])
-        self.rows = self.intro + self.n_words
+        # lignes de 4 cases vides (sans mot) jouées juste après l'intro / le drop,
+        # pour laisser au rappeur le temps de se caler avant le 1er mot
+        self.blank = int(cfg.get("blank_rows", 0))
+        self.rows = self.intro + self.blank + self.n_words
         self.last_beat = self.rows * 4 - 1
         self.outro = float(cfg.get("outro_bars", 1))
         self.duration = self.lead + (self.rows + self.outro) * self.bar
@@ -349,10 +352,11 @@ class Renderer:
                 continue
             row = Image.new("RGBA", (W, CELL_H + 12), (0, 0, 0, 0))
             intro_row = r < tl.intro
+            blank_row = tl.intro <= r < tl.intro + tl.blank
             for c in range(4):
                 lvl = self.cell_level(r, c, t)
-                if c == 3 and not intro_row:
-                    wi = r - tl.intro
+                if c == 3 and not intro_row and not blank_row:
+                    wi = r - tl.intro - tl.blank
                     th = tl.lead + (4 * r + 3) * tl.spb
                     if t < th:
                         s = sp.pill[wi]
@@ -368,10 +372,11 @@ class Renderer:
                 else:
                     lib = sp.dark if intro_row else sp.cell
                     row.alpha_composite(lib[int(round(min(lvl, 1) * 20))], (CELL_X[c], 1))
-            n = r - tl.intro + 1 if not intro_row else r - tl.intro
-            rn = sp.rownum_img(n)
-            row.alpha_composite(rn, (int(GRID_X0 / 2 - 35 - 6), int(CELL_H / 2 - 20)))
-            row.alpha_composite(rn, (int(W - GRID_X0 / 2 - 35 + 6), int(CELL_H / 2 - 20)))
+            if not blank_row:
+                n = r - tl.intro - tl.blank + 1 if not intro_row else r - tl.intro
+                rn = sp.rownum_img(n)
+                row.alpha_composite(rn, (int(GRID_X0 / 2 - 35 - 6), int(CELL_H / 2 - 20)))
+                row.alpha_composite(rn, (int(W - GRID_X0 / 2 - 35 + 6), int(CELL_H / 2 - 20)))
             if alpha < 1:
                 row = _fade(row, alpha)
             grid.alpha_composite(row, (0, int(round(y - WIN_TOP - 1))))
@@ -459,7 +464,7 @@ def build_audio(cfg, tl, out_wav, cfg_dir):
         if cfg.get("tick"):
             _mix_ticks(out_wav, tl, sr)
         return
-    audio = beatgen.make_beat(bpm=tl.bpm, lead=tl.lead, intro_bars=tl.intro, main_bars=tl.n_words,
+    audio = beatgen.make_beat(bpm=tl.bpm, lead=tl.lead, intro_bars=tl.intro, main_bars=tl.blank + tl.n_words,
                               outro_bars=tl.outro, style=cfg.get("beat_style", "boombap"),
                               seed=int(cfg.get("seed", 7)), sr=sr, tick=bool(cfg.get("tick", False)))
     beatgen.write_wav(out_wav, audio, sr)
