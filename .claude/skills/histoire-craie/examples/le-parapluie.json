@@ -1,0 +1,431 @@
+{
+ "_histoire": "Un papi tient le parapluie au-dessus de son petit-fils et se fait mouiller. Des années plus tard, le petit-fils, devenu grand, revient tenir le parapluie au-dessus du papi.",
+ "_legende": "Il a tenu le parapluie pendant 10 ans. Il lui a suffi d'une fois pour comprendre. ☔",
+ "duration": 33,
+ "music": {
+  "mood": "sad",
+  "bpm": 64,
+  "turn": 20.5,
+  "volume": 0.6
+ },
+ "rain": {
+  "t0": 0,
+  "t1": 33,
+  "density": 0.85,
+  "angle": 10,
+  "volume": 0.14
+ },
+ "set": [
+  {
+   "type": "ground",
+   "y": 1300
+  },
+  {
+   "type": "bench",
+   "x": 640,
+   "y": 1300,
+   "w": 290
+  },
+  {
+   "type": "lamp",
+   "x": 890,
+   "y": 1300,
+   "h": 440,
+   "side": -1
+  }
+ ],
+ "actors": {
+  "papi": {
+   "extras": [
+    "glasses",
+    "mustache"
+   ],
+   "hair": "none",
+   "keys": [
+    {
+     "t": 0,
+     "x": -230,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "umbrella",
+     "face": "smile"
+    },
+    {
+     "t": 4.0,
+     "x": 230,
+     "ease": "out"
+    },
+    {
+     "t": 4.7,
+     "pose": "umbrella_look",
+     "face": "closed"
+    },
+    {
+     "t": 6.2,
+     "pose": "umbrella",
+     "face": "smile"
+    },
+    {
+     "t": 6.5,
+     "x": 230
+    },
+    {
+     "t": 9.6,
+     "x": 1400,
+     "ease": "in"
+    },
+    {
+     "t": 12.0,
+     "x": 690,
+     "pose": "sit_sad",
+     "face": "sad",
+     "cut": true
+    },
+    {
+     "t": 14.0,
+     "pose": "shiver"
+    },
+    {
+     "t": 15.0,
+     "pose": "sit_sad",
+     "trans": 0.3
+    },
+    {
+     "t": 20.9,
+     "dir": 1,
+     "pose": "sit_sad"
+    },
+    {
+     "t": 21.2,
+     "dir": -1,
+     "pose": "sit_look_up",
+     "face": "surprised",
+     "trans": 0.3
+    },
+    {
+     "t": 22.6,
+     "face": "happy"
+    },
+    {
+     "t": 24.2,
+     "pose": "sit_bench",
+     "face": "closed"
+    }
+   ]
+  },
+  "petit": {
+   "hair": "cowlick",
+   "keys": [
+    {
+     "t": 0,
+     "x": -100,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "stand",
+     "face": "happy",
+     "scale": 0.62
+    },
+    {
+     "t": 4.0,
+     "x": 370,
+     "ease": "out"
+    },
+    {
+     "t": 4.5,
+     "dir": -1,
+     "pose": "look_up",
+     "face": "happy"
+    },
+    {
+     "t": 6.2,
+     "dir": 1,
+     "pose": "stand"
+    },
+    {
+     "t": 6.5,
+     "x": 370
+    },
+    {
+     "t": 9.6,
+     "x": 1520,
+     "ease": "in"
+    },
+    {
+     "t": 10.0,
+     "visible": false
+    }
+   ]
+  },
+  "grand": {
+   "hair": "cowlick",
+   "extras": [
+    "scarf"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": -260,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "umbrella",
+     "face": "neutral",
+     "visible": false
+    },
+    {
+     "t": 15.6,
+     "visible": true
+    },
+    {
+     "t": 16.0,
+     "x": -260
+    },
+    {
+     "t": 19.4,
+     "x": 500,
+     "ease": "out"
+    },
+    {
+     "t": 19.8,
+     "face": "sad"
+    },
+    {
+     "t": 20.4,
+     "face": "smile"
+    },
+    {
+     "t": 23.2,
+     "x": 500
+    },
+    {
+     "t": 24.0,
+     "x": 545,
+     "pose": "sit_umbrella",
+     "face": "closed"
+    }
+   ]
+  }
+ },
+ "props": {
+  "parapluie_papi": {
+   "type": "umbrella",
+   "keys": [
+    {
+     "t": 0,
+     "attach": "papi.hand_r",
+     "rot": 24,
+     "open": true
+    },
+    {
+     "t": 10.0,
+     "visible": false
+    }
+   ]
+  },
+  "canne": {
+   "type": "cane",
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 800,
+     "y": 1300,
+     "rot": -14
+    },
+    {
+     "t": 11.0,
+     "visible": true
+    }
+   ]
+  },
+  "parapluie_grand": {
+   "type": "umbrella",
+   "keys": [
+    {
+     "t": 0,
+     "attach": "grand.hand_r",
+     "rot": 0,
+     "open": true,
+     "visible": false
+    },
+    {
+     "t": 15.6,
+     "visible": true
+    },
+    {
+     "t": 19.9,
+     "rot": 0
+    },
+    {
+     "t": 20.7,
+     "rot": 22
+    },
+    {
+     "t": 23.3,
+     "rot": 22
+    },
+    {
+     "t": 24.0,
+     "rot": 4
+    }
+   ]
+  }
+ },
+ "camera": [
+  {
+   "t": 0,
+   "cx": 540,
+   "cy": 1010,
+   "zoom": 1.0
+  },
+  {
+   "t": 3.6,
+   "cx": 540,
+   "cy": 1010,
+   "zoom": 1.0
+  },
+  {
+   "t": 5.0,
+   "cx": 330,
+   "cy": 1110,
+   "zoom": 1.55
+  },
+  {
+   "t": 6.4,
+   "cx": 330,
+   "cy": 1110,
+   "zoom": 1.55
+  },
+  {
+   "t": 7.6,
+   "cx": 540,
+   "cy": 1010,
+   "zoom": 1.0
+  },
+  {
+   "t": 12.0,
+   "cx": 690,
+   "cy": 1130,
+   "zoom": 1.6,
+   "cut": true
+  },
+  {
+   "t": 15.2,
+   "cx": 670,
+   "cy": 1110,
+   "zoom": 1.45
+  },
+  {
+   "t": 16.6,
+   "cx": 520,
+   "cy": 1040,
+   "zoom": 1.0
+  },
+  {
+   "t": 19.2,
+   "cx": 560,
+   "cy": 1040,
+   "zoom": 1.0
+  },
+  {
+   "t": 21.0,
+   "cx": 630,
+   "cy": 1120,
+   "zoom": 1.5
+  },
+  {
+   "t": 23.4,
+   "cx": 630,
+   "cy": 1120,
+   "zoom": 1.5
+  },
+  {
+   "t": 25.0,
+   "cx": 620,
+   "cy": 1010,
+   "zoom": 1.15
+  }
+ ],
+ "fade": [
+  {
+   "t": 0,
+   "b": 0
+  },
+  {
+   "t": 0.6,
+   "b": 1
+  },
+  {
+   "t": 9.2,
+   "b": 1
+  },
+  {
+   "t": 10.0,
+   "b": 0
+  },
+  {
+   "t": 12.2,
+   "b": 0
+  },
+  {
+   "t": 13.0,
+   "b": 1
+  },
+  {
+   "t": 32.0,
+   "b": 1
+  },
+  {
+   "t": 33,
+   "b": 0
+  }
+ ],
+ "texts": [
+  {
+   "text": "LE PARAPLUIE",
+   "size": 120,
+   "y": 300,
+   "t0": 0.6,
+   "write": 1.4,
+   "t1": 7.6,
+   "fade": 0.8
+  },
+  {
+   "text": "DES ANNÉES PLUS TARD...",
+   "size": 80,
+   "y": 900,
+   "t0": 10.2,
+   "write": 1.3,
+   "t1": 11.9,
+   "fade": 0.5,
+   "over_fade": true
+  },
+  {
+   "lines": [
+    {
+     "text": "UN JOUR,",
+     "size": 92
+    },
+    {
+     "text": "CE SERA TON TOUR",
+     "size": 92
+    },
+    {
+     "text": "DE TENIR LE PARAPLUIE.",
+     "size": 108
+    }
+   ],
+   "y": 270,
+   "t0": 25.2,
+   "write": 3.6,
+   "gap": 1.0
+  }
+ ],
+ "sfx": [
+  {
+   "t": 21.2,
+   "type": "pop",
+   "volume": 0.25
+  }
+ ]
+}
