@@ -1,0 +1,752 @@
+{
+ "_histoire": "Il frappe à une porte depuis 100 jours et laisse une fleur chaque jour. Retournement : la porte est seule au milieu du vide, et de l'autre côté une fille fait exactement la même chose. Le vent emporte la porte : ils se découvrent.",
+ "_retention": "Accroche texte dès 0 s, compteur de jours = barre de progression, coupe toutes les 2 s, révélation par dézoom à 60 %, morale courte, coupe sèche (boucle).",
+ "_legende": "100 jours à frapper. Il suffisait de faire le tour. 🚪 #animation #stickman #amour #histoire #émotion",
+ "duration": 18.2,
+ "music": {
+  "mood": "sad",
+  "bpm": 76,
+  "turn": 13.4,
+  "volume": 0.6
+ },
+ "set": [
+  {
+   "type": "ground",
+   "y": 1300
+  }
+ ],
+ "actors": {
+  "lui": {
+   "hair": "cap",
+   "keys": [
+    {
+     "t": 0,
+     "x": 330,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "stand",
+     "face": "smile"
+    },
+    {
+     "t": 0.8,
+     "x": 480,
+     "ease": "out"
+    },
+    {
+     "t": 0.95,
+     "pose": "knock",
+     "trans": 0.15
+    },
+    {
+     "t": 1.75,
+     "pose": "stand",
+     "face": "smile",
+     "trans": 0.2
+    },
+    {
+     "t": 2.15,
+     "pose": "crouch"
+    },
+    {
+     "t": 2.55,
+     "pose": "stand"
+    },
+    {
+     "t": 2.7,
+     "x": 480,
+     "pose": "knock",
+     "face": "neutral",
+     "cut": true,
+     "trans": 0.05
+    },
+    {
+     "t": 3.6,
+     "pose": "stand",
+     "trans": 0.2
+    },
+    {
+     "t": 4.5,
+     "pose": "knock_sad",
+     "face": "sad",
+     "trans": 0.05
+    },
+    {
+     "t": 5.4,
+     "pose": "sad",
+     "trans": 0.2
+    },
+    {
+     "t": 6.3,
+     "pose": "knock_sad",
+     "face": "cry",
+     "trans": 0.05
+    },
+    {
+     "t": 7.0,
+     "pose": "sad",
+     "trans": 0.2
+    },
+    {
+     "t": 7.4,
+     "x": 480
+    },
+    {
+     "t": 7.9,
+     "x": 555,
+     "dir": -1,
+     "pose": "hug_knees",
+     "face": "sad"
+    },
+    {
+     "t": 13.6,
+     "pose": "sit_look_up",
+     "face": "surprised",
+     "trans": 0.25
+    },
+    {
+     "t": 14.1,
+     "x": 555
+    },
+    {
+     "t": 14.5,
+     "x": 505,
+     "pose": "stand",
+     "dir": 1,
+     "face": "surprised"
+    },
+    {
+     "t": 14.9,
+     "face": "laugh"
+    },
+    {
+     "t": 16.3,
+     "face": "happy"
+    }
+   ]
+  },
+  "elle": {
+   "hair": "ponytail",
+   "extras": [
+    "skirt"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 650,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "hug_knees",
+     "face": "sad"
+    },
+    {
+     "t": 13.6,
+     "pose": "sit_look_up",
+     "face": "surprised",
+     "trans": 0.25
+    },
+    {
+     "t": 14.1,
+     "x": 650
+    },
+    {
+     "t": 14.5,
+     "x": 700,
+     "pose": "stand",
+     "dir": -1,
+     "face": "surprised"
+    },
+    {
+     "t": 15.0,
+     "face": "laugh"
+    },
+    {
+     "t": 16.3,
+     "face": "happy"
+    }
+   ]
+  }
+ },
+ "props": {
+  "porte": {
+   "type": "door",
+   "keys": [
+    {
+     "t": 0,
+     "x": 600,
+     "y": 1300,
+     "rot": 0
+    },
+    {
+     "t": 12.9,
+     "x": 600,
+     "y": 1300,
+     "rot": 0
+    },
+    {
+     "t": 14.4,
+     "x": 80,
+     "y": 420,
+     "rot": -260,
+     "ease": "in"
+    },
+    {
+     "t": 14.5,
+     "visible": false
+    }
+   ]
+  },
+  "fl_lui0": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 568.5837114615754,
+     "y": 1300,
+     "rot": -71.90501897307853
+    },
+    {
+     "t": 2.45,
+     "visible": true
+    }
+   ]
+  },
+  "fl_lui1": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 558.6236505443359,
+     "y": 1297,
+     "rot": -70.3508318759277
+    },
+    {
+     "t": 2.7,
+     "visible": true
+    }
+   ]
+  },
+  "fl_lui2": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 551.6009094259225,
+     "y": 1294,
+     "rot": -62.95226956544776
+    },
+    {
+     "t": 2.7,
+     "visible": true
+    }
+   ]
+  },
+  "fl_lui3": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 537.4922697414737,
+     "y": 1300,
+     "rot": -50.986429455125744
+    },
+    {
+     "t": 2.7,
+     "visible": true
+    }
+   ]
+  },
+  "fl_lui4": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 529.4090243849673,
+     "y": 1297,
+     "rot": -68.34215472929047
+    },
+    {
+     "t": 4.5,
+     "visible": true
+    }
+   ]
+  },
+  "fl_lui5": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 521.7799199509511,
+     "y": 1294,
+     "rot": -66.6995206967565
+    },
+    {
+     "t": 4.5,
+     "visible": true
+    }
+   ]
+  },
+  "fl_lui6": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 514.9640128242878,
+     "y": 1300,
+     "rot": -71.8145012270541
+    },
+    {
+     "t": 4.5,
+     "visible": true
+    }
+   ]
+  },
+  "fl_lui7": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 505.7135974045265,
+     "y": 1297,
+     "rot": -47.17573105715819
+    },
+    {
+     "t": 6.3,
+     "visible": true
+    }
+   ]
+  },
+  "fl_lui8": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 493.0264797073295,
+     "y": 1294,
+     "rot": -50.80042959893029
+    },
+    {
+     "t": 6.3,
+     "visible": true
+    }
+   ]
+  },
+  "fl_lui9": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 484.1973129687422,
+     "y": 1300,
+     "rot": -69.1969314594228
+    },
+    {
+     "t": 6.3,
+     "visible": true
+    }
+   ]
+  },
+  "fl_elle0": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "x": 631.8590997437972,
+     "y": 1300,
+     "rot": 56.190731927606095
+    }
+   ]
+  },
+  "fl_elle1": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "x": 643.3913682532723,
+     "y": 1297,
+     "rot": 49.36054926025959
+    }
+   ]
+  },
+  "fl_elle2": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "x": 653.2803045081672,
+     "y": 1294,
+     "rot": 72.39845242095234
+    }
+   ]
+  },
+  "fl_elle3": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "x": 660.6351113023193,
+     "y": 1300,
+     "rot": 54.848956304505805
+    }
+   ]
+  },
+  "fl_elle4": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "x": 669.0357226542625,
+     "y": 1297,
+     "rot": 69.66629477277647
+    }
+   ]
+  },
+  "fl_elle5": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "x": 677.8415273255109,
+     "y": 1294,
+     "rot": 72.31961378203829
+    }
+   ]
+  },
+  "fl_elle6": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "x": 689.6075301833995,
+     "y": 1300,
+     "rot": 49.0354748944475
+    }
+   ]
+  },
+  "fl_elle7": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "x": 696.2858332175223,
+     "y": 1297,
+     "rot": 65.99262781280027
+    }
+   ]
+  },
+  "fl_elle8": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "x": 707.4532217364881,
+     "y": 1294,
+     "rot": 57.82899594942326
+    }
+   ]
+  },
+  "fl_elle9": {
+   "type": "flower",
+   "size": 0.62,
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "x": 716.2939034392728,
+     "y": 1300,
+     "rot": 49.55867735329096
+    }
+   ]
+  }
+ },
+ "camera": [
+  {
+   "t": 0,
+   "cx": 330,
+   "cy": 1120,
+   "zoom": 1.6
+  },
+  {
+   "t": 2.6,
+   "cx": 330,
+   "cy": 1120,
+   "zoom": 1.6
+  },
+  {
+   "t": 2.7,
+   "cx": 360,
+   "cy": 1140,
+   "zoom": 1.75,
+   "cut": true
+  },
+  {
+   "t": 4.4,
+   "cx": 360,
+   "cy": 1140,
+   "zoom": 1.75
+  },
+  {
+   "t": 4.5,
+   "cx": 330,
+   "cy": 1110,
+   "zoom": 1.6,
+   "cut": true
+  },
+  {
+   "t": 6.2,
+   "cx": 330,
+   "cy": 1110,
+   "zoom": 1.6
+  },
+  {
+   "t": 6.3,
+   "cx": 380,
+   "cy": 1160,
+   "zoom": 1.9,
+   "cut": true
+  },
+  {
+   "t": 8.3,
+   "cx": 380,
+   "cy": 1160,
+   "zoom": 1.9
+  },
+  {
+   "t": 8.4,
+   "cx": 340,
+   "cy": 1150,
+   "zoom": 1.7,
+   "cut": true
+  },
+  {
+   "t": 11.0,
+   "cx": 420,
+   "cy": 1200,
+   "zoom": 2.3,
+   "ease": "linear"
+  },
+  {
+   "t": 12.4,
+   "cx": 600,
+   "cy": 1110,
+   "zoom": 1.25,
+   "ease": "out"
+  },
+  {
+   "t": 15.0,
+   "cx": 600,
+   "cy": 1110,
+   "zoom": 1.25
+  },
+  {
+   "t": 16.0,
+   "cx": 600,
+   "cy": 1130,
+   "zoom": 1.3
+  }
+ ],
+ "fade": [
+  {
+   "t": 0,
+   "b": 1
+  }
+ ],
+ "texts": [
+  {
+   "lines": [
+    {
+     "text": "IL FRAPPE À CETTE PORTE",
+     "size": 78
+    },
+    {
+     "text": "DEPUIS 100 JOURS.",
+     "size": 96
+    }
+   ],
+   "y": 230,
+   "t0": 0,
+   "write": 0.6,
+   "t1": 2.5,
+   "fade": 0.15
+  },
+  {
+   "text": "JOUR 1",
+   "size": 90,
+   "y": 470,
+   "t0": 0.0,
+   "write": 0.2,
+   "t1": 2.6,
+   "fade": 0.05
+  },
+  {
+   "text": "JOUR 12",
+   "size": 90,
+   "y": 470,
+   "t0": 2.7,
+   "write": 0.2,
+   "t1": 4.4,
+   "fade": 0.05
+  },
+  {
+   "text": "JOUR 47",
+   "size": 90,
+   "y": 470,
+   "t0": 4.5,
+   "write": 0.2,
+   "t1": 6.2,
+   "fade": 0.05
+  },
+  {
+   "text": "JOUR 99",
+   "size": 90,
+   "y": 470,
+   "t0": 6.3,
+   "write": 0.2,
+   "t1": 8.3,
+   "fade": 0.05
+  },
+  {
+   "text": "JOUR 100",
+   "size": 110,
+   "y": 400,
+   "t0": 8.4,
+   "write": 0.3,
+   "t1": 11.2,
+   "fade": 0.3
+  },
+  {
+   "lines": [
+    {
+     "text": "PARFOIS, IL SUFFIT",
+     "size": 92
+    },
+    {
+     "text": "DE FAIRE LE TOUR.",
+     "size": 118
+    }
+   ],
+   "y": 300,
+   "t0": 15.2,
+   "write": 1.5
+  }
+ ],
+ "sfx": [
+  {
+   "t": 1.1,
+   "type": "wood",
+   "volume": 0.7
+  },
+  {
+   "t": 1.4,
+   "type": "wood",
+   "volume": 0.7
+  },
+  {
+   "t": 1.7,
+   "type": "wood",
+   "volume": 0.7
+  },
+  {
+   "t": 2.85,
+   "type": "wood",
+   "volume": 0.7
+  },
+  {
+   "t": 3.15,
+   "type": "wood",
+   "volume": 0.7
+  },
+  {
+   "t": 3.45,
+   "type": "wood",
+   "volume": 0.7
+  },
+  {
+   "t": 4.65,
+   "type": "wood",
+   "volume": 0.7
+  },
+  {
+   "t": 4.95,
+   "type": "wood",
+   "volume": 0.7
+  },
+  {
+   "t": 5.25,
+   "type": "wood",
+   "volume": 0.7
+  },
+  {
+   "t": 6.45,
+   "type": "wood",
+   "volume": 0.4
+  },
+  {
+   "t": 6.75,
+   "type": "wood",
+   "volume": 0.4
+  },
+  {
+   "t": 11.0,
+   "type": "whoosh",
+   "volume": 0.5
+  },
+  {
+   "t": 13.0,
+   "type": "whoosh",
+   "volume": 0.6
+  },
+  {
+   "t": 14.7,
+   "type": "pop",
+   "volume": 0.3
+  }
+ ]
+}

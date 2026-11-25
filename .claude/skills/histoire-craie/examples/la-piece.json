@@ -1,7 +1,7 @@
 {
  "_histoire": "Un passant donne une pièce à un sans-abri. La gentillesse passe de main en main (pièce -> pain -> moitié de pain -> fleur -> main tendue) et revient au passant le jour où c'est lui qui est tombé.",
  "_legende": "Une pièce. 4 personnes. Elle est revenue. ✨ #animation #stickman #gentillesse #émotion #histoire",
- "duration": 39,
+ "duration": 35.6,
  "music": {
   "mood": "sad",
   "bpm": 70,
@@ -44,8 +44,8 @@
   },
   {
    "type": "path",
-   "t0": 31.0,
-   "draw": 3.2,
+   "t0": 30.6,
+   "draw": 2.2,
    "w": 5,
    "points": [
     [
@@ -600,7 +600,7 @@
    "zoom": 1.55
   },
   {
-   "t": 31.0,
+   "t": 30.6,
    "cx": 1300,
    "cy": 1050,
    "zoom": 0.45
@@ -612,16 +612,8 @@
    "b": 0
   },
   {
-   "t": 0.6,
+   "t": 0.4,
    "b": 1
-  },
-  {
-   "t": 38.0,
-   "b": 1
-  },
-  {
-   "t": 39,
-   "b": 0
   }
  ],
  "texts": [
@@ -650,8 +642,8 @@
     }
    ],
    "y": 250,
-   "t0": 32.2,
-   "write": 3.2,
+   "t0": 31.6,
+   "write": 2.4,
    "gap": 0.98
   }
  ],

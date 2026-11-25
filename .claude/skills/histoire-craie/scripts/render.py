@@ -208,6 +208,8 @@ POSES = {
     "wave": dict(sr=160, er=10, anim="wave"),
     "cheer": dict(sl=165, el=5, sr=170, er=5, anim="bounce"),
     "phone": dict(tilt=18, sl=8, sr=40, er=105),
+    "knock": dict(sl=6, el=4, sr=80, er=12, anim="knock"),
+    "knock_sad": dict(lean=8, tilt=20, sl=4, el=4, sr=72, er=14, anim="knock"),
     "umbrella": dict(sr=60, er=100),
     "umbrella_look": dict(tilt=18, sr=60, er=100),
     "umbrella_look_up": dict(tilt=-20, sr=60, er=100),
@@ -275,6 +277,8 @@ class Actor:
             P["er"] += 22 * math.sin(t * 9)
         elif anim == "bounce":
             P["dy"] -= 18 * abs(math.sin(t * 6))
+        elif anim == "knock":
+            P["er"] += 28 * max(0.0, math.sin(t * 21))
         elif anim == "shiver":
             P["lean"] += 1.5 * math.sin(t * 55)
         P["dy"] += tr.num("lift", t, 0.0)
@@ -499,6 +503,14 @@ class Prop:
             cv.fill_poly(pts, 0)
             cv.poly(pts, w, sd, closed=True)
             cv.line(P(4, -7), P(18, 6), 3, sd + 2, val=190)
+        elif k == "door":
+            slab = [P(-15, 0), P(15, 0), P(15, -300), P(-15, -300)]
+            cv.fill_poly(slab, 0)
+            cv.poly(slab, w, sd, closed=True)
+            cv.line(P(-9, -20), P(-9, -280), 2.5, sd + 1, val=150)
+            cv.line(P(9, -20), P(9, -280), 2.5, sd + 2, val=150)
+            for i, sg in enumerate((-1, 1)):
+                cv.circle(P(sg * 24, -140), 8 * s, 4, sd + 3 + i, n=8)
         elif k == "plank":
             box = [P(-75, -9), P(75, -9), P(75, 9), P(-75, 9)]
             cv.fill_poly(box, 0)

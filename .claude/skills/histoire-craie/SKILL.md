@@ -54,6 +54,25 @@ la place gardée sur le banc ; le cadeau emballé chaque année.
   aux moments d'émotion.
 - Titre court en haut au début, morale à la fin, texte écrit lettre par lettre.
 
+## Rétention d'audience (à appliquer à chaque vidéo)
+
+Exemple de référence : `examples/la-porte.json` (18 s).
+
+- **Accroche dans la 1re seconde** : pas de fondu d'ouverture, le personnage est
+  déjà en action et une phrase-mystère s'écrit en 0,6 s (« IL FRAPPE À CETTE PORTE
+  DEPUIS 100 JOURS. »). Elle pose une question à laquelle seule la fin répond.
+- **Compteur visible** (JOUR 1 → 12 → 47 → 99 → 100) : il fait office de barre de
+  progression et donne envie d'arriver à 100.
+- **Un changement toutes les 1,5 à 2 s** : coupe sèche (`"cut": true` sur la
+  caméra), nouveau cadrage, nouvel élément qui s'accumule (le tas de fleurs).
+- **Retournement visuel tardif (≈ 60-70 %)** : l'information cachée par le
+  cadrage serré se révèle par un dézoom rapide. Pas besoin de texte.
+- **Fin courte** : la morale s'écrit en 1,5 s au maximum, puis on coupe ≤ 1,5 s
+  après. Pas de fondu au noir final, pour que la boucle reparte directement sur
+  l'accroche et compte des revisionnages.
+- **Durée** : 15 à 25 s pour la rétention ; garder 30 à 40 s pour les histoires
+  plus contemplatives.
+
 ## Fichier d'histoire (JSON)
 
 Partir de `examples/le-parapluie.json`, une histoire complète de 33 s.
