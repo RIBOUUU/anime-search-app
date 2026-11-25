@@ -1,0 +1,467 @@
+{
+ "duration": 17.6,
+ "music": {
+  "mood": "sad",
+  "bpm": 80,
+  "turn": 11.4,
+  "volume": 0.55
+ },
+ "fade": [
+  {
+   "t": 0,
+   "b": 1
+  }
+ ],
+ "set": [
+  {
+   "type": "ground",
+   "y": 1300,
+   "x0": -1500,
+   "x1": 300
+  },
+  {
+   "type": "tower",
+   "x": 250,
+   "top": 720,
+   "w": 80,
+   "board": 170,
+   "side": 1
+  },
+  {
+   "type": "burst",
+   "x": 395,
+   "y": 430,
+   "t0": 11.35,
+   "r": 160
+  },
+  {
+   "type": "burst",
+   "x": 520,
+   "y": 1320,
+   "t0": 11.95,
+   "r": 180,
+   "glow": false
+  }
+ ],
+ "actors": {
+  "ado": {
+   "hair": "ponytail",
+   "hud": [
+    {
+     "type": "gauge",
+     "label": "PEUR",
+     "fmt": "pct",
+     "t1": 11.3,
+     "keys": [
+      {
+       "t": 0,
+       "v": 100
+      },
+      {
+       "t": 2.85,
+       "v": 100
+      },
+      {
+       "t": 2.9,
+       "v": 90,
+       "cut": true
+      },
+      {
+       "t": 5.3,
+       "v": 70,
+       "cut": true
+      },
+      {
+       "t": 7.7,
+       "v": 40,
+       "cut": true
+      },
+      {
+       "t": 10.2,
+       "v": 12
+      },
+      {
+       "t": 0.01,
+       "glow": null
+      }
+     ]
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 380,
+     "ground": 720,
+     "dir": 1,
+     "pose": "shiver",
+     "face": "worried"
+    },
+    {
+     "t": 1.8,
+     "face": "cry"
+    },
+    {
+     "t": 2.2,
+     "dir": -1,
+     "pose": "sad"
+    },
+    {
+     "t": 2.85,
+     "x": 300,
+     "ease": "out"
+    },
+    {
+     "t": 2.9,
+     "x": 330,
+     "dir": 1,
+     "pose": "shiver",
+     "face": "worried",
+     "cut": true
+    },
+    {
+     "t": 4.2,
+     "x": 375,
+     "ease": "inout"
+    },
+    {
+     "t": 4.7,
+     "dir": -1,
+     "pose": "sad"
+    },
+    {
+     "t": 5.3,
+     "x": 360,
+     "dir": 1,
+     "pose": "shiver",
+     "face": "worried",
+     "cut": true
+    },
+    {
+     "t": 6.5,
+     "x": 395,
+     "ease": "inout"
+    },
+    {
+     "t": 7.1,
+     "dir": -1
+    },
+    {
+     "t": 7.7,
+     "x": 395,
+     "dir": 1,
+     "pose": "stand",
+     "face": "worried",
+     "cut": true
+    },
+    {
+     "t": 9.6,
+     "face": "closed"
+    },
+    {
+     "t": 10.6,
+     "pose": "cheer",
+     "face": "closed"
+    },
+    {
+     "t": 11.2,
+     "pose": "dive",
+     "face": "closed"
+    },
+    {
+     "t": 11.25,
+     "x": 395,
+     "ground": 720
+    },
+    {
+     "t": 11.9,
+     "x": 520,
+     "ground": 1500,
+     "ease": "in"
+    },
+    {
+     "t": 12.4,
+     "x": 520,
+     "ground": 1440,
+     "pose": "cheer",
+     "face": "laugh",
+     "cut": true
+    }
+   ]
+  },
+  "amie1": {
+   "hair": "curly",
+   "keys": [
+    {
+     "t": 0,
+     "x": 700,
+     "ground": 1440,
+     "dir": -1,
+     "pose": "stand",
+     "face": "smile"
+    },
+    {
+     "t": 7.8,
+     "pose": "wave",
+     "face": "happy"
+    },
+    {
+     "t": 12.3,
+     "pose": "cheer",
+     "face": "laugh"
+    }
+   ]
+  },
+  "amie2": {
+   "hair": "bow",
+   "keys": [
+    {
+     "t": 0,
+     "x": 880,
+     "ground": 1440,
+     "dir": -1,
+     "pose": "stand",
+     "face": "neutral"
+    },
+    {
+     "t": 8.6,
+     "pose": "wave",
+     "face": "happy"
+    },
+    {
+     "t": 12.3,
+     "pose": "cheer",
+     "face": "laugh"
+    }
+   ]
+  }
+ },
+ "props": {
+  "eau": {
+   "type": "water",
+   "w": 1900,
+   "keys": [
+    {
+     "t": 0,
+     "x": 900,
+     "y": 1320
+    }
+   ]
+  },
+  "b1": {
+   "type": "bubble",
+   "text": "VAS-Y !",
+   "font": 38,
+   "tail": -1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "amie1.head",
+     "dy": -20,
+     "dx": 0
+    },
+    {
+     "t": 8.0,
+     "visible": true
+    },
+    {
+     "t": 9.6,
+     "visible": false
+    }
+   ]
+  },
+  "b2": {
+   "type": "bubble",
+   "text": "ON EST LÀ !",
+   "font": 38,
+   "tail": -1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "amie2.head",
+     "dy": -20,
+     "dx": 0
+    },
+    {
+     "t": 8.8,
+     "visible": true
+    },
+    {
+     "t": 10.4,
+     "visible": false
+    }
+   ]
+  }
+ },
+ "camera": [
+  {
+   "t": 0,
+   "cx": 470,
+   "cy": 640,
+   "zoom": 1.2
+  },
+  {
+   "t": 2.85,
+   "cx": 470,
+   "cy": 640,
+   "zoom": 1.2
+  },
+  {
+   "t": 2.9,
+   "cx": 460,
+   "cy": 650,
+   "zoom": 1.15,
+   "cut": true
+  },
+  {
+   "t": 5.25,
+   "cx": 460,
+   "cy": 650,
+   "zoom": 1.15
+  },
+  {
+   "t": 5.3,
+   "cx": 470,
+   "cy": 630,
+   "zoom": 1.3,
+   "cut": true
+  },
+  {
+   "t": 7.65,
+   "cx": 470,
+   "cy": 630,
+   "zoom": 1.3
+  },
+  {
+   "t": 7.7,
+   "cx": 560,
+   "cy": 1000,
+   "zoom": 0.95,
+   "cut": true
+  },
+  {
+   "t": 9.4,
+   "cx": 560,
+   "cy": 1000,
+   "zoom": 0.95
+  },
+  {
+   "t": 10.6,
+   "cx": 420,
+   "cy": 780,
+   "zoom": 1.9
+  },
+  {
+   "t": 11.2,
+   "cx": 420,
+   "cy": 780,
+   "zoom": 1.9
+  },
+  {
+   "t": 11.9,
+   "cx": 600,
+   "cy": 1050,
+   "zoom": 1.0,
+   "ease": "out"
+  },
+  {
+   "t": 13.0,
+   "cx": 680,
+   "cy": 1020,
+   "zoom": 1.2
+  }
+ ],
+ "texts": [
+  {
+   "lines": [
+    {
+     "text": "SA PEUR ÉTAIT À 100 %.",
+     "size": 90
+    },
+    {
+     "text": "REGARDE CE QU'ELLE A FAIT.",
+     "size": 76
+    }
+   ],
+   "y": 200,
+   "t0": 0,
+   "write": 0.6,
+   "t1": 2.4,
+   "fade": 0.15
+  },
+  {
+   "text": "ESSAI 1",
+   "size": 84,
+   "y": 470,
+   "t0": 0.05,
+   "write": 0.15,
+   "t1": 2.85,
+   "fade": 0.05,
+   "color": "green"
+  },
+  {
+   "text": "ESSAI 5",
+   "size": 84,
+   "y": 440,
+   "t0": 2.9,
+   "write": 0.15,
+   "t1": 5.25,
+   "fade": 0.05,
+   "color": "green"
+  },
+  {
+   "text": "ESSAI 9",
+   "size": 84,
+   "y": 440,
+   "t0": 5.3,
+   "write": 0.15,
+   "t1": 7.65,
+   "fade": 0.05,
+   "color": "green"
+  },
+  {
+   "text": "ESSAI 12",
+   "size": 84,
+   "y": 440,
+   "t0": 7.7,
+   "write": 0.15,
+   "t1": 10.4,
+   "fade": 0.05,
+   "color": "green"
+  },
+  {
+   "lines": [
+    {
+     "text": "LE COURAGE, CE N'EST PAS",
+     "size": 88
+    },
+    {
+     "text": "DE NE PAS AVOIR PEUR.",
+     "size": 108
+    }
+   ],
+   "y": 230,
+   "t0": 13.4,
+   "write": 1.5
+  }
+ ],
+ "sfx": [
+  {
+   "t": 11.35,
+   "type": "pop",
+   "volume": 0.5
+  },
+  {
+   "t": 11.3,
+   "type": "whoosh",
+   "volume": 0.5
+  },
+  {
+   "t": 11.9,
+   "type": "drop",
+   "volume": 0.6
+  }
+ ],
+ "_legende": "Sa peur était à 100 %. Elle a sauté quand même 💥 #courage #ado #stickman #animation"
+}

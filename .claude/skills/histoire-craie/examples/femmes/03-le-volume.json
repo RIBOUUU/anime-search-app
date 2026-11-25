@@ -1,0 +1,525 @@
+{
+ "duration": 17.8,
+ "music": {
+  "mood": "sad",
+  "bpm": 80,
+  "turn": 10.4,
+  "volume": 0.55
+ },
+ "fade": [
+  {
+   "t": 0,
+   "b": 1
+  }
+ ],
+ "set": [
+  {
+   "type": "ground",
+   "y": 1300
+  },
+  {
+   "type": "desk",
+   "x": 560,
+   "w": 560,
+   "h": 110
+  },
+  {
+   "type": "burst",
+   "x": 400,
+   "y": 860,
+   "t0": 11.5
+  }
+ ],
+ "actors": {
+  "elle": {
+   "hair": "long",
+   "extras": [
+    "skirt"
+   ],
+   "hud": [
+    {
+     "type": "bars",
+     "label": "SA VOIX",
+     "warn": 1.5,
+     "keys": [
+      {
+       "t": 0,
+       "v": 5
+      },
+      {
+       "t": 2.5,
+       "v": 5
+      },
+      {
+       "t": 2.7,
+       "v": 4
+      },
+      {
+       "t": 5.0,
+       "v": 4
+      },
+      {
+       "t": 5.2,
+       "v": 3
+      },
+      {
+       "t": 7.3,
+       "v": 3
+      },
+      {
+       "t": 7.5,
+       "v": 2
+      },
+      {
+       "t": 8.2,
+       "v": 1
+      },
+      {
+       "t": 11.4,
+       "v": 1
+      },
+      {
+       "t": 12.0,
+       "v": 5
+      },
+      {
+       "t": 11.6,
+       "glow": "warm"
+      },
+      {
+       "t": 13.5,
+       "glow": null
+      }
+     ]
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 400,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "stand",
+     "face": "smile"
+    },
+    {
+     "t": 1.0,
+     "pose": "wave"
+    },
+    {
+     "t": 2.3,
+     "pose": "stand",
+     "face": "sad"
+    },
+    {
+     "t": 3.9,
+     "pose": "present",
+     "face": "smile"
+    },
+    {
+     "t": 5.0,
+     "pose": "stand",
+     "face": "sad"
+    },
+    {
+     "t": 7.6,
+     "pose": "sad",
+     "face": "sad"
+    },
+    {
+     "t": 9.0,
+     "face": "cry"
+    },
+    {
+     "t": 11.3,
+     "pose": "look_up",
+     "face": "surprised"
+    },
+    {
+     "t": 12.0,
+     "pose": "stand",
+     "face": "happy"
+    }
+   ]
+  },
+  "chef": {
+   "hair": "none",
+   "extras": [
+    "tie"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 720,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "stand",
+     "face": "neutral"
+    },
+    {
+     "t": 2.0,
+     "pose": "point",
+     "face": "angry"
+    },
+    {
+     "t": 3.0,
+     "pose": "stand"
+    },
+    {
+     "t": 6.3,
+     "pose": "present",
+     "face": "happy"
+    },
+    {
+     "t": 8.4,
+     "pose": "cheer",
+     "face": "laugh"
+    },
+    {
+     "t": 10.0,
+     "pose": "stand"
+    },
+    {
+     "t": 11.1,
+     "face": "surprised"
+    },
+    {
+     "t": 12.4,
+     "face": "worried",
+     "pose": "sad"
+    }
+   ]
+  },
+  "collegue": {
+   "hair": "cap",
+   "extras": [
+    "tie"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 860,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "stand",
+     "face": "neutral"
+    },
+    {
+     "t": 4.6,
+     "pose": "point",
+     "face": "angry"
+    },
+    {
+     "t": 5.6,
+     "pose": "stand"
+    },
+    {
+     "t": 7.4,
+     "pose": "cheer",
+     "face": "laugh"
+    },
+    {
+     "t": 9.6,
+     "pose": "stand"
+    },
+    {
+     "t": 11.2,
+     "face": "surprised"
+    }
+   ]
+  },
+  "allie": {
+   "hair": "curly",
+   "extras": [
+    "skirt",
+    "glasses"
+   ],
+   "hud": [
+    {
+     "type": "bars",
+     "label": "",
+     "t0": 11.4,
+     "keys": [
+      {
+       "t": 0,
+       "v": 5
+      }
+     ]
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 225,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "stand",
+     "face": "neutral"
+    },
+    {
+     "t": 9.2,
+     "face": "angry"
+    },
+    {
+     "t": 10.4,
+     "pose": "point",
+     "face": "angry"
+    },
+    {
+     "t": 12.2,
+     "pose": "stand",
+     "face": "happy"
+    }
+   ]
+  }
+ },
+ "props": {
+  "b1": {
+   "type": "bubble",
+   "text": "J'AI UNE IDÉE...",
+   "font": 38,
+   "tail": 1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "elle.head",
+     "dy": -185,
+     "dx": 0
+    },
+    {
+     "t": 1.0,
+     "visible": true
+    },
+    {
+     "t": 2.2,
+     "visible": false
+    }
+   ]
+  },
+  "b2": {
+   "type": "bubble",
+   "text": "ATTENDS.",
+   "font": 38,
+   "tail": -1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "chef.head",
+     "dy": -20,
+     "dx": 0
+    },
+    {
+     "t": 2.0,
+     "visible": true
+    },
+    {
+     "t": 3.1,
+     "visible": false
+    }
+   ]
+  },
+  "b3": {
+   "type": "bubble",
+   "text": "ET SI ON...",
+   "font": 38,
+   "tail": 1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "elle.head",
+     "dy": -185,
+     "dx": 0
+    },
+    {
+     "t": 3.9,
+     "visible": true
+    },
+    {
+     "t": 4.8,
+     "visible": false
+    }
+   ]
+  },
+  "b4": {
+   "type": "bubble",
+   "text": "PAS MAINTENANT.",
+   "font": 38,
+   "tail": -1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "collegue.head",
+     "dy": -20,
+     "dx": 0
+    },
+    {
+     "t": 4.6,
+     "visible": true
+    },
+    {
+     "t": 5.7,
+     "visible": false
+    }
+   ]
+  },
+  "b5": {
+   "type": "bubble",
+   "text": "J'AI UNE IDÉE GÉNIALE !",
+   "font": 38,
+   "tail": -1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "chef.head",
+     "dy": -20,
+     "dx": 0
+    },
+    {
+     "t": 6.3,
+     "visible": true
+    },
+    {
+     "t": 7.8,
+     "visible": false
+    }
+   ]
+  },
+  "b6": {
+   "type": "bubble",
+   "text": "BRAVO CHEF !",
+   "font": 38,
+   "tail": -1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "collegue.head",
+     "dy": -20,
+     "dx": 0
+    },
+    {
+     "t": 7.5,
+     "visible": true
+    },
+    {
+     "t": 8.8,
+     "visible": false
+    }
+   ]
+  },
+  "b7": {
+   "type": "bubble",
+   "text": "C'ÉTAIT SON IDÉE.",
+   "font": 36,
+   "tail": 1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "allie.head",
+     "dy": -60,
+     "dx": 0
+    },
+    {
+     "t": 10.4,
+     "visible": true
+    },
+    {
+     "t": 12.6,
+     "visible": false
+    }
+   ]
+  }
+ },
+ "camera": [
+  {
+   "t": 0,
+   "cx": 620,
+   "cy": 1040,
+   "zoom": 1.35
+  },
+  {
+   "t": 7.8,
+   "cx": 620,
+   "cy": 1040,
+   "zoom": 1.35
+  },
+  {
+   "t": 9.6,
+   "cx": 420,
+   "cy": 1080,
+   "zoom": 1.9
+  },
+  {
+   "t": 10.1,
+   "cx": 420,
+   "cy": 1080,
+   "zoom": 1.9
+  },
+  {
+   "t": 10.6,
+   "cx": 520,
+   "cy": 1050,
+   "zoom": 1.15,
+   "ease": "out"
+  },
+  {
+   "t": 13.2,
+   "cx": 520,
+   "cy": 1030,
+   "zoom": 1.15
+  }
+ ],
+ "texts": [
+  {
+   "lines": [
+    {
+     "text": "À CHAQUE RÉUNION,",
+     "size": 88
+    },
+    {
+     "text": "SA VOIX BAISSE D'UN CRAN.",
+     "size": 84
+    }
+   ],
+   "y": 200,
+   "t0": 0,
+   "write": 0.6,
+   "t1": 2.4,
+   "fade": 0.15
+  },
+  {
+   "lines": [
+    {
+     "text": "QUAND UNE FEMME PARLE,",
+     "size": 88
+    },
+    {
+     "text": "MONTE LE SON.",
+     "size": 108
+    }
+   ],
+   "y": 230,
+   "t0": 14.0,
+   "write": 1.5
+  }
+ ],
+ "sfx": [
+  {
+   "t": 10.5,
+   "type": "whoosh",
+   "volume": 0.4
+  },
+  {
+   "t": 11.5,
+   "type": "pop",
+   "volume": 0.4
+  }
+ ],
+ "_legende": "Elle a eu l'idée. Il a eu les applaudissements. Jusqu'à ce qu'une collègue monte le son 🔊 #femmes #travail #stickman"
+}

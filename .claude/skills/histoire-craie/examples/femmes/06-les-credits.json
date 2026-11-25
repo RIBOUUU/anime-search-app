@@ -1,0 +1,499 @@
+{
+ "duration": 19.8,
+ "music": {
+  "mood": "sad",
+  "bpm": 80,
+  "turn": 13.0,
+  "volume": 0.55
+ },
+ "fade": [
+  {
+   "t": 0,
+   "b": 1
+  }
+ ],
+ "set": [
+  {
+   "type": "ground",
+   "y": 1300,
+   "x0": -1500,
+   "x1": 4000
+  },
+  {
+   "type": "bed",
+   "x": 680,
+   "w": 330
+  },
+  {
+   "type": "window",
+   "x": 930,
+   "y": 860,
+   "w": 180,
+   "h": 170,
+   "moon": true
+  },
+  {
+   "type": "bench",
+   "x": 1500,
+   "w": 240
+  },
+  {
+   "type": "lamp",
+   "x": 2250,
+   "h": 470,
+   "side": 1
+  },
+  {
+   "type": "house",
+   "x": 2900,
+   "w": 300,
+   "h": 260,
+   "label": "CHEZ ELLE",
+   "light": true
+  },
+  {
+   "type": "burst",
+   "x": 2620,
+   "y": 820,
+   "t0": 13.0,
+   "r": 180
+  }
+ ],
+ "actors": {
+  "inf": {
+   "hair": "nurse",
+   "extras": [
+    "skirt"
+   ],
+   "hud": [
+    {
+     "type": "counter",
+     "label": "VIES SAUVÉES",
+     "dy": 75,
+     "keys": [
+      {
+       "t": 0,
+       "v": 1
+      },
+      {
+       "t": 2.9,
+       "v": 1
+      },
+      {
+       "t": 3.0,
+       "v": 120,
+       "cut": true
+      },
+      {
+       "t": 5.5,
+       "v": 900
+      },
+      {
+       "t": 5.6,
+       "v": 2300,
+       "cut": true
+      },
+      {
+       "t": 8.3,
+       "v": 4000
+      },
+      {
+       "t": 14,
+       "v": 4000
+      }
+     ]
+    },
+    {
+     "type": "counter",
+     "label": "MERCI",
+     "dy": 200,
+     "warn": 0.5,
+     "keys": [
+      {
+       "t": 0,
+       "v": 0
+      },
+      {
+       "t": 13.0,
+       "v": 0
+      },
+      {
+       "t": 15.0,
+       "v": 9999,
+       "ease": "in"
+      },
+      {
+       "t": 13.0,
+       "glow": "warm"
+      }
+     ]
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 470,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "reach",
+     "face": "worried"
+    },
+    {
+     "t": 1.8,
+     "pose": "stand",
+     "face": "smile"
+    },
+    {
+     "t": 3.0,
+     "x": -150,
+     "pose": "run",
+     "face": "worried",
+     "cut": true
+    },
+    {
+     "t": 5.5,
+     "x": 1150,
+     "ease": "linear"
+    },
+    {
+     "t": 5.6,
+     "x": 1540,
+     "pose": "sit_sad",
+     "face": "sad",
+     "cut": true
+    },
+    {
+     "t": 7.4,
+     "face": "closed"
+    },
+    {
+     "t": 8.4,
+     "x": 1900,
+     "pose": "sad",
+     "face": "sad",
+     "cut": true
+    },
+    {
+     "t": 12.0,
+     "x": 2560,
+     "ease": "linear"
+    },
+    {
+     "t": 12.4,
+     "face": "surprised",
+     "pose": "stand"
+    },
+    {
+     "t": 13.1,
+     "face": "cry"
+    },
+    {
+     "t": 14.0,
+     "face": "happy"
+    }
+   ]
+  },
+  "patient": {
+   "hair": "cap",
+   "keys": [
+    {
+     "t": 0,
+     "x": 715,
+     "ground": 1230,
+     "dir": 1,
+     "pose": "lie",
+     "face": "closed"
+    },
+    {
+     "t": 2.9,
+     "visible": false
+    },
+    {
+     "t": 11.0,
+     "visible": true,
+     "x": 2760,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "stand",
+     "face": "smile",
+     "cut": true
+    },
+    {
+     "t": 12.8,
+     "pose": "present",
+     "face": "happy"
+    }
+   ]
+  },
+  "epouse": {
+   "hair": "long",
+   "extras": [
+    "skirt"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 2900,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "hold",
+     "face": "happy"
+    },
+    {
+     "t": 11.0,
+     "visible": true
+    },
+    {
+     "t": 13.4,
+     "pose": "cheer"
+    }
+   ]
+  },
+  "gamin": {
+   "hair": "cowlick",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 2840,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "stand",
+     "face": "happy",
+     "scale": 0.55
+    },
+    {
+     "t": 11.0,
+     "visible": true
+    },
+    {
+     "t": 13.2,
+     "pose": "cheer",
+     "face": "laugh"
+    }
+   ]
+  }
+ },
+ "props": {
+  "trousse": {
+   "type": "box",
+   "size": 0.55,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "inf.hand_r",
+     "dy": 40
+    },
+    {
+     "t": 3.0,
+     "visible": true
+    },
+    {
+     "t": 5.6,
+     "visible": false
+    }
+   ]
+  },
+  "fleur": {
+   "type": "flower",
+   "shine": true,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "epouse.hands",
+     "shine": true
+    },
+    {
+     "t": 11.0,
+     "visible": true
+    }
+   ]
+  },
+  "c1": {
+   "type": "heart",
+   "size": 0.8,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 2600,
+     "y": 900
+    },
+    {
+     "t": 13.2,
+     "visible": true
+    },
+    {
+     "t": 15.2,
+     "y": 500
+    }
+   ]
+  },
+  "c2": {
+   "type": "heart",
+   "size": 0.6,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 2720,
+     "y": 950
+    },
+    {
+     "t": 13.5,
+     "visible": true
+    },
+    {
+     "t": 15.5,
+     "y": 560
+    }
+   ]
+  },
+  "b1": {
+   "type": "bubble",
+   "text": "MERCI.",
+   "font": 52,
+   "tail": -1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "patient.head",
+     "dy": -20,
+     "dx": 0
+    },
+    {
+     "t": 12.8,
+     "visible": true
+    },
+    {
+     "t": 14.8,
+     "visible": false
+    }
+   ]
+  }
+ },
+ "camera": [
+  {
+   "t": 0,
+   "cx": 560,
+   "cy": 1060,
+   "zoom": 1.35
+  },
+  {
+   "t": 2.95,
+   "cx": 560,
+   "cy": 1060,
+   "zoom": 1.35
+  },
+  {
+   "t": 3.0,
+   "cx": 300,
+   "cy": 1040,
+   "zoom": 1.1,
+   "cut": true
+  },
+  {
+   "t": 5.5,
+   "cx": 900,
+   "cy": 1040,
+   "zoom": 1.1,
+   "ease": "linear"
+  },
+  {
+   "t": 5.6,
+   "cx": 1520,
+   "cy": 1080,
+   "zoom": 1.45,
+   "cut": true
+  },
+  {
+   "t": 8.35,
+   "cx": 1520,
+   "cy": 1080,
+   "zoom": 1.55
+  },
+  {
+   "t": 8.4,
+   "cx": 2000,
+   "cy": 1040,
+   "zoom": 1.1,
+   "cut": true
+  },
+  {
+   "t": 11.0,
+   "cx": 2500,
+   "cy": 1050,
+   "zoom": 1.1,
+   "ease": "linear"
+  },
+  {
+   "t": 12.6,
+   "cx": 2700,
+   "cy": 1060,
+   "zoom": 1.2
+  },
+  {
+   "t": 14.5,
+   "cx": 2700,
+   "cy": 1020,
+   "zoom": 1.05
+  }
+ ],
+ "texts": [
+  {
+   "lines": [
+    {
+     "text": "ELLE A SAUVÉ 4 000 VIES.",
+     "size": 86
+    },
+    {
+     "text": "PERSONNE NE CONNAÎT SON NOM.",
+     "size": 72
+    }
+   ],
+   "y": 200,
+   "t0": 0,
+   "write": 0.6,
+   "t1": 2.6,
+   "fade": 0.15
+  },
+  {
+   "lines": [
+    {
+     "text": "ELLES SAUVENT DES VIES EN SILENCE.",
+     "size": 88
+    },
+    {
+     "text": "DIS-LEUR MERCI.",
+     "size": 108
+    }
+   ],
+   "y": 230,
+   "t0": 15.6,
+   "write": 1.5
+  }
+ ],
+ "sfx": [
+  {
+   "t": 12.8,
+   "type": "heart",
+   "volume": 0.6
+  },
+  {
+   "t": 13.0,
+   "type": "pop",
+   "volume": 0.4
+  }
+ ],
+ "_legende": "4 000 vies sauvées. 0 merci. Jusqu'à ce soir-là 🤍 #infirmière #soignante #stickman #merci",
+ "rain": {
+  "t0": 8.4,
+  "t1": 12.5,
+  "density": 0.9,
+  "volume": 0.14
+ }
+}

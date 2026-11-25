@@ -1,0 +1,441 @@
+{
+ "duration": 18.4,
+ "music": {
+  "mood": "sad",
+  "bpm": 80,
+  "turn": 9.6,
+  "volume": 0.55
+ },
+ "fade": [
+  {
+   "t": 0,
+   "b": 1
+  }
+ ],
+ "set": [
+  {
+   "type": "ground",
+   "y": 1300,
+   "x0": -1500,
+   "x1": 5000
+  },
+  {
+   "type": "house",
+   "x": 960,
+   "w": 300,
+   "h": 280,
+   "label": "COLLÈGE"
+  },
+  {
+   "type": "window",
+   "x": 2380,
+   "y": 820,
+   "w": 200,
+   "h": 190,
+   "moon": true
+  },
+  {
+   "type": "burst",
+   "x": 2540,
+   "y": 1100,
+   "t0": 9.6,
+   "r": 120
+  }
+ ],
+ "actors": {
+  "elle": {
+   "hair": "bow",
+   "extras": [
+    "skirt"
+   ],
+   "hud": [
+    {
+     "type": "gauge",
+     "label": "CONFIANCE",
+     "fmt": "pct",
+     "warn": 12,
+     "keys": [
+      {
+       "t": 0,
+       "v": 100
+      },
+      {
+       "t": 1.9,
+       "v": 100
+      },
+      {
+       "t": 2.3,
+       "v": 62
+      },
+      {
+       "t": 4.2,
+       "v": 62
+      },
+      {
+       "t": 4.6,
+       "v": 31
+      },
+      {
+       "t": 6.4,
+       "v": 31
+      },
+      {
+       "t": 6.8,
+       "v": 7
+      },
+      {
+       "t": 9.6,
+       "v": 7
+      },
+      {
+       "t": 13.4,
+       "v": 100,
+       "ease": "in"
+      },
+      {
+       "t": 10.0,
+       "glow": "warm"
+      }
+     ]
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 220,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "stand",
+     "face": "smile",
+     "scale": 1.0
+    },
+    {
+     "t": 1.4,
+     "x": 470,
+     "ease": "out"
+    },
+    {
+     "t": 1.9,
+     "face": "surprised"
+    },
+    {
+     "t": 2.4,
+     "scale": 0.72,
+     "face": "sad",
+     "ease": "out"
+    },
+    {
+     "t": 4.6,
+     "scale": 0.48,
+     "ease": "out",
+     "pose": "sad"
+    },
+    {
+     "t": 6.8,
+     "scale": 0.27,
+     "ease": "out",
+     "face": "cry"
+    },
+    {
+     "t": 7.4,
+     "dir": -1
+    },
+    {
+     "t": 8.0,
+     "x": 200,
+     "ease": "in"
+    },
+    {
+     "t": 8.1,
+     "x": 2520,
+     "dir": 1,
+     "pose": "hug_knees",
+     "face": "sad",
+     "cut": true
+    },
+    {
+     "t": 9.4,
+     "pose": "stand",
+     "face": "surprised"
+    },
+    {
+     "t": 9.9,
+     "pose": "dance",
+     "face": "closed"
+    },
+    {
+     "t": 10.5,
+     "scale": 0.3
+    },
+    {
+     "t": 13.6,
+     "scale": 4.2,
+     "ease": "in"
+    },
+    {
+     "t": 12.2,
+     "face": "laugh"
+    }
+   ]
+  },
+  "moq1": {
+   "hair": "cap",
+   "keys": [
+    {
+     "t": 0,
+     "x": 700,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "stand",
+     "face": "laugh"
+    },
+    {
+     "t": 1.2,
+     "pose": "point"
+    },
+    {
+     "t": 2.6,
+     "pose": "stand"
+    },
+    {
+     "t": 6.2,
+     "pose": "point"
+    },
+    {
+     "t": 7.4,
+     "pose": "stand"
+    },
+    {
+     "t": 8.1,
+     "visible": false
+    }
+   ]
+  },
+  "moq2": {
+   "hair": "beanie",
+   "keys": [
+    {
+     "t": 0,
+     "x": 840,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "stand",
+     "face": "laugh"
+    },
+    {
+     "t": 3.4,
+     "pose": "point"
+    },
+    {
+     "t": 4.8,
+     "pose": "cheer"
+    },
+    {
+     "t": 8.1,
+     "visible": false
+    }
+   ]
+  }
+ },
+ "props": {
+  "b1": {
+   "type": "bubble",
+   "text": "TROP GROSSE.",
+   "font": 38,
+   "tail": -1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "moq1.head",
+     "dy": -20,
+     "dx": 0
+    },
+    {
+     "t": 1.2,
+     "visible": true
+    },
+    {
+     "t": 2.6,
+     "visible": false
+    }
+   ]
+  },
+  "b2": {
+   "type": "bubble",
+   "text": "T'ES BIZARRE.",
+   "font": 38,
+   "tail": -1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "moq2.head",
+     "dy": -20,
+     "dx": 0
+    },
+    {
+     "t": 3.4,
+     "visible": true
+    },
+    {
+     "t": 4.9,
+     "visible": false
+    }
+   ]
+  },
+  "b3": {
+   "type": "bubble",
+   "text": "PERSONNE T'AIME.",
+   "font": 38,
+   "tail": -1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "moq1.head",
+     "dy": -20,
+     "dx": 0
+    },
+    {
+     "t": 5.8,
+     "visible": true
+    },
+    {
+     "t": 7.4,
+     "visible": false
+    }
+   ]
+  },
+  "casque": {
+   "type": "headphones",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 2600,
+     "y": 1290,
+     "rot": 0
+    },
+    {
+     "t": 8.1,
+     "visible": true
+    },
+    {
+     "t": 9.5,
+     "attach": "elle.head",
+     "dy": 0
+    }
+   ]
+  }
+ },
+ "camera": [
+  {
+   "t": 0,
+   "cx": 560,
+   "cy": 1060,
+   "zoom": 1.2
+  },
+  {
+   "t": 6.0,
+   "cx": 500,
+   "cy": 1100,
+   "zoom": 1.35
+  },
+  {
+   "t": 8.05,
+   "cx": 480,
+   "cy": 1140,
+   "zoom": 1.6
+  },
+  {
+   "t": 8.1,
+   "cx": 2530,
+   "cy": 1200,
+   "zoom": 2.4,
+   "cut": true
+  },
+  {
+   "t": 9.6,
+   "cx": 2530,
+   "cy": 1200,
+   "zoom": 2.3
+  },
+  {
+   "t": 12.4,
+   "cx": 2540,
+   "cy": 1000,
+   "zoom": 1.0
+  },
+  {
+   "t": 13.7,
+   "cx": 2540,
+   "cy": 900,
+   "zoom": 0.9
+  },
+  {
+   "t": 14.6,
+   "cx": 2560,
+   "cy": 380,
+   "zoom": 0.42,
+   "ease": "out"
+  }
+ ],
+ "texts": [
+  {
+   "lines": [
+    {
+     "text": "À CHAQUE REMARQUE,",
+     "size": 92
+    },
+    {
+     "text": "ELLE RAPETISSE.",
+     "size": 110
+    }
+   ],
+   "y": 200,
+   "t0": 0,
+   "write": 0.6,
+   "t1": 2.2,
+   "fade": 0.15
+  },
+  {
+   "lines": [
+    {
+     "text": "TA TAILLE,",
+     "size": 88
+    },
+    {
+     "text": "C'EST TOI QUI LA DÉCIDES.",
+     "size": 108
+    }
+   ],
+   "y": 230,
+   "t0": 14.6,
+   "write": 1.5
+  }
+ ],
+ "sfx": [
+  {
+   "t": 2.3,
+   "type": "drop",
+   "volume": 0.3
+  },
+  {
+   "t": 4.6,
+   "type": "drop",
+   "volume": 0.3
+  },
+  {
+   "t": 6.8,
+   "type": "drop",
+   "volume": 0.3
+  },
+  {
+   "t": 9.6,
+   "type": "pop",
+   "volume": 0.4
+  }
+ ],
+ "_legende": "Chaque remarque la faisait rapetisser. Jusqu'au jour où elle a décidé de sa taille 🎧 #confiance #ado #stickman #harcèlement"
+}

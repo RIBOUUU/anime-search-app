@@ -32,7 +32,9 @@ import audio as audiogen  # noqa: E402
 
 W, H = 1080, 1920
 CHALK_RGB = np.array([238, 241, 245], np.float32) / 255.0
-GLOW_COLORS = {"warm": (1.0, 0.78, 0.45), "cool": (0.62, 0.78, 1.0), "white": (1, 1, 1)}
+GLOW_COLORS = {"warm": (1.0, 0.78, 0.45), "cool": (0.62, 0.78, 1.0), "white": (1, 1, 1),
+               "green": (0.55, 1.0, 0.25)}
+APPLE_RGB = np.array([150, 240, 70], np.float32) / 255.0   # vert pomme : jauges, compteurs, progression
 _RT = np.random.default_rng(12345).random(1 << 16).astype(np.float32)
 
 
@@ -123,9 +125,14 @@ class Canvas:
     def __init__(self, cam):
         self.cx, self.cy, self.z = cam
         self.img = Image.new("L", (W, H), 0)
-        self.d = ImageDraw.Draw(self.img)
+        self.green = Image.new("L", (W, H), 0)
+        self._dw, self._dg = ImageDraw.Draw(self.img), ImageDraw.Draw(self.green)
+        self.d = self._dw
         self.glow = {k: Image.new("L", (W // 4, H // 4), 0) for k in GLOW_COLORS}
         self.gd = {k: ImageDraw.Draw(v) for k, v in self.glow.items()}
+
+    def use(self, layer):
+        self.d = self._dg if layer == "green" else self._dw
 
     def S(self, p):
         return ((p[0] - self.cx) * self.z + W / 2, (p[1] - self.cy) * self.z + H / 2)
@@ -177,10 +184,16 @@ class Canvas:
         """bouche le fond (pour qu'un objet masque ce qui est derrière)."""
         self.d.polygon([self.S(p) for p in pts], fill=int(val))
 
-    def label(self, c, txt, size=44):
+    def label(self, c, txt, size=44, val=235):
+        if not txt:
+            return
         f = ImageFont.truetype(FONT_PATH, max(8, int(size * self.z)))
         x, y = self.S(c)
-        self.d.text((x, y), txt, font=f, fill=235, anchor="mm", stroke_width=max(1, int(self.z)), stroke_fill=235)
+        self.d.text((x, y), txt, font=f, fill=int(val), anchor="mm", stroke_width=max(1, int(self.z)),
+                    stroke_fill=int(val))
+
+    def text_w(self, txt, size):
+        return ImageFont.truetype(FONT_PATH, max(8, int(size))).getlength(txt)
 
     def add_glow(self, c, r, kind="warm", val=255):
         x, y = self.S(c)
@@ -208,6 +221,12 @@ POSES = {
     "wave": dict(sr=160, er=10, anim="wave"),
     "cheer": dict(sl=165, el=5, sr=170, er=5, anim="bounce"),
     "phone": dict(tilt=18, sl=8, sr=40, er=105),
+    "dance": dict(sl=150, el=20, sr=40, er=60, anim="dance"),
+    "run": dict(lean=12, el=70, er=70),
+    "sit_type": dict(lean=6, tilt=8, hl=90, kl=-90, hr=86, kr=-86, sl=40, el=50, sr=45, er=45, anim="type"),
+    "drink": dict(tilt=-6, sr=35, er=130),
+    "dive": dict(sl=178, el=0, sr=176, er=0, hl=-4, hr=4, dy=0),
+    "present": dict(sr=70, er=30, sl=10),
     "knock": dict(sl=6, el=4, sr=80, er=12, anim="knock"),
     "knock_sad": dict(lean=8, tilt=20, sl=4, el=4, sr=72, er=14, anim="knock"),
     "umbrella": dict(sr=60, er=100),
@@ -230,7 +249,7 @@ POSES = {
     "lie": dict(lean=-90, tilt=0, hl=88, kl=0, hr=92, kr=0, sl=180, el=0, sr=175, er=0, dy=0),
     "jump": dict(sl=150, el=10, sr=155, er=10, hl=40, kl=-70, hr=20, kr=-60, dy=-60),
 }
-ARMS_FREE = {"stand", "walk", "sad", "old", "look_up", "look_down"}
+ARMS_FREE = {"stand", "walk", "sad", "old", "look_up", "look_down", "run"}
 BODY = dict(T=105, NECK=8, R=34, UA=55, FA=50, TH=62, SH=62)
 
 
@@ -248,6 +267,9 @@ class Actor:
         self.extras = set(spec.get("extras", []))   # glasses, mustache, beard, skirt, scarf, bow, tie
         self.seed = sid(name)
         self.joints = {}
+        self.hud = spec.get("hud", [])
+        for h in self.hud:
+            h["_tr"] = Track(h.get("keys", [{"t": 0, "v": 0}]))
 
     def state(self, t):
         tr = self.tr
@@ -277,6 +299,16 @@ class Actor:
             P["er"] += 22 * math.sin(t * 9)
         elif anim == "bounce":
             P["dy"] -= 18 * abs(math.sin(t * 6))
+        elif anim == "dance":
+            ph = t * 7
+            P["sl"] = 150 + 25 * math.sin(ph)
+            P["sr"] = 40 + 110 * (0.5 + 0.5 * math.sin(ph + 3.1))
+            P["dy"] -= 14 * abs(math.sin(ph))
+            P["hl"] += 18 * math.sin(ph)
+            P["lean"] += 6 * math.sin(ph * 0.5)
+        elif anim == "type":
+            P["el"] += 10 * max(0.0, math.sin(t * 17))
+            P["er"] += 10 * max(0.0, math.sin(t * 17 + 1.7))
         elif anim == "knock":
             P["er"] += 28 * max(0.0, math.sin(t * 21))
         elif anim == "shiver":
@@ -337,6 +369,61 @@ class Actor:
             n = J["neck"]
             cv.poly([n, (n[0] + 6 * s * d, n[1] + 36 * s)], w * 0.8, sd + 32)
         self.draw_head(cv, J, st, P, t)
+        self.draw_hud(cv, J, st, t)
+
+    def draw_hud(self, cv, J, st, t):
+        s = st["s"]
+        for i, h in enumerate(self.hud):
+            tr = h["_tr"]
+            if not (h.get("t0", -1e9) <= t <= h.get("t1", 1e9)) or not tr.disc("show", t, True):
+                continue
+            v = tr.num("v", t, 0.0)
+            c, R = J["head"], J["R"]
+            hs = h.get("size", 1.25) * min(3.0, max(0.8, s))
+            bx = c[0] + h.get("dx", 0)
+            by = c[1] - R - h.get("dy", 75) * hs
+            sd = self.seed + 300 + i * 40
+            txt = h.get("prefix", "") + fmt_value(v, h.get("fmt", "int")) + h.get("suffix", "")
+            lab = tr.disc("label", t, h.get("label", ""))
+            warn = h.get("warn") is not None and v <= h["warn"]
+            blink = 255 if not warn else int(150 + 105 * (0.5 + 0.5 * math.sin(t * 14)))
+            cv.use("green")
+            kind = h.get("type", "gauge")
+            if kind == "gauge":
+                wd, ht = 190 * hs, 30 * hs
+                x0, y0 = bx - wd / 2, by - ht / 2
+                frac = min(1.0, max(0.0, v / h.get("max", 100)))
+                if frac > 0:
+                    fx = x0 + 5 + (wd - 10) * frac
+                    cv.fill_poly([(x0 + 5, y0 + 5), (fx, y0 + 5), (fx, y0 + ht - 5), (x0 + 5, y0 + ht - 5)], 95)
+                    xx = x0 + 7
+                    k = 0
+                    while xx < fx - 3:
+                        cv.line((xx, y0 + ht - 6), (min(xx + 7, fx - 2), y0 + 6), 3, sd + k, val=235, jit=0.3)
+                        xx += 8 * hs
+                        k += 1
+                cv.poly([(x0, y0), (x0 + wd, y0), (x0 + wd, y0 + ht), (x0, y0 + ht)], 4.5, sd, val=blink, closed=True)
+                cv.line((x0 + wd + 4, y0 + ht * 0.3), (x0 + wd + 4, y0 + ht * 0.7), 6, sd + 1, val=blink)
+                cv.label((bx, y0 - 26 * hs), (lab + " " + txt).strip(), 36 * hs, val=blink)
+            elif kind == "bars":
+                n = h.get("n", 5)
+                on = int(round(v))
+                bw, gap = 20 * hs, 9 * hs
+                x0 = bx - (n * bw + (n - 1) * gap) / 2
+                for k in range(n):
+                    hh = (14 + k * 9) * hs
+                    xa, yb = x0 + k * (bw + gap), by + 22 * hs
+                    box = [(xa, yb - hh), (xa + bw, yb - hh), (xa + bw, yb), (xa, yb)]
+                    if k < on:
+                        cv.fill_poly(box, 215)
+                    cv.poly(box, 3.5, sd + k, closed=True, val=blink)
+                if lab:
+                    cv.label((bx, by - 34 * hs), lab, 34 * hs, val=blink)
+            else:   # counter
+                if lab:
+                    cv.label((bx, by - 40 * hs), lab, 30 * hs, val=200)
+                cv.label((bx, by), txt, 52 * hs, val=blink)
+            cv.use("chalk")
 
     def draw_head(self, cv, J, st, P, t):
         c, R, s, d, sd = J["head"], J["R"], st["s"], st["d"], self.seed
@@ -429,10 +516,36 @@ class Actor:
                 a = math.radians(200 + i * 28)
                 cc = (c[0] + math.cos(a) * R, c[1] + math.sin(a) * R)
                 cv.circle(cc, R * 0.24, w * 0.55, sd + 110 + i, n=8)
+        elif h == "nurse":
+            cv.poly([(c[0] - R * 0.7, c[1] - R * 0.75), (c[0] - R * 0.5, c[1] - R * 1.25), (c[0] + R * 0.5, c[1] - R * 1.25),
+                     (c[0] + R * 0.7, c[1] - R * 0.75)], w * 0.7, sd + 117)
+            cv.line((c[0], c[1] - R * 1.18), (c[0], c[1] - R * 0.86), w * 0.55, sd + 118)
+            cv.line((c[0] - R * 0.16, c[1] - R * 1.02), (c[0] + R * 0.16, c[1] - R * 1.02), w * 0.55, sd + 119)
+            b = (c[0] - R * 1.0 * d, c[1] - R * 0.2)
+            cv.poly([b, (b[0] - R * 0.45 * d, b[1] + R * 0.7), (b[0] - R * 0.3 * d, b[1] + R * 1.2)], w * 0.8, sd + 120)
+        elif h == "headband":
+            cv.circle(c, R * 1.02, w * 0.9, sd + 121, a0=200, a1=340, n=10)
+            cv.line((c[0] - R * 1.0 * d, c[1] - R * 0.5), (c[0] - R * 1.5 * d, c[1] - R * 0.2), w * 0.7, sd + 122)
+            for i in range(5):
+                a = math.radians(205 + i * 30)
+                cv.circle((c[0] + math.cos(a) * R * 1.05, c[1] + math.sin(a) * R * 1.05), R * 0.2, w * 0.5, sd + 123 + i, n=7)
         elif h == "bow":
             b = (c[0] + R * 0.5 * d, c[1] - R * 0.95)
             cv.poly([b, (b[0] - 14 * s, b[1] - 10 * s), (b[0] - 14 * s, b[1] + 10 * s), b,
                      (b[0] + 14 * s, b[1] - 10 * s), (b[0] + 14 * s, b[1] + 10 * s), b], w * 0.6, sd + 116)
+
+
+def fmt_value(v, f):
+    if f == "pct":
+        return f"{int(round(v))} %"
+    if f == "time":
+        v = max(0, int(round(v)))
+        return f"{v // 60:02d}:{v % 60:02d}"
+    if f == "euro":
+        return f"{int(round(v)):,}".replace(",", " ") + " €"
+    if f == "none":
+        return ""
+    return f"{int(round(v)):,}".replace(",", " ")
 
 
 def heart(cv, c, r, w, seed):
@@ -454,6 +567,7 @@ class Prop:
         self.kind = spec.get("type", "box")
         self.tr = Track(spec.get("keys", []))
         self.size = spec.get("size", 1.0)
+        self.spec = spec
         self.seed = sid(name)
         self.shelter = None
 
@@ -503,6 +617,66 @@ class Prop:
             cv.fill_poly(pts, 0)
             cv.poly(pts, w, sd, closed=True)
             cv.line(P(4, -7), P(18, 6), 3, sd + 2, val=190)
+        elif k == "bubble":
+            txt = self.tr.disc("text", t, self.spec.get("text", ""))
+            fs = self.spec.get("font", 40) * s
+            lines = txt.split("\n")
+            tw = max(cv.text_w(l, fs) for l in lines) + 50 * s
+            th = fs * 1.15 * len(lines) + 34 * s
+            cx, cy = x, y - th / 2 - 40 * s
+            pts = [(cx + math.cos(a) * tw / 2 * 1.08, cy + math.sin(a) * th / 2 * 1.15) for a in np.linspace(0, 6.28, 30)]
+            cv.fill_poly(pts, 0)
+            cv.poly(pts, 4.5, sd)
+            side = self.spec.get("tail", 1)
+            cv.poly([(cx + side * 12 * s, cy + th / 2), (x - side * 8 * s, y - 6 * s), (cx + side * 34 * s, cy + th / 2 - 4)], 4, sd + 1)
+            for i, l in enumerate(lines):
+                cv.label((cx, cy - (len(lines) - 1) * fs * 0.57 + i * fs * 1.15), l, fs)
+        elif k == "label":
+            cv.label((x, y), self.tr.disc("text", t, self.spec.get("text", "")), self.spec.get("font", 48) * s)
+        elif k == "list":
+            items = self.spec.get("items", [])
+            done = int(self.tr.num("done", t, 0))
+            wd, lh = 330 * s, 46 * s
+            ht = lh * (len(items) + 1.4)
+            box = [(x - wd / 2, y - ht), (x + wd / 2, y - ht), (x + wd / 2, y), (x - wd / 2, y)]
+            cv.fill_poly(box, 0)
+            cv.poly(box, 4.5, sd, closed=True)
+            cv.label((x, y - ht + lh * 0.7), self.spec.get("title", "MA LISTE"), 40 * s)
+            for i, it in enumerate(items):
+                yy = y - ht + lh * (1.7 + i)
+                cv.poly([(x - wd / 2 + 18 * s, yy - 11 * s), (x - wd / 2 + 40 * s, yy - 11 * s),
+                         (x - wd / 2 + 40 * s, yy + 11 * s), (x - wd / 2 + 18 * s, yy + 11 * s)], 3, sd + 10 + i, closed=True)
+                cv.label((x + 18 * s, yy), it, 30 * s)
+                if i < done:
+                    cv.poly([(x - wd / 2 + 20 * s, yy), (x - wd / 2 + 28 * s, yy + 9 * s), (x - wd / 2 + 44 * s, yy - 14 * s)],
+                            4, sd + 40 + i)
+                    tl = cv.text_w(it, 30 * s) / 2
+                    cv.line((x + 18 * s - tl, yy), (x + 18 * s + tl, yy - 3 * s), 4, sd + 60 + i)
+        elif k == "water":
+            wd = self.spec.get("w", 900) / 2
+            ph = t * 2.2
+            top = [(x - wd + i * wd / 20, y + 7 * math.sin(ph + i * 0.9)) for i in range(41)]
+            cv.fill_poly(top + [(x + wd, y + 900), (x - wd, y + 900)], 0)
+            cv.poly(top, 5, sd)
+            for j in range(4):
+                yy = y + 60 + j * 70
+                xx = x - wd + ((j * 173 + t * 30) % (2 * wd - 160))
+                cv.poly([(xx + i * 16, yy + 5 * math.sin(ph + i)) for i in range(8)], 3, sd + 5 + j, val=150)
+        elif k == "laptop":
+            scr = [P(-40, -8), P(-28, -62), P(30, -62), P(18, -8)]
+            cv.fill_poly(scr, 40)
+            cv.poly(scr, 4.5, sd, closed=True)
+            cv.line(P(-46, 0), P(46, 0), 5, sd + 1)
+            if self.tr.disc("glow", t, False):
+                cv.add_glow(P(0, -36), 70 * s, "cool", 200)
+        elif k == "book":
+            cv.poly([P(-38, -6), P(-4, 0), P(0, -40), P(-34, -46), P(-38, -6)], 4, sd)
+            cv.poly([P(38, -6), P(4, 0), P(0, -40), P(34, -46), P(38, -6)], 4, sd + 1)
+        elif k == "headphones":
+            cv.circle((x, y), 40 * s, 5, sd, a0=190, a1=350, n=14)
+            for i, sg in enumerate((-1, 1)):
+                cv.poly([(x + sg * 34 * s, y - 6 * s), (x + sg * 46 * s, y - 6 * s), (x + sg * 46 * s, y + 22 * s),
+                         (x + sg * 34 * s, y + 22 * s)], 4, sd + 1 + i, closed=True)
         elif k == "door":
             slab = [P(-15, 0), P(15, 0), P(15, -300), P(-15, -300)]
             cv.fill_poly(slab, 0)
@@ -689,6 +863,55 @@ class Scenery:
                 cv.add_glow((wx, y - h + 70), 70, "warm", 200)
             if s.get("label"):
                 cv.label((x, y - h - w2 * 0.8 - 40), s["label"], s.get("label_size", 44))
+        elif k == "burst":
+            u = (t - s["t0"]) / s.get("dur", 0.7)
+            if 0 <= u <= 1:
+                c, r = (s["x"], s["y"]), s.get("r", 140)
+                for i in range(16):
+                    a = i / 16 * 2 * math.pi + rnd(sd, i) * 0.3
+                    r0, r1 = r * (0.2 + 0.7 * u), r * (0.4 + 0.9 * u)
+                    cv.line((c[0] + math.cos(a) * r0, c[1] + math.sin(a) * r0),
+                            (c[0] + math.cos(a) * r1, c[1] + math.sin(a) * r1), 4, sd + i, val=255 * (1 - u))
+                if s.get("glow", True):
+                    cv.add_glow(c, r * (1 - u), "warm", int(255 * (1 - u)))
+        elif k == "desk":
+            x, y, w2, h = s["x"], s.get("y", 1300), s.get("w", 260) / 2, s.get("h", 105)
+            cv.poly([(x - w2, y - h), (x + w2, y - h)], 7, sd)
+            cv.line((x - w2 + 14, y - h), (x - w2 + 14, y), 6, sd + 1)
+            cv.line((x + w2 - 14, y - h), (x + w2 - 14, y), 6, sd + 2)
+        elif k == "bed":
+            x, y, w2 = s["x"], s.get("y", 1300), s.get("w", 320) / 2
+            top = y - 70
+            cv.poly([(x - w2, y), (x - w2, top - 50)], 6, sd)
+            cv.poly([(x + w2, y), (x + w2, top - 20)], 6, sd + 1)
+            cv.poly([(x - w2, top), (x + w2, top)], 6, sd + 2)
+            cv.poly([(x - w2, top + 22), (x + w2, top + 22)], 5, sd + 3)
+            cv.circle((x - w2 + 45, top - 14), 26, 4, sd + 4, a0=180, a1=360, n=10)
+        elif k == "sign":
+            x, y, h, txt = s["x"], s.get("y", 1300), s.get("h", 330), s.get("text", "")
+            w2 = s.get("w", 300) / 2
+            for i, xx in enumerate((x - w2, x + w2)):
+                cv.line((xx, y), (xx, y - h), 6, sd + i)
+            cv.poly([(x - w2, y - h), (x + w2, y - h), (x + w2, y - h + 70), (x - w2, y - h + 70)], 5, sd + 3, closed=True)
+            cv.label((x, y - h + 35), txt, s.get("size", 46))
+            if s.get("tape"):
+                cv.poly([(x - w2, y - 120), (x - w2 / 3, y - 110), (x + w2 / 3, y - 122), (x + w2, y - 115)], 3, sd + 4)
+        elif k == "window":
+            x, y, w2, h = s["x"], s["y"], s.get("w", 200) / 2, s.get("h", 220)
+            cv.poly([(x - w2, y), (x + w2, y), (x + w2, y + h), (x - w2, y + h)], 5, sd, closed=True)
+            cv.line((x, y), (x, y + h), 4, sd + 1)
+            cv.line((x - w2, y + h / 2), (x + w2, y + h / 2), 4, sd + 2)
+            if s.get("moon"):
+                cv.circle((x + w2 * 0.45, y + h * 0.25), 18, 3, sd + 3, n=12)
+        elif k == "tower":
+            x, top, w2 = s["x"], s["top"], s.get("w", 70) / 2
+            y = s.get("y", 1300)
+            cv.line((x - w2, y), (x - w2, top), 6, sd)
+            cv.line((x + w2, y), (x + w2, top), 6, sd + 1)
+            for i, yy in enumerate(range(int(top) + 60, int(y), 90)):
+                cv.line((x - w2, yy), (x + w2, yy - 40), 3.5, sd + 2 + i, val=180)
+            ex = s.get("board", 160) * s.get("side", 1)
+            cv.poly([(x - w2, top), (x + w2 + ex, top), (x + w2 + ex, top + 14), (x - w2, top + 14)], 5, sd + 40, closed=True)
         elif k == "path":
             pts = [tuple(p) for p in s["points"]]
             seg = [math.dist(a, b) for a, b in zip(pts, pts[1:])]
@@ -828,8 +1051,14 @@ class Scene:
         self._dust(cv, t)
         chalk = np.asarray(cv.img, np.float32) / 255
         chalk = chalk * self.grain[int(t * 8) % 2]
+        gtxt = Image.new("L", (W, H), 0)
+        for tx in self.texts:
+            if tx.s.get("color") == "green":
+                tx.draw(gtxt, t)
+        green = np.maximum(np.asarray(cv.green, np.float32), np.asarray(gtxt, np.float32)) / 255
+        green = green * (0.55 + 0.5 * self.grain[0])
         soft = np.asarray(cv.img.filter(ImageFilter.GaussianBlur(5)), np.float32) / 255
-        img = self.bg + chalk[..., None] * CHALK_RGB + soft[..., None] * 0.16
+        img = self.bg + chalk[..., None] * CHALK_RGB + soft[..., None] * 0.16 + green[..., None] * APPLE_RGB
         for k, g in cv.glow.items():
             if g.getbbox():
                 ga = np.asarray(g.filter(ImageFilter.GaussianBlur(9)).resize((W, H), Image.BILINEAR), np.float32) / 255
@@ -839,7 +1068,8 @@ class Scene:
         tl = Image.new("L", (W, H), 0)
         top = Image.new("L", (W, H), 0)
         for tx in self.texts:
-            tx.draw(top if tx.s.get("over_fade") else tl, t)
+            if tx.s.get("color") != "green":
+                tx.draw(top if tx.s.get("over_fade") else tl, t)
         if tl.getbbox():
             ta = np.asarray(tl, np.float32) / 255 * (0.45 + 0.6 * self.grain[0])
             img = img + ta[..., None] * CHALK_RGB * b

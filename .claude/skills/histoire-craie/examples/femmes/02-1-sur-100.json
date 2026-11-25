@@ -1,0 +1,666 @@
+{
+ "duration": 19.4,
+ "music": {
+  "mood": "sad",
+  "bpm": 80,
+  "turn": 10.6,
+  "volume": 0.55
+ },
+ "fade": [
+  {
+   "t": 0,
+   "b": 1
+  }
+ ],
+ "set": [
+  {
+   "type": "ground",
+   "y": 1300
+  },
+  {
+   "type": "house",
+   "x": 820,
+   "w": 280,
+   "h": 260,
+   "label": "BANQUE",
+   "label_size": 34,
+   "t0": 0,
+   "t1": 2.5900000000000003
+  },
+  {
+   "type": "house",
+   "x": 820,
+   "w": 280,
+   "h": 260,
+   "label": "INVESTISSEURS",
+   "label_size": 34,
+   "t0": 2.6,
+   "t1": 4.890000000000001
+  },
+  {
+   "type": "house",
+   "x": 820,
+   "w": 280,
+   "h": 260,
+   "label": "BANQUE",
+   "label_size": 34,
+   "t0": 4.9,
+   "t1": 7.19
+  },
+  {
+   "type": "house",
+   "x": 820,
+   "w": 280,
+   "h": 260,
+   "label": "FONDS PRIVÉ",
+   "label_size": 34,
+   "t0": 7.2,
+   "t1": 9.49
+  },
+  {
+   "type": "house",
+   "x": 820,
+   "w": 280,
+   "h": 260,
+   "label": "PORTE 100",
+   "label_size": 34,
+   "t0": 9.5,
+   "t1": 12.790000000000001
+  },
+  {
+   "type": "house",
+   "x": 820,
+   "w": 300,
+   "h": 270,
+   "label": "SA BOÎTE",
+   "light": true,
+   "t0": 13.6
+  },
+  {
+   "type": "burst",
+   "x": 560,
+   "y": 880,
+   "t0": 10.6
+  },
+  {
+   "type": "burst",
+   "x": 560,
+   "y": 900,
+   "t0": 15.6
+  }
+ ],
+ "actors": {
+  "elle": {
+   "hair": "long",
+   "extras": [
+    "skirt"
+   ],
+   "hud": [
+    {
+     "type": "counter",
+     "prefix": "NON × ",
+     "t1": 10.5,
+     "t0": 1.45,
+     "keys": [
+      {
+       "t": 0,
+       "v": 1
+      },
+      {
+       "t": 2.65,
+       "v": 12,
+       "cut": true
+      },
+      {
+       "t": 5.0,
+       "v": 47,
+       "cut": true
+      },
+      {
+       "t": 7.3,
+       "v": 99,
+       "cut": true
+      }
+     ]
+    },
+    {
+     "type": "counter",
+     "prefix": "OUI !",
+     "fmt": "none",
+     "t0": 10.6,
+     "t1": 12.8,
+     "size": 1.3,
+     "keys": [
+      {
+       "t": 0,
+       "v": 0,
+       "glow": "warm"
+      }
+     ]
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 380,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "hold",
+     "face": "smile"
+    },
+    {
+     "t": 0.9,
+     "x": 580,
+     "ease": "out"
+    },
+    {
+     "t": 1.0,
+     "pose": "present"
+    },
+    {
+     "t": 2.1,
+     "face": "sad",
+     "pose": "hold"
+    },
+    {
+     "t": 2.65,
+     "x": 580,
+     "pose": "present",
+     "face": "neutral",
+     "cut": true
+    },
+    {
+     "t": 3.8,
+     "face": "sad",
+     "pose": "hold"
+    },
+    {
+     "t": 4.95,
+     "x": 580,
+     "pose": "present",
+     "face": "worried",
+     "cut": true
+    },
+    {
+     "t": 6.1,
+     "pose": "sad",
+     "face": "sad"
+    },
+    {
+     "t": 7.25,
+     "x": 580,
+     "pose": "sad",
+     "face": "cry",
+     "cut": true
+    },
+    {
+     "t": 8.6,
+     "face": "cry"
+    },
+    {
+     "t": 9.55,
+     "x": 580,
+     "pose": "present",
+     "face": "worried",
+     "cut": true
+    },
+    {
+     "t": 10.6,
+     "face": "surprised"
+    },
+    {
+     "t": 11.0,
+     "face": "laugh",
+     "pose": "cheer"
+    },
+    {
+     "t": 12.8,
+     "visible": false
+    },
+    {
+     "t": 13.6,
+     "visible": true,
+     "x": 760,
+     "dir": -1,
+     "pose": "stand",
+     "face": "neutral",
+     "cut": true
+    },
+    {
+     "t": 15.4,
+     "pose": "present",
+     "face": "smile"
+    },
+    {
+     "t": 16.0,
+     "face": "happy"
+    }
+   ]
+  },
+  "banquier": {
+   "hair": "none",
+   "extras": [
+    "tie",
+    "glasses"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 800,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "stand",
+     "face": "neutral"
+    },
+    {
+     "t": 1.4,
+     "face": "angry"
+    },
+    {
+     "t": 2.4,
+     "face": "laugh"
+    },
+    {
+     "t": 4.0,
+     "face": "angry"
+    },
+    {
+     "t": 6.2,
+     "face": "laugh"
+    },
+    {
+     "t": 8.0,
+     "face": "angry"
+    },
+    {
+     "t": 9.5,
+     "visible": false
+    }
+   ]
+  },
+  "mamie": {
+   "hair": "curly",
+   "extras": [
+    "glasses",
+    "skirt"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 800,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "old",
+     "face": "smile"
+    },
+    {
+     "t": 10.0,
+     "visible": true
+    },
+    {
+     "t": 10.6,
+     "face": "happy"
+    },
+    {
+     "t": 12.8,
+     "visible": false
+    }
+   ]
+  },
+  "petite": {
+   "hair": "ponytail",
+   "extras": [
+    "skirt"
+   ],
+   "hud": [
+    {
+     "type": "counter",
+     "prefix": "NON × ",
+     "t1": 15.5,
+     "size": 0.8,
+     "keys": [
+      {
+       "t": 0,
+       "v": 37
+      }
+     ]
+    },
+    {
+     "type": "counter",
+     "prefix": "OUI !",
+     "fmt": "none",
+     "t0": 15.6,
+     "size": 1.1,
+     "keys": [
+      {
+       "t": 0,
+       "v": 0,
+       "glow": "warm"
+      }
+     ]
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 240,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "hold",
+     "face": "worried",
+     "scale": 0.85
+    },
+    {
+     "t": 13.6,
+     "visible": true
+    },
+    {
+     "t": 14.6,
+     "x": 560,
+     "ease": "out"
+    },
+    {
+     "t": 14.8,
+     "pose": "knock"
+    },
+    {
+     "t": 15.4,
+     "pose": "present",
+     "face": "surprised"
+    },
+    {
+     "t": 15.9,
+     "face": "laugh",
+     "pose": "cheer"
+    }
+   ]
+  }
+ },
+ "props": {
+  "dossier": {
+   "type": "letter",
+   "keys": [
+    {
+     "t": 0,
+     "attach": "elle.hands",
+     "dy": 6
+    },
+    {
+     "t": 12.8,
+     "visible": false
+    }
+   ]
+  },
+  "dossier2": {
+   "type": "letter",
+   "size": 0.8,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "petite.hand_l",
+     "dy": 6
+    },
+    {
+     "t": 13.6,
+     "visible": true
+    }
+   ]
+  },
+  "b1": {
+   "type": "bubble",
+   "text": "NON.",
+   "font": 38,
+   "tail": -1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "banquier.head",
+     "dy": -20,
+     "dx": 0
+    },
+    {
+     "t": 1.4,
+     "visible": true
+    },
+    {
+     "t": 2.5,
+     "visible": false
+    }
+   ]
+  },
+  "b2": {
+   "type": "bubble",
+   "text": "NON. NEXT.",
+   "font": 38,
+   "tail": -1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "banquier.head",
+     "dy": -20,
+     "dx": 0
+    },
+    {
+     "t": 3.5,
+     "visible": true
+    },
+    {
+     "t": 4.8,
+     "visible": false
+    }
+   ]
+  },
+  "b3": {
+   "type": "bubble",
+   "text": "HAHA... NON.",
+   "font": 38,
+   "tail": -1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "banquier.head",
+     "dy": -20,
+     "dx": 0
+    },
+    {
+     "t": 5.6,
+     "visible": true
+    },
+    {
+     "t": 7.1,
+     "visible": false
+    }
+   ]
+  },
+  "b4": {
+   "type": "bubble",
+   "text": "NON.",
+   "font": 38,
+   "tail": -1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "banquier.head",
+     "dy": -20,
+     "dx": 0
+    },
+    {
+     "t": 8.0,
+     "visible": true
+    },
+    {
+     "t": 9.4,
+     "visible": false
+    }
+   ]
+  },
+  "b5": {
+   "type": "bubble",
+   "text": "OUI.",
+   "font": 54,
+   "tail": -1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "mamie.head",
+     "dy": -20,
+     "dx": 0
+    },
+    {
+     "t": 10.4,
+     "visible": true
+    },
+    {
+     "t": 12.7,
+     "visible": false
+    }
+   ]
+  },
+  "b6": {
+   "type": "bubble",
+   "text": "OUI.",
+   "font": 54,
+   "tail": -1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "elle.head",
+     "dy": -20,
+     "dx": 0
+    },
+    {
+     "t": 15.5,
+     "visible": true
+    },
+    {
+     "t": 17.4,
+     "visible": false
+    }
+   ]
+  }
+ },
+ "camera": [
+  {
+   "t": 0,
+   "cx": 640,
+   "cy": 1040,
+   "zoom": 1.25
+  },
+  {
+   "t": 9.4,
+   "cx": 660,
+   "cy": 1060,
+   "zoom": 1.35
+  },
+  {
+   "t": 10.4,
+   "cx": 680,
+   "cy": 1080,
+   "zoom": 1.45
+  },
+  {
+   "t": 12.8,
+   "cx": 660,
+   "cy": 1050,
+   "zoom": 1.25
+  },
+  {
+   "t": 13.6,
+   "cx": 600,
+   "cy": 1040,
+   "zoom": 1.2,
+   "cut": true
+  },
+  {
+   "t": 16.0,
+   "cx": 640,
+   "cy": 1050,
+   "zoom": 1.3
+  }
+ ],
+ "texts": [
+  {
+   "lines": [
+    {
+     "text": "ON LUI A DIT NON",
+     "size": 92
+    },
+    {
+     "text": "99 FOIS.",
+     "size": 120
+    }
+   ],
+   "y": 200,
+   "t0": 0,
+   "write": 0.6,
+   "t1": 2.6,
+   "fade": 0.15
+  },
+  {
+   "text": "10 ANS PLUS TARD",
+   "size": 84,
+   "y": 470,
+   "t0": 12.85,
+   "write": 0.4,
+   "t1": 14.6,
+   "fade": 0.2
+  },
+  {
+   "lines": [
+    {
+     "text": "IL SUFFIT D'UN OUI.",
+     "size": 88
+    },
+    {
+     "text": "DEVIENS-LE.",
+     "size": 108
+    }
+   ],
+   "y": 230,
+   "t0": 17.2,
+   "write": 1.5
+  }
+ ],
+ "sfx": [
+  {
+   "t": 10.6,
+   "type": "pop",
+   "volume": 0.4
+  },
+  {
+   "t": 15.6,
+   "type": "pop",
+   "volume": 0.4
+  },
+  {
+   "t": 0.95,
+   "type": "wood",
+   "volume": 0.5
+  },
+  {
+   "t": 1.15,
+   "type": "wood",
+   "volume": 0.5
+  },
+  {
+   "t": 14.85,
+   "type": "wood",
+   "volume": 0.5
+  },
+  {
+   "t": 15.05,
+   "type": "wood",
+   "volume": 0.5
+  }
+ ],
+ "_legende": "99 « non ». 1 « oui ». Et maintenant c'est elle qui ouvre la porte 🚪✨ #entrepreneuse #femme #stickman #motivation"
+}

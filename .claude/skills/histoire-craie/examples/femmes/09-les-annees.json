@@ -1,0 +1,583 @@
+{
+ "duration": 21.4,
+ "music": {
+  "mood": "sad",
+  "bpm": 80,
+  "turn": 10.6,
+  "volume": 0.55
+ },
+ "fade": [
+  {
+   "t": 0,
+   "b": 1
+  }
+ ],
+ "set": [
+  {
+   "type": "ground",
+   "y": 1300,
+   "x0": -1500,
+   "x1": 3000
+  },
+  {
+   "type": "desk",
+   "x": 520,
+   "w": 220
+  },
+  {
+   "type": "bench",
+   "x": 380,
+   "w": 110
+  },
+  {
+   "type": "bench",
+   "x": 1500,
+   "w": 240
+  },
+  {
+   "type": "burst",
+   "x": 2380,
+   "y": 820,
+   "t0": 12.6
+  },
+  {
+   "type": "burst",
+   "x": 640,
+   "y": 780,
+   "t0": 14.6
+  },
+  {
+   "type": "burst",
+   "x": 1180,
+   "y": 800,
+   "t0": 16.7
+  },
+  {
+   "type": "burst",
+   "x": 1640,
+   "y": 760,
+   "t0": 18.3,
+   "r": 200
+  }
+ ],
+ "actors": {
+  "jeune": {
+   "hair": "long",
+   "extras": [
+    "skirt"
+   ],
+   "hud": [
+    {
+     "type": "counter",
+     "label": "ÂGE",
+     "keys": [
+      {
+       "t": 0,
+       "v": 20
+      },
+      {
+       "t": 2.7,
+       "v": 32,
+       "cut": true
+      },
+      {
+       "t": 5.0,
+       "v": 50,
+       "cut": true
+      }
+     ]
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 380,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "sit_type",
+     "face": "happy"
+    },
+    {
+     "t": 2.7,
+     "x": 300,
+     "pose": "walk",
+     "face": "smile",
+     "cut": true
+    },
+    {
+     "t": 4.9,
+     "x": 640,
+     "ease": "linear"
+    },
+    {
+     "t": 5.0,
+     "x": 380,
+     "pose": "sit_type",
+     "face": "sad",
+     "cut": true
+    },
+    {
+     "t": 7.3,
+     "visible": false
+    }
+   ]
+  },
+  "petit": {
+   "hair": "cowlick",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 380,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "reach",
+     "face": "happy",
+     "scale": 0.5
+    },
+    {
+     "t": 2.7,
+     "visible": true,
+     "cut": true
+    },
+    {
+     "t": 4.9,
+     "x": 720,
+     "ease": "linear"
+    },
+    {
+     "t": 5.0,
+     "visible": false
+    }
+   ]
+  },
+  "vieille": {
+   "hair": "long",
+   "extras": [
+    "skirt",
+    "glasses"
+   ],
+   "hud": [
+    {
+     "type": "counter",
+     "label": "ÂGE",
+     "keys": [
+      {
+       "t": 7.3,
+       "v": 70
+      },
+      {
+       "t": 9.4,
+       "v": 78,
+       "cut": true
+      },
+      {
+       "t": 17.5,
+       "v": 78
+      },
+      {
+       "t": 17.6,
+       "v": 80,
+       "cut": true
+      },
+      {
+       "t": 17.6,
+       "glow": "warm"
+      }
+     ]
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 1520,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "sit_sad",
+     "face": "sad"
+    },
+    {
+     "t": 7.3,
+     "visible": true
+    },
+    {
+     "t": 9.4,
+     "pose": "sit_look_up",
+     "face": "surprised",
+     "cut": true
+    },
+    {
+     "t": 10.4,
+     "pose": "sit_bench",
+     "face": "happy"
+    },
+    {
+     "t": 11.0,
+     "x": 2200,
+     "pose": "old",
+     "face": "happy",
+     "cut": true
+    },
+    {
+     "t": 12.4,
+     "x": 2300,
+     "ease": "out"
+    },
+    {
+     "t": 12.6,
+     "pose": "cheer",
+     "face": "laugh"
+    },
+    {
+     "t": 13.4,
+     "x": 520,
+     "pose": "sit_type",
+     "face": "closed",
+     "cut": true
+    },
+    {
+     "t": 15.2,
+     "x": 1100,
+     "pose": "dance",
+     "face": "laugh",
+     "cut": true
+    },
+    {
+     "t": 17.2,
+     "x": 1520,
+     "pose": "sit_bench",
+     "face": "closed",
+     "cut": true
+    },
+    {
+     "t": 18.3,
+     "face": "happy"
+    }
+   ]
+  }
+ },
+ "props": {
+  "liste": {
+   "type": "list",
+   "items": [
+    "VOIR LA MER",
+    "ÉCRIRE UN LIVRE",
+    "DANSER SOUS LA PLUIE",
+    "ÊTRE FIÈRE DE MOI"
+   ],
+   "title": "MA LISTE",
+   "size": 0.8,
+   "keys": [
+    {
+     "t": 0,
+     "x": 700,
+     "y": 1070,
+     "done": 0
+    },
+    {
+     "t": 2.7,
+     "visible": false
+    },
+    {
+     "t": 9.4,
+     "visible": true,
+     "x": 1700,
+     "y": 1080,
+     "cut": true
+    },
+    {
+     "t": 11.0,
+     "x": 2480,
+     "y": 1090,
+     "cut": true
+    },
+    {
+     "t": 12.6,
+     "done": 1,
+     "cut": true
+    },
+    {
+     "t": 13.4,
+     "x": 760,
+     "y": 1050,
+     "cut": true
+    },
+    {
+     "t": 14.6,
+     "done": 2,
+     "cut": true
+    },
+    {
+     "t": 15.2,
+     "x": 1300,
+     "y": 1040,
+     "cut": true
+    },
+    {
+     "t": 16.7,
+     "done": 3,
+     "cut": true
+    },
+    {
+     "t": 17.2,
+     "x": 1720,
+     "y": 1080,
+     "cut": true
+    },
+    {
+     "t": 18.3,
+     "done": 4,
+     "cut": true
+    }
+   ]
+  },
+  "ordi": {
+   "type": "laptop",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 540,
+     "y": 1195,
+     "glow": true
+    },
+    {
+     "t": 5.0,
+     "visible": true
+    },
+    {
+     "t": 7.3,
+     "visible": false
+    }
+   ]
+  },
+  "boite": {
+   "type": "box",
+   "size": 0.6,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 1690,
+     "y": 1300
+    },
+    {
+     "t": 7.3,
+     "visible": true
+    },
+    {
+     "t": 9.4,
+     "visible": false
+    }
+   ]
+  },
+  "mer": {
+   "type": "water",
+   "w": 1200,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 2900,
+     "y": 1302
+    },
+    {
+     "t": 11.0,
+     "visible": true
+    },
+    {
+     "t": 13.4,
+     "visible": false
+    }
+   ]
+  },
+  "livre": {
+   "type": "book",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 540,
+     "y": 1195
+    },
+    {
+     "t": 13.4,
+     "visible": true
+    },
+    {
+     "t": 15.2,
+     "visible": false
+    }
+   ]
+  }
+ },
+ "camera": [
+  {
+   "t": 0,
+   "cx": 540,
+   "cy": 1040,
+   "zoom": 1.3
+  },
+  {
+   "t": 2.65,
+   "cx": 540,
+   "cy": 1040,
+   "zoom": 1.3
+  },
+  {
+   "t": 2.7,
+   "cx": 480,
+   "cy": 1060,
+   "zoom": 1.2,
+   "cut": true
+  },
+  {
+   "t": 4.95,
+   "cx": 560,
+   "cy": 1060,
+   "zoom": 1.2
+  },
+  {
+   "t": 5.0,
+   "cx": 480,
+   "cy": 1060,
+   "zoom": 1.35,
+   "cut": true
+  },
+  {
+   "t": 7.25,
+   "cx": 480,
+   "cy": 1060,
+   "zoom": 1.35
+  },
+  {
+   "t": 7.3,
+   "cx": 1560,
+   "cy": 1080,
+   "zoom": 1.4,
+   "cut": true
+  },
+  {
+   "t": 10.95,
+   "cx": 1600,
+   "cy": 1070,
+   "zoom": 1.45
+  },
+  {
+   "t": 11.0,
+   "cx": 2400,
+   "cy": 1060,
+   "zoom": 1.2,
+   "cut": true
+  },
+  {
+   "t": 13.35,
+   "cx": 2400,
+   "cy": 1060,
+   "zoom": 1.2
+  },
+  {
+   "t": 13.4,
+   "cx": 620,
+   "cy": 1040,
+   "zoom": 1.3,
+   "cut": true
+  },
+  {
+   "t": 15.15,
+   "cx": 620,
+   "cy": 1040,
+   "zoom": 1.3
+  },
+  {
+   "t": 15.2,
+   "cx": 1180,
+   "cy": 1040,
+   "zoom": 1.25,
+   "cut": true
+  },
+  {
+   "t": 17.15,
+   "cx": 1180,
+   "cy": 1040,
+   "zoom": 1.25
+  },
+  {
+   "t": 17.2,
+   "cx": 1600,
+   "cy": 1060,
+   "zoom": 1.35,
+   "cut": true
+  },
+  {
+   "t": 18.6,
+   "cx": 1600,
+   "cy": 1020,
+   "zoom": 1.15
+  }
+ ],
+ "texts": [
+  {
+   "lines": [
+    {
+     "text": "À 80 ANS, ELLE A RAYÉ",
+     "size": 88
+    },
+    {
+     "text": "LE DERNIER RÊVE DE SA LISTE.",
+     "size": 76
+    }
+   ],
+   "y": 200,
+   "t0": 0,
+   "write": 0.6,
+   "t1": 2.6,
+   "fade": 0.15
+  },
+  {
+   "lines": [
+    {
+     "text": "TES RÊVES N'ONT PAS",
+     "size": 88
+    },
+    {
+     "text": "DE DATE LIMITE.",
+     "size": 108
+    }
+   ],
+   "y": 230,
+   "t0": 18.8,
+   "write": 1.5
+  }
+ ],
+ "sfx": [
+  {
+   "t": 12.6,
+   "type": "pop",
+   "volume": 0.35
+  },
+  {
+   "t": 14.6,
+   "type": "pop",
+   "volume": 0.35
+  },
+  {
+   "t": 16.7,
+   "type": "pop",
+   "volume": 0.35
+  },
+  {
+   "t": 18.3,
+   "type": "heart",
+   "volume": 0.6
+  }
+ ],
+ "_legende": "Elle a écrit sa liste à 20 ans. Elle l'a finie à 80 📜 #rêves #mamie #stickman #inspiration",
+ "rain": {
+  "t0": 15.2,
+  "t1": 17.1,
+  "density": 0.9,
+  "volume": 0.12
+ }
+}

@@ -1,0 +1,830 @@
+{
+ "duration": 19.4,
+ "music": {
+  "mood": "sad",
+  "bpm": 80,
+  "turn": 12.3,
+  "volume": 0.55
+ },
+ "fade": [
+  {
+   "t": 0,
+   "b": 1
+  }
+ ],
+ "set": [
+  {
+   "type": "ground",
+   "y": 1300,
+   "x0": -1500,
+   "x1": 9000
+  },
+  {
+   "type": "bench",
+   "x": 600,
+   "w": 250
+  },
+  {
+   "type": "lamp",
+   "x": 2900,
+   "h": 470
+  },
+  {
+   "type": "burst",
+   "x": 540,
+   "y": 900,
+   "t0": 12.3,
+   "r": 260
+  }
+ ],
+ "actors": {
+  "m1": {
+   "hair": "ponytail",
+   "extras": [
+    "skirt"
+   ],
+   "hud": [
+    {
+     "type": "counter",
+     "label": "FEMMES",
+     "size": 1.1,
+     "keys": [
+      {
+       "t": 0,
+       "v": 1
+      },
+      {
+       "t": 12.3,
+       "v": 6
+      },
+      {
+       "t": 14.6,
+       "v": 1000000,
+       "ease": "in"
+      },
+      {
+       "t": 12.3,
+       "glow": "warm"
+      }
+     ]
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 260,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "walk",
+     "face": "smile"
+    },
+    {
+     "t": 1.2,
+     "x": 520,
+     "ease": "out"
+    },
+    {
+     "t": 1.4,
+     "pose": "reach"
+    },
+    {
+     "t": 2.5,
+     "visible": false
+    },
+    {
+     "t": 12.3,
+     "visible": true,
+     "x": 540,
+     "pose": "cheer",
+     "face": "laugh",
+     "cut": true
+    }
+   ]
+  },
+  "etu": {
+   "hair": "long",
+   "extras": [
+    "glasses",
+    "skirt"
+   ],
+   "hud": [
+    {
+     "type": "counter",
+     "label": "FEMMES",
+     "size": 1.0,
+     "t0": 2.5,
+     "t1": 4.9,
+     "keys": [
+      {
+       "t": 0,
+       "v": 2
+      }
+     ]
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 660,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "sit_sad",
+     "face": "cry"
+    },
+    {
+     "t": 1.6,
+     "face": "surprised"
+    },
+    {
+     "t": 2.1,
+     "face": "happy",
+     "pose": "sit_look_up"
+    },
+    {
+     "t": 2.5,
+     "x": 1500,
+     "dir": 1,
+     "pose": "carry",
+     "face": "smile",
+     "cut": true
+    },
+    {
+     "t": 4.8,
+     "x": 1950,
+     "ease": "linear"
+    },
+    {
+     "t": 4.9,
+     "visible": false
+    }
+   ]
+  },
+  "vieille": {
+   "hair": "curly",
+   "extras": [
+    "glasses",
+    "skirt"
+   ],
+   "hud": [
+    {
+     "type": "counter",
+     "label": "FEMMES",
+     "size": 1.0,
+     "t0": 4.95,
+     "t1": 7.35,
+     "keys": [
+      {
+       "t": 0,
+       "v": 3
+      }
+     ]
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 1640,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "old",
+     "face": "smile"
+    },
+    {
+     "t": 4.8,
+     "x": 2100,
+     "ease": "linear"
+    },
+    {
+     "t": 4.95,
+     "x": 2700,
+     "dir": 1,
+     "pose": "umbrella",
+     "face": "smile",
+     "cut": true
+    },
+    {
+     "t": 7.35,
+     "visible": false
+    }
+   ]
+  },
+  "ado": {
+   "hair": "bow",
+   "extras": [
+    "skirt"
+   ],
+   "hud": [
+    {
+     "type": "counter",
+     "label": "FEMMES",
+     "size": 1.0,
+     "t0": 7.4,
+     "t1": 9.8,
+     "keys": [
+      {
+       "t": 0,
+       "v": 4
+      }
+     ]
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 2870,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "sad",
+     "face": "sad",
+     "scale": 0.85
+    },
+    {
+     "t": 6.2,
+     "face": "happy",
+     "pose": "look_up"
+    },
+    {
+     "t": 7.4,
+     "x": 4500,
+     "dir": 1,
+     "pose": "hold",
+     "face": "smile",
+     "cut": true
+    },
+    {
+     "t": 9.8,
+     "visible": false
+    }
+   ]
+  },
+  "maman2": {
+   "hair": "long",
+   "extras": [
+    "skirt"
+   ],
+   "hud": [
+    {
+     "type": "counter",
+     "label": "FEMMES",
+     "size": 1.0,
+     "t0": 9.85,
+     "t1": 12.25,
+     "keys": [
+      {
+       "t": 0,
+       "v": 5
+      }
+     ]
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 4680,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "sit_sad",
+     "face": "sad"
+    },
+    {
+     "t": 8.6,
+     "face": "surprised"
+    },
+    {
+     "t": 9.1,
+     "face": "happy"
+    },
+    {
+     "t": 9.85,
+     "x": 6200,
+     "dir": 1,
+     "pose": "kneel",
+     "face": "smile",
+     "cut": true
+    },
+    {
+     "t": 10.6,
+     "pose": "reach"
+    },
+    {
+     "t": 12.25,
+     "visible": false
+    }
+   ]
+  },
+  "fillette": {
+   "hair": "ponytail",
+   "keys": [
+    {
+     "t": 0,
+     "x": 6380,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "hug_knees",
+     "face": "cry",
+     "scale": 0.55
+    },
+    {
+     "t": 10.8,
+     "pose": "stand",
+     "face": "happy"
+    },
+    {
+     "t": 12.25,
+     "visible": false
+    }
+   ]
+  },
+  "f0": {
+   "hair": "long",
+   "extras": [
+    "skirt",
+    "glasses"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 930.0,
+     "ground": 1300.0,
+     "dir": -1,
+     "pose": "reach",
+     "face": "happy",
+     "scale": 0.95
+    },
+    {
+     "t": 12.3,
+     "visible": true
+    },
+    {
+     "t": 13.8,
+     "pose": "cheer",
+     "face": "laugh"
+    }
+   ]
+  },
+  "f1": {
+   "hair": "curly",
+   "extras": [
+    "skirt"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 855.5166278062295,
+     "ground": 1323.511410091699,
+     "dir": -1,
+     "pose": "reach",
+     "face": "happy",
+     "scale": 0.95
+    },
+    {
+     "t": 12.3,
+     "visible": true
+    },
+    {
+     "t": 13.8,
+     "pose": "cheer",
+     "face": "laugh"
+    }
+   ]
+  },
+  "f2": {
+   "hair": "ponytail",
+   "extras": [
+    "skirt"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 660.5166278062295,
+     "ground": 1338.0422606518061,
+     "dir": -1,
+     "pose": "reach",
+     "face": "happy",
+     "scale": 0.95
+    },
+    {
+     "t": 12.3,
+     "visible": true
+    },
+    {
+     "t": 13.8,
+     "pose": "cheer",
+     "face": "laugh"
+    }
+   ]
+  },
+  "f3": {
+   "hair": "bow",
+   "extras": [
+    "skirt",
+    "glasses"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 419.48337219377055,
+     "ground": 1338.0422606518061,
+     "dir": 1,
+     "pose": "reach",
+     "face": "happy",
+     "scale": 0.95
+    },
+    {
+     "t": 12.3,
+     "visible": true
+    },
+    {
+     "t": 13.8,
+     "pose": "cheer",
+     "face": "laugh"
+    }
+   ]
+  },
+  "f4": {
+   "hair": "beanie",
+   "extras": [
+    "skirt"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 224.48337219377055,
+     "ground": 1323.511410091699,
+     "dir": 1,
+     "pose": "reach",
+     "face": "happy",
+     "scale": 0.95
+    },
+    {
+     "t": 12.3,
+     "visible": true
+    },
+    {
+     "t": 13.8,
+     "pose": "cheer",
+     "face": "laugh"
+    }
+   ]
+  },
+  "f5": {
+   "hair": "cap",
+   "extras": [
+    "skirt"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 150.0,
+     "ground": 1300.0,
+     "dir": 1,
+     "pose": "reach",
+     "face": "happy",
+     "scale": 0.95
+    },
+    {
+     "t": 12.3,
+     "visible": true
+    },
+    {
+     "t": 13.8,
+     "pose": "cheer",
+     "face": "laugh"
+    }
+   ]
+  },
+  "f6": {
+   "hair": "long",
+   "extras": [
+    "skirt",
+    "glasses"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 224.48337219377044,
+     "ground": 1216.488589908301,
+     "dir": 1,
+     "pose": "reach",
+     "face": "happy",
+     "scale": 0.82
+    },
+    {
+     "t": 12.3,
+     "visible": true
+    },
+    {
+     "t": 13.8,
+     "pose": "cheer",
+     "face": "laugh"
+    }
+   ]
+  },
+  "f7": {
+   "hair": "curly",
+   "extras": [
+    "skirt"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 419.48337219377044,
+     "ground": 1201.9577393481939,
+     "dir": 1,
+     "pose": "reach",
+     "face": "happy",
+     "scale": 0.82
+    },
+    {
+     "t": 12.3,
+     "visible": true
+    },
+    {
+     "t": 13.8,
+     "pose": "cheer",
+     "face": "laugh"
+    }
+   ]
+  },
+  "f8": {
+   "hair": "ponytail",
+   "extras": [
+    "skirt"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 660.5166278062294,
+     "ground": 1201.9577393481939,
+     "dir": -1,
+     "pose": "reach",
+     "face": "happy",
+     "scale": 0.82
+    },
+    {
+     "t": 12.3,
+     "visible": true
+    },
+    {
+     "t": 13.8,
+     "pose": "cheer",
+     "face": "laugh"
+    }
+   ]
+  },
+  "f9": {
+   "hair": "headband",
+   "extras": [
+    "skirt",
+    "glasses"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 855.5166278062295,
+     "ground": 1216.488589908301,
+     "dir": -1,
+     "pose": "reach",
+     "face": "happy",
+     "scale": 0.82
+    },
+    {
+     "t": 12.3,
+     "visible": true
+    },
+    {
+     "t": 13.8,
+     "pose": "cheer",
+     "face": "laugh"
+    }
+   ]
+  }
+ },
+ "props": {
+  "carton": {
+   "type": "box",
+   "size": 0.8,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "etu.hands",
+     "dy": 50
+    },
+    {
+     "t": 2.5,
+     "visible": true
+    },
+    {
+     "t": 4.9,
+     "visible": false
+    }
+   ]
+  },
+  "parapluie": {
+   "type": "umbrella",
+   "keys": [
+    {
+     "t": 0,
+     "attach": "vieille.hand_r",
+     "rot": 0,
+     "visible": false
+    },
+    {
+     "t": 4.95,
+     "visible": true
+    },
+    {
+     "t": 5.6,
+     "rot": 0
+    },
+    {
+     "t": 6.2,
+     "rot": 26
+    },
+    {
+     "t": 7.35,
+     "visible": false
+    }
+   ]
+  },
+  "bebe": {
+   "type": "ball",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "ado.hands",
+     "dy": 30
+    },
+    {
+     "t": 7.4,
+     "visible": true
+    },
+    {
+     "t": 9.8,
+     "visible": false
+    }
+   ]
+  }
+ },
+ "camera": [
+  {
+   "t": 0,
+   "cx": 520,
+   "cy": 1060,
+   "zoom": 1.35
+  },
+  {
+   "t": 2.45,
+   "cx": 560,
+   "cy": 1060,
+   "zoom": 1.35
+  },
+  {
+   "t": 2.5,
+   "cx": 1640,
+   "cy": 1060,
+   "zoom": 1.25,
+   "cut": true
+  },
+  {
+   "t": 4.9,
+   "cx": 1880,
+   "cy": 1060,
+   "zoom": 1.25,
+   "ease": "linear"
+  },
+  {
+   "t": 4.95,
+   "cx": 2800,
+   "cy": 1060,
+   "zoom": 1.3,
+   "cut": true
+  },
+  {
+   "t": 7.35,
+   "cx": 2800,
+   "cy": 1060,
+   "zoom": 1.3
+  },
+  {
+   "t": 7.4,
+   "cx": 4600,
+   "cy": 1060,
+   "zoom": 1.35,
+   "cut": true
+  },
+  {
+   "t": 9.8,
+   "cx": 4600,
+   "cy": 1060,
+   "zoom": 1.35
+  },
+  {
+   "t": 9.85,
+   "cx": 6300,
+   "cy": 1080,
+   "zoom": 1.45,
+   "cut": true
+  },
+  {
+   "t": 12.25,
+   "cx": 6300,
+   "cy": 1080,
+   "zoom": 1.45
+  },
+  {
+   "t": 12.3,
+   "cx": 540,
+   "cy": 1150,
+   "zoom": 2.2,
+   "cut": true
+  },
+  {
+   "t": 13.6,
+   "cx": 540,
+   "cy": 1080,
+   "zoom": 0.95,
+   "ease": "out"
+  }
+ ],
+ "texts": [
+  {
+   "lines": [
+    {
+     "text": "UNE FEMME EN A AIDÉ UNE AUTRE.",
+     "size": 74
+    },
+    {
+     "text": "COMPTE JUSQU'À LA FIN.",
+     "size": 92
+    }
+   ],
+   "y": 200,
+   "t0": 0,
+   "write": 0.6,
+   "t1": 2.4,
+   "fade": 0.15
+  },
+  {
+   "lines": [
+    {
+     "text": "SEULE, ELLE AVANCE.",
+     "size": 88
+    },
+    {
+     "text": "ENSEMBLE, ELLES CHANGENT TOUT.",
+     "size": 108
+    }
+   ],
+   "y": 230,
+   "t0": 15.0,
+   "write": 1.5
+  }
+ ],
+ "sfx": [
+  {
+   "t": 2.5,
+   "type": "pop",
+   "volume": 0.3
+  },
+  {
+   "t": 4.95,
+   "type": "pop",
+   "volume": 0.3
+  },
+  {
+   "t": 7.4,
+   "type": "pop",
+   "volume": 0.3
+  },
+  {
+   "t": 9.85,
+   "type": "pop",
+   "volume": 0.3
+  },
+  {
+   "t": 12.3,
+   "type": "heart",
+   "volume": 0.6
+  }
+ ],
+ "_legende": "Une femme en a aidé une autre. Compte jusqu'à la fin ⭕ #femmes #sororité #stickman #entraide",
+ "rain": {
+  "t0": 4.95,
+  "t1": 7.4,
+  "density": 0.9,
+  "volume": 0.12
+ }
+}
