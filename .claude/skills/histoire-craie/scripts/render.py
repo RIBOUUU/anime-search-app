@@ -177,6 +177,11 @@ class Canvas:
         """bouche le fond (pour qu'un objet masque ce qui est derrière)."""
         self.d.polygon([self.S(p) for p in pts], fill=int(val))
 
+    def label(self, c, txt, size=44):
+        f = ImageFont.truetype(FONT_PATH, max(8, int(size * self.z)))
+        x, y = self.S(c)
+        self.d.text((x, y), txt, font=f, fill=235, anchor="mm", stroke_width=max(1, int(self.z)), stroke_fill=235)
+
     def add_glow(self, c, r, kind="warm", val=255):
         x, y = self.S(c)
         rr = r * self.z / 4
@@ -472,7 +477,29 @@ class Prop:
             q = rot((px * s, py * s), r)
             return (x + q[0], y + q[1])
 
-        if k == "plank":
+        if self.tr.disc("shine", t, False):
+            cv.add_glow(P(0, -12), 75 * s, "warm", 255)
+        if k == "coin":
+            cv.fill_poly([(x + math.cos(a) * 11 * s, y + math.sin(a) * 11 * s) for a in np.linspace(0, 6.28, 14)], 0)
+            cv.circle((x, y), 11 * s, 4, sd, n=12)
+            cv.line(P(-3, -4), P(3, 4), 2.5, sd + 1)
+        elif k == "cup":
+            box = [P(-24, -55), P(24, -55), P(17, 0), P(-17, 0)]
+            cv.fill_poly(box, 0)
+            cv.poly(box, w, sd, closed=True)
+            cv.line(P(-23, -44), P(23, -44), 2.5, sd + 1, val=170)
+        elif k == "bread":
+            pts = [P(math.cos(a) * 70, math.sin(a) * 15) for a in np.linspace(0, 6.28, 26)]
+            cv.fill_poly(pts, 0)
+            cv.poly(pts, w, sd, closed=True)
+            for i in range(4):
+                cv.line(P(-45 + i * 28, -8), P(-30 + i * 28, 6), 3, sd + 2 + i, val=190)
+        elif k == "bread_half":
+            pts = [P(math.cos(a) * 36, math.sin(a) * 14) for a in np.linspace(-1.6, 1.6, 14)] + [P(-6, 12), P(-4, 0), P(-8, -12)]
+            cv.fill_poly(pts, 0)
+            cv.poly(pts, w, sd, closed=True)
+            cv.line(P(4, -7), P(18, 6), 3, sd + 2, val=190)
+        elif k == "plank":
             box = [P(-75, -9), P(75, -9), P(75, 9), P(-75, 9)]
             cv.fill_poly(box, 0)
             cv.poly(box, w, sd, closed=True)
@@ -648,6 +675,29 @@ class Scenery:
                     4.5, sd + 2, closed=True)
             if s.get("light", False):
                 cv.add_glow((wx, y - h + 70), 70, "warm", 200)
+            if s.get("label"):
+                cv.label((x, y - h - w2 * 0.8 - 40), s["label"], s.get("label_size", 44))
+        elif k == "path":
+            pts = [tuple(p) for p in s["points"]]
+            seg = [math.dist(a, b) for a, b in zip(pts, pts[1:])]
+            tot = sum(seg)
+            u = ease((t - s.get("t0", 0)) / max(1e-6, s.get("draw", 2.0)), "inout")
+            todo, dash, gap = tot * u, s.get("dash", 26), s.get("gap", 18)
+            head = pts[0]
+            for (a, b), L in zip(zip(pts, pts[1:]), seg):
+                if todo <= 0:
+                    break
+                d = 0.0
+                while d < min(L, todo):
+                    e = min(d + dash, L, todo)
+                    p0 = (a[0] + (b[0] - a[0]) * d / L, a[1] + (b[1] - a[1]) * d / L)
+                    p1 = (a[0] + (b[0] - a[0]) * e / L, a[1] + (b[1] - a[1]) * e / L)
+                    cv.line(p0, p1, s.get("w", 5), sd + int(d), jit=0.4)
+                    head = p1
+                    d += dash + gap
+                todo -= L
+            if 0 < u < 1:
+                cv.add_glow(head, 60, "warm", 255)
         elif k == "line":
             cv.poly([tuple(p) for p in s["points"]], s.get("w", 6), sd)
 

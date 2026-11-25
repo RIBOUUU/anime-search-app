@@ -1,0 +1,685 @@
+{
+ "_histoire": "Un passant donne une pièce à un sans-abri. La gentillesse passe de main en main (pièce -> pain -> moitié de pain -> fleur -> main tendue) et revient au passant le jour où c'est lui qui est tombé.",
+ "_legende": "Une pièce. 4 personnes. Elle est revenue. ✨ #animation #stickman #gentillesse #émotion #histoire",
+ "duration": 39,
+ "music": {
+  "mood": "sad",
+  "bpm": 70,
+  "turn": 27.8,
+  "volume": 0.6
+ },
+ "set": [
+  {
+   "type": "ground",
+   "y": 1300
+  },
+  {
+   "type": "house",
+   "x": 760,
+   "y": 1300,
+   "w": 300,
+   "h": 250,
+   "light": true,
+   "label": "BOULANGERIE",
+   "label_size": 40
+  },
+  {
+   "type": "bench",
+   "x": 1080,
+   "y": 1300,
+   "w": 280
+  },
+  {
+   "type": "tree",
+   "x": 1460,
+   "y": 1300,
+   "h": 400
+  },
+  {
+   "type": "lamp",
+   "x": 2060,
+   "y": 1300,
+   "h": 470,
+   "side": 1
+  },
+  {
+   "type": "path",
+   "t0": 31.0,
+   "draw": 3.2,
+   "w": 5,
+   "points": [
+    [
+     345,
+     1225
+    ],
+    [
+     760,
+     1205
+    ],
+    [
+     1060,
+     1180
+    ],
+    [
+     1460,
+     1240
+    ],
+    [
+     1880,
+     1170
+    ],
+    [
+     2400,
+     1180
+    ],
+    [
+     2250,
+     900
+    ],
+    [
+     1700,
+     760
+    ],
+    [
+     1100,
+     760
+    ],
+    [
+     600,
+     860
+    ],
+    [
+     330,
+     1120
+    ]
+   ]
+  }
+ ],
+ "actors": {
+  "passant": {
+   "hair": "cap",
+   "keys": [
+    {
+     "t": 0,
+     "x": -220,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "stand",
+     "face": "neutral"
+    },
+    {
+     "t": 3.6,
+     "x": 210,
+     "ease": "out"
+    },
+    {
+     "t": 4.3,
+     "pose": "crouch",
+     "face": "smile"
+    },
+    {
+     "t": 5.6,
+     "pose": "stand"
+    },
+    {
+     "t": 5.9,
+     "x": 210
+    },
+    {
+     "t": 8.0,
+     "x": 1350,
+     "ease": "in"
+    },
+    {
+     "t": 13.0,
+     "x": 2470,
+     "ease": "linear"
+    },
+    {
+     "t": 13.4,
+     "dir": -1,
+     "pose": "sit_ground",
+     "face": "sad"
+    },
+    {
+     "t": 27.6,
+     "pose": "reach",
+     "face": "surprised",
+     "trans": 0.4
+    },
+    {
+     "t": 27.6,
+     "x": 2470
+    },
+    {
+     "t": 28.6,
+     "x": 2460,
+     "pose": "stand"
+    },
+    {
+     "t": 29.0,
+     "pose": "hold",
+     "face": "surprised"
+    },
+    {
+     "t": 29.7,
+     "face": "happy"
+    }
+   ]
+  },
+  "sdf": {
+   "hair": "beanie",
+   "extras": [
+    "beard"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 550,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "hug_knees",
+     "face": "sad"
+    },
+    {
+     "t": 5.6,
+     "face": "surprised"
+    },
+    {
+     "t": 6.3,
+     "face": "happy"
+    },
+    {
+     "t": 6.9,
+     "pose": "crouch",
+     "dir": -1,
+     "x": 420
+    },
+    {
+     "t": 7.5,
+     "pose": "stand"
+    },
+    {
+     "t": 7.8,
+     "x": 420,
+     "dir": 1
+    },
+    {
+     "t": 9.2,
+     "x": 760,
+     "ease": "inout"
+    },
+    {
+     "t": 9.3,
+     "visible": false
+    },
+    {
+     "t": 10.1,
+     "visible": true,
+     "face": "smile"
+    },
+    {
+     "t": 10.3,
+     "x": 760
+    },
+    {
+     "t": 12.4,
+     "x": 990,
+     "ease": "inout"
+    },
+    {
+     "t": 12.7,
+     "pose": "hold",
+     "face": "smile"
+    },
+    {
+     "t": 14.3,
+     "pose": "reach"
+    },
+    {
+     "t": 15.2,
+     "pose": "hold",
+     "face": "happy"
+    },
+    {
+     "t": 15.6,
+     "x": 990
+    },
+    {
+     "t": 16.2,
+     "x": 1010,
+     "pose": "sit_bench"
+    },
+    {
+     "t": 17.0,
+     "face": "closed"
+    }
+   ]
+  },
+  "enfant": {
+   "hair": "curly",
+   "keys": [
+    {
+     "t": 0,
+     "x": 1130,
+     "ground": 1276,
+     "dir": -1,
+     "pose": "sit_sad",
+     "face": "cry",
+     "scale": 0.6
+    },
+    {
+     "t": 13.2,
+     "face": "sad"
+    },
+    {
+     "t": 14.6,
+     "pose": "sit_bench",
+     "face": "surprised"
+    },
+    {
+     "t": 15.3,
+     "face": "happy"
+    },
+    {
+     "t": 17.6,
+     "x": 1130,
+     "ground": 1276
+    },
+    {
+     "t": 18.0,
+     "x": 1160,
+     "ground": 1300,
+     "pose": "stand",
+     "dir": 1
+    },
+    {
+     "t": 19.8,
+     "x": 1400,
+     "ease": "inout"
+    },
+    {
+     "t": 20.2,
+     "pose": "crouch"
+    },
+    {
+     "t": 20.9,
+     "pose": "stand",
+     "face": "happy"
+    },
+    {
+     "t": 21.0,
+     "x": 1400
+    },
+    {
+     "t": 22.4,
+     "x": 1760,
+     "ease": "inout"
+    },
+    {
+     "t": 22.8,
+     "pose": "reach"
+    },
+    {
+     "t": 23.6,
+     "pose": "wave",
+     "face": "laugh"
+    },
+    {
+     "t": 25.5,
+     "pose": "stand"
+    }
+   ]
+  },
+  "dame": {
+   "hair": "long",
+   "extras": [
+    "skirt",
+    "glasses"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 1880,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "sad",
+     "face": "sad"
+    },
+    {
+     "t": 22.6,
+     "face": "surprised",
+     "pose": "stand"
+    },
+    {
+     "t": 23.3,
+     "face": "happy",
+     "pose": "hold"
+    },
+    {
+     "t": 24.0,
+     "x": 1880,
+     "dir": 1
+    },
+    {
+     "t": 27.0,
+     "x": 2350,
+     "ease": "inout"
+    },
+    {
+     "t": 27.5,
+     "pose": "reach",
+     "face": "smile"
+    },
+    {
+     "t": 28.6,
+     "pose": "reach"
+    },
+    {
+     "t": 29.3,
+     "pose": "stand",
+     "face": "happy"
+    }
+   ]
+  }
+ },
+ "props": {
+  "gobelet": {
+   "type": "cup",
+   "layer": "back",
+   "keys": [
+    {
+     "t": 0,
+     "x": 345,
+     "y": 1300
+    }
+   ]
+  },
+  "piece": {
+   "type": "coin",
+   "keys": [
+    {
+     "t": 0,
+     "attach": "passant.hand_r",
+     "dy": 4,
+     "shine": true
+    },
+    {
+     "t": 5.0,
+     "attach": null,
+     "x": 343,
+     "y": 1225
+    },
+    {
+     "t": 5.35,
+     "y": 1262,
+     "ease": "in"
+    },
+    {
+     "t": 7.4,
+     "attach": "sdf.hand_r"
+    },
+    {
+     "t": 9.3,
+     "visible": false
+    }
+   ]
+  },
+  "pain": {
+   "type": "bread",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "sdf.hands",
+     "rot": -8,
+     "shine": true
+    },
+    {
+     "t": 10.1,
+     "visible": true
+    },
+    {
+     "t": 13.5,
+     "visible": false
+    }
+   ]
+  },
+  "moitie1": {
+   "type": "bread_half",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "sdf.hand_l",
+     "rot": 180
+    },
+    {
+     "t": 13.5,
+     "visible": true
+    },
+    {
+     "t": 19.0,
+     "visible": false
+    }
+   ]
+  },
+  "moitie2": {
+   "type": "bread_half",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "sdf.hand_r",
+     "shine": true
+    },
+    {
+     "t": 13.5,
+     "visible": true
+    },
+    {
+     "t": 14.9,
+     "attach": "enfant.hand_r"
+    },
+    {
+     "t": 17.8,
+     "visible": false
+    }
+   ]
+  },
+  "fleur": {
+   "type": "flower",
+   "size": 0.8,
+   "keys": [
+    {
+     "t": 0,
+     "x": 1480,
+     "y": 1300
+    },
+    {
+     "t": 20.6,
+     "attach": "enfant.hand_r",
+     "dy": 10,
+     "shine": true
+    },
+    {
+     "t": 23.0,
+     "attach": "dame.hand_r"
+    },
+    {
+     "t": 29.0,
+     "attach": "passant.hand_r"
+    }
+   ]
+  },
+  "courses": {
+   "type": "box",
+   "layer": "back",
+   "size": 0.8,
+   "keys": [
+    {
+     "t": 0,
+     "x": 2580,
+     "y": 1300,
+     "rot": 75
+    }
+   ]
+  }
+ },
+ "camera": [
+  {
+   "t": 0,
+   "cx": 380,
+   "cy": 1090,
+   "zoom": 1.35
+  },
+  {
+   "t": 6.8,
+   "cx": 380,
+   "cy": 1090,
+   "zoom": 1.35
+  },
+  {
+   "t": 9.0,
+   "cx": 740,
+   "cy": 1060,
+   "zoom": 1.15
+  },
+  {
+   "t": 10.4,
+   "cx": 760,
+   "cy": 1060,
+   "zoom": 1.15
+  },
+  {
+   "t": 12.6,
+   "cx": 1060,
+   "cy": 1110,
+   "zoom": 1.45
+  },
+  {
+   "t": 16.6,
+   "cx": 1060,
+   "cy": 1110,
+   "zoom": 1.45
+  },
+  {
+   "t": 18.5,
+   "cx": 1250,
+   "cy": 1060,
+   "zoom": 1.15
+  },
+  {
+   "t": 21.0,
+   "cx": 1550,
+   "cy": 1060,
+   "zoom": 1.15
+  },
+  {
+   "t": 22.6,
+   "cx": 1800,
+   "cy": 1100,
+   "zoom": 1.45
+  },
+  {
+   "t": 24.2,
+   "cx": 1800,
+   "cy": 1100,
+   "zoom": 1.45
+  },
+  {
+   "t": 27.0,
+   "cx": 2380,
+   "cy": 1100,
+   "zoom": 1.3
+  },
+  {
+   "t": 29.8,
+   "cx": 2410,
+   "cy": 1120,
+   "zoom": 1.55
+  },
+  {
+   "t": 31.0,
+   "cx": 1300,
+   "cy": 1050,
+   "zoom": 0.45
+  }
+ ],
+ "fade": [
+  {
+   "t": 0,
+   "b": 0
+  },
+  {
+   "t": 0.6,
+   "b": 1
+  },
+  {
+   "t": 38.0,
+   "b": 1
+  },
+  {
+   "t": 39,
+   "b": 0
+  }
+ ],
+ "texts": [
+  {
+   "text": "LA PIÈCE",
+   "size": 130,
+   "y": 260,
+   "t0": 0.6,
+   "write": 1.2,
+   "t1": 6.0,
+   "fade": 0.8
+  },
+  {
+   "lines": [
+    {
+     "text": "CE QUE TU DONNES",
+     "size": 96
+    },
+    {
+     "text": "FAIT TOUJOURS",
+     "size": 96
+    },
+    {
+     "text": "LE TOUR.",
+     "size": 150
+    }
+   ],
+   "y": 250,
+   "t0": 32.2,
+   "write": 3.2,
+   "gap": 0.98
+  }
+ ],
+ "sfx": [
+  {
+   "t": 5.33,
+   "type": "tick",
+   "volume": 0.6
+  },
+  {
+   "t": 9.3,
+   "type": "tick",
+   "volume": 0.3
+  },
+  {
+   "t": 14.9,
+   "type": "pop",
+   "volume": 0.25
+  },
+  {
+   "t": 23.0,
+   "type": "pop",
+   "volume": 0.25
+  },
+  {
+   "t": 28.6,
+   "type": "heart",
+   "volume": 0.5
+  }
+ ]
+}
