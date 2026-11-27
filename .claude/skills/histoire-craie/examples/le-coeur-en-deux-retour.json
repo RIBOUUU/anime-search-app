@@ -258,21 +258,21 @@
    "keys": [
     {
      "t": 0,
-     "attach": "elle.hands",
-     "dx": 55,
-     "dy": 0
+     "attach": "elle.head",
+     "dx": 0,
+     "dy": -175
     },
     {
      "t": 0.9,
-     "attach": "elle.hands",
-     "dx": 55,
-     "dy": 0
+     "attach": "elle.head",
+     "dx": 0,
+     "dy": -175
     },
     {
      "t": 1.0,
      "attach": null,
      "x": 532,
-     "y": 1030
+     "y": 855
     },
     {
      "t": 1.25,
@@ -282,19 +282,15 @@
      "t": 5.8,
      "visible": true,
      "x": 532,
-     "y": 1030
+     "y": 855
     },
     {
      "t": 6.4,
      "cracked": true,
      "dim": true,
-     "x": 532
-    },
-    {
-     "t": 7.0,
-     "x": 520,
-     "y": 1110,
-     "ease": "in"
+     "attach": "elle.head",
+     "dx": 0,
+     "dy": -175
     },
     {
      "t": 12.0,
@@ -309,21 +305,21 @@
    "keys": [
     {
      "t": 0,
-     "attach": "lui.hands",
-     "dx": 55,
-     "dy": 0
+     "attach": "lui.head",
+     "dx": 0,
+     "dy": -175
     },
     {
      "t": 0.9,
-     "attach": "lui.hands",
-     "dx": 55,
-     "dy": 0
+     "attach": "lui.head",
+     "dx": 0,
+     "dy": -175
     },
     {
      "t": 1.0,
      "attach": null,
      "x": 548,
-     "y": 1030
+     "y": 855
     },
     {
      "t": 1.25,
@@ -333,20 +329,20 @@
      "t": 5.8,
      "visible": true,
      "x": 548,
-     "y": 1030
+     "y": 855
     },
     {
      "t": 6.0,
      "shine": false,
-     "attach": "lui.hands",
-     "dx": 55,
-     "dy": 0
+     "attach": "lui.head",
+     "dx": 0,
+     "dy": -175
     },
     {
      "t": 7.7,
      "attach": null,
      "x": 905,
-     "y": 1030
+     "y": 855
     },
     {
      "t": 8.0,
@@ -377,14 +373,14 @@
     },
     {
      "t": 11.4,
-     "attach": "lui.hands",
-     "dx": 55,
-     "dy": 0,
+     "attach": "lui.head",
+     "dx": 0,
+     "dy": -175,
      "rot": 0
     },
     {
      "t": 14.2,
-     "dy": 40
+     "dy": -130
     }
    ]
   },
@@ -396,9 +392,9 @@
     {
      "t": 0,
      "visible": false,
-     "attach": "autre.hands",
-     "dx": 55,
-     "dy": 0
+     "attach": "autre.head",
+     "dx": 0,
+     "dy": -175
     },
     {
      "t": 3.4,
@@ -408,7 +404,7 @@
      "t": 7.7,
      "attach": null,
      "x": 875,
-     "y": 1030
+     "y": 855
     },
     {
      "t": 8.3,
@@ -447,7 +443,7 @@
      "t": 0,
      "visible": false,
      "x": 890,
-     "y": 1080
+     "y": 860
     },
     {
      "t": 8.9,
@@ -466,10 +462,10 @@
     {
      "t": 0,
      "visible": false,
-     "attach": "elle.sho",
+     "attach": "elle.head",
      "dx": 0,
-     "dy": 20,
-     "grow": 0.5
+     "dy": -185,
+     "grow": 0.7
     },
     {
      "t": 15.4,
@@ -478,7 +474,7 @@
     },
     {
      "t": 17.0,
-     "grow": 0.75
+     "grow": 0.9
     }
    ]
   },
@@ -490,7 +486,7 @@
      "t": 0,
      "visible": false,
      "x": 540,
-     "y": 1030
+     "y": 855
     },
     {
      "t": 1.25,

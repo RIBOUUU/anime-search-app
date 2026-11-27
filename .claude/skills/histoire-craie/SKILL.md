@@ -73,6 +73,16 @@ Exemple de référence : `examples/la-porte.json` (18 s).
 - **Durée** : 15 à 25 s pour la rétention ; garder 30 à 40 s pour les histoires
   plus contemplatives.
 
+## Objets symboliques : au-dessus de la tête, jamais dans la main
+
+Un objet-métaphore tenu « dans la main » d'un bonhomme bâton paraît bricolé.
+Le placer **au-dessus de la tête**, assez haut (≈ 175 px au-dessus du centre de
+la tête, à l'échelle 1), centré, comme une bulle de pensée :
+`"attach": "elle.head", "dx": 0, "dy": -175`. Quand deux objets se rejoignent
+(deux moitiés de cœur), les faire se rencontrer à cette même hauteur entre les
+deux personnages. Seuls les accessoires « physiques » (parapluie, valise,
+téléphone, canne) restent dans la main.
+
 ## Fichier d'histoire (JSON)
 
 Partir de `examples/le-parapluie.json`, une histoire complète de 33 s.
