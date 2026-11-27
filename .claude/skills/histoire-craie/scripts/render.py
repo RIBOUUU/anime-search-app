@@ -588,7 +588,7 @@ class Prop:
         if not self.tr.disc("visible", t, True):
             return
         (x, y), r = self.pos(t, actors)
-        k, s, sd = self.kind, self.size, self.seed
+        k, s, sd = self.kind, self.size * self.tr.num("grow", t, 1.0), self.seed
         w = 5.5
 
         def P(px, py):
@@ -677,6 +677,28 @@ class Prop:
             for i, sg in enumerate((-1, 1)):
                 cv.poly([(x + sg * 34 * s, y - 6 * s), (x + sg * 46 * s, y - 6 * s), (x + sg * 46 * s, y + 22 * s),
                          (x + sg * 34 * s, y + 22 * s)], 4, sd + 1 + i, closed=True)
+        elif k in ("half_heart", "full_heart"):
+            side = self.spec.get("side", -1)
+            rr = 46
+            if k == "full_heart":
+                rng = np.linspace(0, 2 * math.pi, 41)
+            else:
+                rng = np.linspace(math.pi, 2 * math.pi, 21) if side < 0 else np.linspace(0, math.pi, 21)
+            pts = []
+            for a in rng:
+                hx = 16 * math.sin(a) ** 3
+                hy = -(13 * math.cos(a) - 5 * math.cos(2 * a) - 2 * math.cos(3 * a) - math.cos(4 * a))
+                pts.append(P(hx / 16 * rr, hy / 16 * rr - 10))
+            if k == "half_heart":   # bord cassé en zigzag, du dernier point au premier
+                ya = -(13 * math.cos(rng[-1]) - 5 * math.cos(2 * rng[-1]) - 2 * math.cos(3 * rng[-1]) - math.cos(4 * rng[-1]))
+                yb = -(13 * math.cos(rng[0]) - 5 * math.cos(2 * rng[0]) - 2 * math.cos(3 * rng[0]) - math.cos(4 * rng[0]))
+                ya, yb = ya / 16 * rr - 10, yb / 16 * rr - 10
+                pts += [P((6 if i % 2 else -6) * 0.8, ya + (yb - ya) * i / 6) for i in range(1, 6)]
+            dim = self.tr.disc("dim", t, False)
+            cv.fill_poly(pts, 0)
+            cv.poly(pts, w, sd, closed=True, val=120 if dim else 255)
+            if self.tr.disc("cracked", t, False):
+                cv.poly([P(-side * 6, -30), P(-side * 18, -16), P(-side * 8, -4), P(-side * 22, 10)], 3.5, sd + 9)
         elif k == "door":
             slab = [P(-15, 0), P(15, 0), P(15, -300), P(-15, -300)]
             cv.fill_poly(slab, 0)
