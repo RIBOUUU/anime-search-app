@@ -1,0 +1,545 @@
+{
+ "_histoire": "Version ultra simple : deux moitiés de cœur s'allument ensemble. Il reprend sa moitié pour une autre : celle d'elle se fissure. Sa moitié ne colle pas avec l'autre (grand X). La moitié d'elle devient un cœur entier.",
+ "_legende": "Tu n'étais pas une moitié ❤️ #couple #stickman #animation #amour",
+ "duration": 16.2,
+ "music": {
+  "mood": "sad",
+  "bpm": 72,
+  "turn": 10.8,
+  "volume": 0.6
+ },
+ "set": [
+  {
+   "type": "ground",
+   "y": 1300
+  }
+ ],
+ "actors": {
+  "elle": {
+   "hair": "ponytail",
+   "extras": [
+    "skirt"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 410,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "reach",
+     "face": "smile"
+    },
+    {
+     "t": 1.6,
+     "face": "closed"
+    },
+    {
+     "t": 4.8,
+     "face": "surprised",
+     "pose": "hold"
+    },
+    {
+     "t": 6.4,
+     "pose": "sad",
+     "face": "cry"
+    },
+    {
+     "t": 10.8,
+     "face": "surprised",
+     "pose": "hold"
+    },
+    {
+     "t": 11.8,
+     "face": "laugh",
+     "pose": "cheer"
+    },
+    {
+     "t": 13.4,
+     "face": "happy",
+     "pose": "stand"
+    }
+   ]
+  },
+  "lui": {
+   "hair": "cap",
+   "keys": [
+    {
+     "t": 0,
+     "x": 670,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "reach",
+     "face": "smile"
+    },
+    {
+     "t": 1.6,
+     "face": "closed"
+    },
+    {
+     "t": 4.6,
+     "dir": 1,
+     "face": "love",
+     "pose": "stand"
+    },
+    {
+     "t": 5.8,
+     "x": 670,
+     "pose": "hold"
+    },
+    {
+     "t": 7.2,
+     "x": 790,
+     "ease": "inout"
+    },
+    {
+     "t": 7.6,
+     "pose": "reach",
+     "face": "happy"
+    },
+    {
+     "t": 9.0,
+     "face": "surprised"
+    },
+    {
+     "t": 9.8,
+     "pose": "sad",
+     "face": "sad"
+    },
+    {
+     "t": 12.0,
+     "dir": -1,
+     "face": "cry"
+    }
+   ]
+  },
+  "autre": {
+   "hair": "curly",
+   "extras": [
+    "skirt"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 1300,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "stand",
+     "face": "smile",
+     "visible": false
+    },
+    {
+     "t": 3.4,
+     "visible": true
+    },
+    {
+     "t": 3.5,
+     "x": 1300
+    },
+    {
+     "t": 4.8,
+     "x": 990,
+     "ease": "out"
+    },
+    {
+     "t": 4.9,
+     "pose": "wave",
+     "face": "happy"
+    },
+    {
+     "t": 6.2,
+     "pose": "hold"
+    },
+    {
+     "t": 7.6,
+     "pose": "reach"
+    },
+    {
+     "t": 9.2,
+     "face": "angry",
+     "pose": "stand"
+    },
+    {
+     "t": 10.0,
+     "dir": 1
+    },
+    {
+     "t": 10.2,
+     "x": 990
+    },
+    {
+     "t": 12.0,
+     "x": 1400,
+     "ease": "in"
+    }
+   ]
+  }
+ },
+ "props": {
+  "moitie_elle": {
+   "type": "half_heart",
+   "side": -1,
+   "size": 1.7,
+   "keys": [
+    {
+     "t": 0,
+     "attach": "elle.hands",
+     "dx": 55,
+     "dy": 0
+    },
+    {
+     "t": 0.9,
+     "attach": "elle.hands",
+     "dx": 55,
+     "dy": 0
+    },
+    {
+     "t": 1.0,
+     "attach": null,
+     "x": 532,
+     "y": 1030
+    },
+    {
+     "t": 1.25,
+     "visible": false
+    },
+    {
+     "t": 5.8,
+     "visible": true,
+     "x": 532,
+     "y": 1030
+    },
+    {
+     "t": 6.4,
+     "cracked": true,
+     "dim": true,
+     "x": 532
+    },
+    {
+     "t": 7.0,
+     "x": 520,
+     "y": 1110,
+     "ease": "in"
+    },
+    {
+     "t": 10.8,
+     "visible": false
+    }
+   ]
+  },
+  "moitie_lui": {
+   "type": "half_heart",
+   "side": 1,
+   "size": 1.7,
+   "keys": [
+    {
+     "t": 0,
+     "attach": "lui.hands",
+     "dx": 55,
+     "dy": 0
+    },
+    {
+     "t": 0.9,
+     "attach": "lui.hands",
+     "dx": 55,
+     "dy": 0
+    },
+    {
+     "t": 1.0,
+     "attach": null,
+     "x": 548,
+     "y": 1030
+    },
+    {
+     "t": 1.25,
+     "visible": false
+    },
+    {
+     "t": 5.8,
+     "visible": true,
+     "x": 548,
+     "y": 1030
+    },
+    {
+     "t": 6.0,
+     "shine": false,
+     "attach": "lui.hands",
+     "dx": 55,
+     "dy": 0
+    },
+    {
+     "t": 7.7,
+     "attach": null,
+     "x": 905,
+     "y": 1030
+    },
+    {
+     "t": 8.0,
+     "x": 903
+    },
+    {
+     "t": 8.3,
+     "x": 930,
+     "rot": 12
+    },
+    {
+     "t": 8.5,
+     "x": 900,
+     "rot": -8
+    },
+    {
+     "t": 8.7,
+     "x": 935,
+     "rot": 15
+    },
+    {
+     "t": 9.6,
+     "x": 900,
+     "y": 1300,
+     "rot": 100,
+     "ease": "in",
+     "dim": true
+    }
+   ]
+  },
+  "moitie_autre": {
+   "type": "half_heart",
+   "side": -1,
+   "size": 1.7,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "autre.hands",
+     "dx": 55,
+     "dy": 0
+    },
+    {
+     "t": 3.4,
+     "visible": true
+    },
+    {
+     "t": 7.7,
+     "attach": null,
+     "x": 875,
+     "y": 1030
+    },
+    {
+     "t": 8.3,
+     "x": 865,
+     "rot": -10
+    },
+    {
+     "t": 8.5,
+     "x": 880,
+     "rot": 6
+    },
+    {
+     "t": 8.7,
+     "x": 860,
+     "rot": -14
+    },
+    {
+     "t": 9.6,
+     "x": 830,
+     "y": 1300,
+     "rot": -100,
+     "ease": "in",
+     "dim": true
+    }
+   ]
+  },
+  "non": {
+   "type": "cross",
+   "size": 1.0,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 890,
+     "y": 1080
+    },
+    {
+     "t": 8.9,
+     "visible": true
+    },
+    {
+     "t": 10.2,
+     "visible": false
+    }
+   ]
+  },
+  "coeur_entier": {
+   "type": "full_heart",
+   "size": 1.7,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 525,
+     "y": 1110,
+     "grow": 1.0
+    },
+    {
+     "t": 10.8,
+     "visible": true,
+     "shine": true
+    },
+    {
+     "t": 12.2,
+     "x": 470,
+     "y": 820,
+     "grow": 1.6,
+     "ease": "out"
+    },
+    {
+     "t": 16.2,
+     "y": 800
+    }
+   ]
+  },
+  "coeur_uni": {
+   "type": "full_heart",
+   "size": 1.7,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 540,
+     "y": 1030
+    },
+    {
+     "t": 1.25,
+     "visible": true,
+     "shine": true
+    },
+    {
+     "t": 5.8,
+     "visible": false
+    }
+   ]
+  }
+ },
+ "camera": [
+  {
+   "t": 0,
+   "cx": 540,
+   "cy": 1080,
+   "zoom": 1.75
+  },
+  {
+   "t": 3.3,
+   "cx": 540,
+   "cy": 1080,
+   "zoom": 1.75
+  },
+  {
+   "t": 4.8,
+   "cx": 720,
+   "cy": 1060,
+   "zoom": 1.2
+  },
+  {
+   "t": 6.0,
+   "cx": 720,
+   "cy": 1060,
+   "zoom": 1.2
+  },
+  {
+   "t": 6.5,
+   "cx": 470,
+   "cy": 1100,
+   "zoom": 2.0,
+   "cut": true
+  },
+  {
+   "t": 7.6,
+   "cx": 470,
+   "cy": 1100,
+   "zoom": 2.0
+  },
+  {
+   "t": 7.65,
+   "cx": 890,
+   "cy": 1080,
+   "zoom": 1.8,
+   "cut": true
+  },
+  {
+   "t": 10.4,
+   "cx": 880,
+   "cy": 1100,
+   "zoom": 1.7
+  },
+  {
+   "t": 10.45,
+   "cx": 480,
+   "cy": 1060,
+   "zoom": 1.7,
+   "cut": true
+  },
+  {
+   "t": 12.6,
+   "cx": 480,
+   "cy": 980,
+   "zoom": 1.35
+  },
+  {
+   "t": 13.6,
+   "cx": 560,
+   "cy": 960,
+   "zoom": 1.15
+  }
+ ],
+ "fade": [
+  {
+   "t": 0,
+   "b": 1
+  }
+ ],
+ "texts": [
+  {
+   "text": "TU ÉTAIS ENTIÈRE.",
+   "size": 120,
+   "y": 250,
+   "t0": 13.6,
+   "write": 1.0
+  }
+ ],
+ "sfx": [
+  {
+   "t": 1.3,
+   "type": "heart",
+   "volume": 0.6
+  },
+  {
+   "t": 4.6,
+   "type": "pop",
+   "volume": 0.4
+  },
+  {
+   "t": 6.4,
+   "type": "drop",
+   "volume": 0.6
+  },
+  {
+   "t": 8.3,
+   "type": "thud",
+   "volume": 0.4
+  },
+  {
+   "t": 8.7,
+   "type": "thud",
+   "volume": 0.4
+  },
+  {
+   "t": 8.9,
+   "type": "wood",
+   "volume": 0.6
+  },
+  {
+   "t": 11.0,
+   "type": "heart",
+   "volume": 0.7
+  }
+ ]
+}

@@ -699,6 +699,9 @@ class Prop:
             cv.poly(pts, w, sd, closed=True, val=120 if dim else 255)
             if self.tr.disc("cracked", t, False):
                 cv.poly([P(-side * 6, -30), P(-side * 18, -16), P(-side * 8, -4), P(-side * 22, 10)], 3.5, sd + 9)
+        elif k == "cross":   # grand X « ça ne marche pas »
+            cv.line(P(-60, -60), P(60, 60), 12, sd)
+            cv.line(P(60, -60), P(-60, 60), 12, sd + 1)
         elif k == "door":
             slab = [P(-15, 0), P(15, 0), P(15, -300), P(-15, -300)]
             cv.fill_poly(slab, 0)
