@@ -1,0 +1,392 @@
+{
+ "_histoire": "Elle vide son verre pour remplir le sien ; lui verse le trop-plein dans le verre d'une autre. Elle arrête : son verre se remplit tout seul, celui de lui se vide.",
+ "_legende": "Arrête de te vider pour remplir quelqu'un 🥂 #couple #stickman #animation #amour",
+ "duration": 15.6,
+ "music": {
+  "mood": "sad",
+  "bpm": 74,
+  "turn": 9.6,
+  "volume": 0.6
+ },
+ "set": [
+  {
+   "type": "ground",
+   "y": 1300
+  }
+ ],
+ "actors": {
+  "elle": {
+   "hair": "ponytail",
+   "extras": [
+    "skirt"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 330,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "stand",
+     "face": "smile"
+    },
+    {
+     "t": 2.0,
+     "pose": "reach"
+    },
+    {
+     "t": 4.0,
+     "face": "neutral"
+    },
+    {
+     "t": 5.6,
+     "face": "sad",
+     "pose": "sad"
+    },
+    {
+     "t": 7.4,
+     "face": "surprised",
+     "pose": "stand"
+    },
+    {
+     "t": 8.6,
+     "face": "angry"
+    },
+    {
+     "t": 9.4,
+     "dir": -1,
+     "face": "closed"
+    },
+    {
+     "t": 10.4,
+     "face": "happy",
+     "pose": "cheer",
+     "glow": 0.0
+    },
+    {
+     "t": 11.6,
+     "glow": 0.8
+    },
+    {
+     "t": 12.6,
+     "pose": "stand",
+     "face": "happy"
+    }
+   ]
+  },
+  "lui": {
+   "hair": "cap",
+   "keys": [
+    {
+     "t": 0,
+     "x": 600,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "stand",
+     "face": "smile"
+    },
+    {
+     "t": 4.2,
+     "dir": 1,
+     "face": "love"
+    },
+    {
+     "t": 5.0,
+     "pose": "reach"
+    },
+    {
+     "t": 9.6,
+     "face": "surprised",
+     "pose": "stand"
+    },
+    {
+     "t": 11.0,
+     "face": "cry",
+     "pose": "sad",
+     "dir": -1
+    }
+   ]
+  },
+  "autre": {
+   "hair": "curly",
+   "extras": [
+    "skirt"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 1260,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "stand",
+     "face": "smile",
+     "visible": false
+    },
+    {
+     "t": 3.6,
+     "visible": true
+    },
+    {
+     "t": 3.7,
+     "x": 1260
+    },
+    {
+     "t": 4.8,
+     "x": 860,
+     "ease": "out"
+    },
+    {
+     "t": 5.0,
+     "pose": "wave",
+     "face": "happy"
+    },
+    {
+     "t": 10.6,
+     "face": "angry",
+     "pose": "stand",
+     "dir": 1
+    },
+    {
+     "t": 11.0,
+     "x": 860
+    },
+    {
+     "t": 12.6,
+     "x": 1300,
+     "ease": "in"
+    }
+   ]
+  }
+ },
+ "props": {
+  "verre_elle": {
+   "type": "glass",
+   "size": 1.3,
+   "keys": [
+    {
+     "t": 0,
+     "attach": "elle.head",
+     "dx": 0,
+     "dy": -185,
+     "level": 1.0
+    },
+    {
+     "t": 2.2,
+     "level": 1.0
+    },
+    {
+     "t": 3.8,
+     "level": 0.35
+    },
+    {
+     "t": 7.0,
+     "level": 0.05
+    },
+    {
+     "t": 9.6,
+     "level": 0.05
+    },
+    {
+     "t": 11.6,
+     "level": 1.0,
+     "ease": "inout",
+     "shine": true
+    }
+   ]
+  },
+  "verre_lui": {
+   "type": "glass",
+   "size": 1.3,
+   "keys": [
+    {
+     "t": 0,
+     "attach": "lui.head",
+     "dx": 0,
+     "dy": -185,
+     "level": 0.15
+    },
+    {
+     "t": 2.2,
+     "level": 0.15
+    },
+    {
+     "t": 3.8,
+     "level": 0.95
+    },
+    {
+     "t": 5.4,
+     "level": 0.95
+    },
+    {
+     "t": 7.0,
+     "level": 0.6
+    },
+    {
+     "t": 9.6,
+     "level": 0.6
+    },
+    {
+     "t": 10.8,
+     "level": 0.0,
+     "ease": "in"
+    }
+   ]
+  },
+  "verre_autre": {
+   "type": "glass",
+   "size": 1.3,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "attach": "autre.head",
+     "dx": 0,
+     "dy": -185,
+     "level": 0.1
+    },
+    {
+     "t": 3.6,
+     "visible": true
+    },
+    {
+     "t": 5.4,
+     "level": 0.1
+    },
+    {
+     "t": 7.0,
+     "level": 0.5
+    },
+    {
+     "t": 12.6,
+     "level": 0.5
+    }
+   ]
+  },
+  "non": {
+   "type": "cross",
+   "size": 1.0,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 330,
+     "y": 810
+    },
+    {
+     "t": 8.8,
+     "visible": true
+    },
+    {
+     "t": 9.6,
+     "visible": false
+    }
+   ]
+  }
+ },
+ "camera": [
+  {
+   "t": 0,
+   "cx": 470,
+   "cy": 1020,
+   "zoom": 1.6
+  },
+  {
+   "t": 3.4,
+   "cx": 470,
+   "cy": 1020,
+   "zoom": 1.6
+  },
+  {
+   "t": 4.6,
+   "cx": 690,
+   "cy": 1000,
+   "zoom": 1.15
+  },
+  {
+   "t": 7.2,
+   "cx": 690,
+   "cy": 1000,
+   "zoom": 1.15
+  },
+  {
+   "t": 7.3,
+   "cx": 380,
+   "cy": 1000,
+   "zoom": 1.9,
+   "cut": true
+  },
+  {
+   "t": 9.5,
+   "cx": 380,
+   "cy": 1000,
+   "zoom": 1.9
+  },
+  {
+   "t": 9.6,
+   "cx": 560,
+   "cy": 1000,
+   "zoom": 1.15,
+   "cut": true
+  },
+  {
+   "t": 12.4,
+   "cx": 520,
+   "cy": 960,
+   "zoom": 1.1
+  }
+ ],
+ "fade": [
+  {
+   "t": 0,
+   "b": 1
+  }
+ ],
+ "texts": [
+  {
+   "lines": [
+    {
+     "text": "ARRÊTE DE TE VIDER",
+     "size": 96
+    },
+    {
+     "text": "POUR LE REMPLIR.",
+     "size": 110
+    }
+   ],
+   "y": 230,
+   "t0": 12.6,
+   "write": 1.0
+  }
+ ],
+ "sfx": [
+  {
+   "t": 2.4,
+   "type": "drop",
+   "volume": 0.3
+  },
+  {
+   "t": 3.2,
+   "type": "drop",
+   "volume": 0.3
+  },
+  {
+   "t": 5.6,
+   "type": "drop",
+   "volume": 0.3
+  },
+  {
+   "t": 8.8,
+   "type": "wood",
+   "volume": 0.5
+  },
+  {
+   "t": 10.4,
+   "type": "heart",
+   "volume": 0.6
+  },
+  {
+   "t": 10.8,
+   "type": "whoosh",
+   "volume": 0.4
+  }
+ ]
+}

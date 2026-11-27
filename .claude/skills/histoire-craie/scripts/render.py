@@ -707,6 +707,22 @@ class Prop:
             cv.poly(pts, w, sd, closed=True, val=120 if dim else 255)
             if self.tr.disc("cracked", t, False):
                 cv.poly([P(-side * 6, -30), P(-side * 18, -16), P(-side * 8, -4), P(-side * 22, 10)], 3.5, sd + 9)
+        elif k == "glass":   # verre symbolique, "level" 0..1
+            lv = max(0.0, min(1.0, self.tr.num("level", t, 0.5)))
+            g = [P(-34, -90), P(34, -90), P(24, 0), P(-24, 0)]
+            cv.fill_poly(g, 0)
+            if lv > 0.01:
+                top = -86 * lv
+                i = 0
+                yy = -4.0
+                while yy > top:
+                    hw = 24 + 10 * (-yy / 90)
+                    cv.line(P(-hw + 4, yy), P(hw - 4, yy - 3), 3.5, sd + 20 + i, val=210, jit=0.4)
+                    yy -= 7
+                    i += 1
+                hw = 24 + 10 * (-top / 90)
+                cv.line(P(-hw + 2, top), P(hw - 2, top), 4.5, sd + 5)
+            cv.poly(g, w, sd, closed=True)
         elif k == "cross":   # grand X « ça ne marche pas »
             cv.line(P(-60, -60), P(60, 60), 12, sd)
             cv.line(P(60, -60), P(-60, 60), 12, sd + 1)
