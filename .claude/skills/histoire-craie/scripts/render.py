@@ -370,6 +370,14 @@ class Actor:
             cv.poly([n, (n[0] + 6 * s * d, n[1] + 36 * s)], w * 0.8, sd + 32)
         self.draw_head(cv, J, st, P, t)
         self.draw_hud(cv, J, st, t)
+        # personnage lumineux : "glow" 0..1, "flicker" true = clignote (de plus en plus stable)
+        g = self.tr.num("glow", t, 0.0)
+        if g > 0.01:
+            if self.tr.disc("flicker", t, False):
+                ph = math.sin(t * 23) + math.sin(t * 37 + 1.3)
+                g *= 1.0 if ph > -0.4 * (1 - g) * 2 else 0.15
+            for jn, rr in (("head", 1.6), ("neck", 2.2), ("hip", 2.4)):
+                cv.add_glow(J[jn], 70 * s * rr * (0.6 + 0.4 * g), "warm", int(255 * min(1.0, g)))
 
     def draw_hud(self, cv, J, st, t):
         s = st["s"]
