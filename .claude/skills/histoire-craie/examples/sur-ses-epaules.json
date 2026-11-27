@@ -1,0 +1,982 @@
+{
+ "_histoire": "Elle le porte à bout de bras pour qu'il touche les étoiles ; il devient « grand », l'oublie",
+ "_legende": "Il était grand… parce qu'elle le portait ⭐ #couple #stickman #animation #amour #histoire",
+ "duration": 34.0,
+ "music": {
+  "mood": "sad",
+  "bpm": 70,
+  "turn": 24.6,
+  "volume": 0.6
+ },
+ "set": [
+  {
+   "type": "ground",
+   "y": 1300,
+   "x0": -3000,
+   "x1": 6000
+  },
+  {
+   "type": "moon",
+   "x": 860,
+   "y": 420,
+   "r": 55
+  },
+  {
+   "type": "burst",
+   "x": 560,
+   "y": 600,
+   "t0": 5.0,
+   "r": 120
+  },
+  {
+   "type": "burst",
+   "x": 930,
+   "y": 1000,
+   "t0": 22.7,
+   "r": 200,
+   "glow": false
+  },
+  {
+   "type": "burst",
+   "x": 540,
+   "y": 800,
+   "t0": 27.2,
+   "r": 220
+  }
+ ],
+ "actors": {
+  "elle": {
+   "hair": "ponytail",
+   "extras": [
+    "skirt"
+   ],
+   "hud": [
+    {
+     "type": "gauge",
+     "label": "FORCE",
+     "fmt": "pct",
+     "warn": 20,
+     "dx": -230,
+     "dy": -10,
+     "size": 1.0,
+     "keys": [
+      {
+       "t": 0,
+       "v": 100
+      },
+      {
+       "t": 5.0,
+       "v": 100
+      },
+      {
+       "t": 9.0,
+       "v": 60
+      },
+      {
+       "t": 12.0,
+       "v": 60
+      },
+      {
+       "t": 16.0,
+       "v": 18
+      },
+      {
+       "t": 19.2,
+       "v": 2
+      },
+      {
+       "t": 25.4,
+       "v": 2
+      },
+      {
+       "t": 26.8,
+       "v": 100,
+       "ease": "in"
+      }
+     ]
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": -120,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "walk",
+     "face": "smile",
+     "glow": 0.0
+    },
+    {
+     "t": 2.4,
+     "x": 540,
+     "ease": "out"
+    },
+    {
+     "t": 2.6,
+     "pose": "lift_kneel",
+     "face": "smile"
+    },
+    {
+     "t": 3.8,
+     "pose": "lift_kneel"
+    },
+    {
+     "t": 4.6,
+     "pose": "lift",
+     "face": "happy"
+    },
+    {
+     "t": 8.0,
+     "face": "worried"
+    },
+    {
+     "t": 10.4,
+     "face": "cry"
+    },
+    {
+     "t": 12.0,
+     "pose": "lift_kneel",
+     "face": "cry",
+     "cut": true
+    },
+    {
+     "t": 19.2,
+     "pose": "hug_knees",
+     "face": "cry"
+    },
+    {
+     "t": 24.4,
+     "pose": "sit_look_up",
+     "face": "surprised"
+    },
+    {
+     "t": 25.6,
+     "pose": "stand",
+     "face": "happy",
+     "glow": 0.0
+    },
+    {
+     "t": 26.6,
+     "glow": 1.0,
+     "flicker": true
+    },
+    {
+     "t": 27.4,
+     "flicker": false,
+     "pose": "cheer",
+     "face": "laugh"
+    },
+    {
+     "t": 29.0,
+     "pose": "stand",
+     "face": "closed"
+    }
+   ]
+  },
+  "lui": {
+   "hair": "cap",
+   "hud": [
+    {
+     "type": "gauge",
+     "label": "SUCCÈS",
+     "fmt": "pct",
+     "dx": 230,
+     "dy": -10,
+     "size": 1.0,
+     "keys": [
+      {
+       "t": 0,
+       "v": 0
+      },
+      {
+       "t": 4.8,
+       "v": 0
+      },
+      {
+       "t": 5.3,
+       "v": 30
+      },
+      {
+       "t": 6.6,
+       "v": 60
+      },
+      {
+       "t": 7.6,
+       "v": 85
+      },
+      {
+       "t": 13,
+       "v": 95
+      },
+      {
+       "t": 22.6,
+       "v": 95
+      },
+      {
+       "t": 23.8,
+       "v": 0,
+       "ease": "in"
+      }
+     ]
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 560,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "look_up",
+     "face": "worried",
+     "lift": 0,
+     "glow": 0.0
+    },
+    {
+     "t": 5.6,
+     "glow": 0.0
+    },
+    {
+     "t": 0.6,
+     "pose": "jump"
+    },
+    {
+     "t": 0.9,
+     "pose": "look_up"
+    },
+    {
+     "t": 1.4,
+     "pose": "jump"
+    },
+    {
+     "t": 1.7,
+     "pose": "look_up"
+    },
+    {
+     "t": 2.6,
+     "x": 560
+    },
+    {
+     "t": 3.3,
+     "x": 578,
+     "ground": 1038,
+     "ease": "out",
+     "pose": "stand",
+     "face": "smile"
+    },
+    {
+     "t": 3.8,
+     "x": 578,
+     "ground": 1038
+    },
+    {
+     "t": 4.6,
+     "x": 551,
+     "ground": 975,
+     "pose": "cheer",
+     "face": "happy"
+    },
+    {
+     "t": 6.0,
+     "pose": "wave",
+     "face": "laugh",
+     "glow": 0.35
+    },
+    {
+     "t": 12.0,
+     "x": 578,
+     "ground": 1038,
+     "pose": "wave",
+     "cut": true
+    },
+    {
+     "t": 14.6,
+     "pose": "stand",
+     "face": "smile"
+    },
+    {
+     "t": 15.6,
+     "face": "love",
+     "dir": 1
+    },
+    {
+     "t": 18.4,
+     "x": 578,
+     "ground": 1038,
+     "pose": "stand",
+     "lift": 0
+    },
+    {
+     "t": 18.9,
+     "pose": "jump",
+     "lift": -140,
+     "x": 720,
+     "ground": 990
+    },
+    {
+     "t": 19.5,
+     "x": 870,
+     "ground": 958,
+     "lift": 0,
+     "pose": "cheer",
+     "face": "laugh",
+     "ease": "out"
+    },
+    {
+     "t": 22.6,
+     "x": 870,
+     "ground": 958,
+     "face": "surprised",
+     "pose": "stand"
+    },
+    {
+     "t": 23.6,
+     "x": 930,
+     "ground": 1300,
+     "ease": "in",
+     "pose": "lie",
+     "face": "surprised",
+     "glow": 0.0
+    },
+    {
+     "t": 25.0,
+     "face": "cry"
+    },
+    {
+     "t": 27.6,
+     "face": "sad"
+    }
+   ]
+  },
+  "autre": {
+   "hair": "curly",
+   "extras": [
+    "skirt"
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 930,
+     "ground": 958,
+     "dir": -1,
+     "pose": "wave",
+     "face": "happy"
+    },
+    {
+     "t": 14.8,
+     "visible": true
+    },
+    {
+     "t": 19.6,
+     "pose": "cheer",
+     "face": "laugh"
+    },
+    {
+     "t": 22.6,
+     "face": "surprised",
+     "pose": "stand"
+    },
+    {
+     "t": 22.9,
+     "visible": false
+    }
+   ]
+  },
+  "fan0": {
+   "hair": "cap",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 110,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "cheer",
+     "face": "laugh",
+     "scale": 0.55
+    },
+    {
+     "t": 5.5,
+     "visible": true
+    },
+    {
+     "t": 19.8,
+     "dir": 1
+    },
+    {
+     "t": 23.0,
+     "visible": false
+    }
+   ]
+  },
+  "fan1": {
+   "hair": "curly",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 185,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "cheer",
+     "face": "laugh",
+     "scale": 0.55
+    },
+    {
+     "t": 5.5,
+     "visible": true
+    },
+    {
+     "t": 19.8,
+     "dir": 1
+    },
+    {
+     "t": 23.0,
+     "visible": false
+    }
+   ]
+  },
+  "fan2": {
+   "hair": "beanie",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 255,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "cheer",
+     "face": "laugh",
+     "scale": 0.55
+    },
+    {
+     "t": 5.5,
+     "visible": true
+    },
+    {
+     "t": 19.8,
+     "dir": 1
+    },
+    {
+     "t": 23.0,
+     "visible": false
+    }
+   ]
+  },
+  "fan3": {
+   "hair": "bow",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 1040,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "cheer",
+     "face": "laugh",
+     "scale": 0.55
+    },
+    {
+     "t": 5.5,
+     "visible": true
+    },
+    {
+     "t": 19.8,
+     "dir": -1
+    },
+    {
+     "t": 23.0,
+     "visible": false
+    }
+   ]
+  },
+  "fan4": {
+   "hair": "cap",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 1115,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "cheer",
+     "face": "laugh",
+     "scale": 0.55
+    },
+    {
+     "t": 5.5,
+     "visible": true
+    },
+    {
+     "t": 19.8,
+     "dir": -1
+    },
+    {
+     "t": 23.0,
+     "visible": false
+    }
+   ]
+  },
+  "fan5": {
+   "hair": "long",
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 1190,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "cheer",
+     "face": "laugh",
+     "scale": 0.55
+    },
+    {
+     "t": 5.5,
+     "visible": true
+    },
+    {
+     "t": 19.8,
+     "dir": -1
+    },
+    {
+     "t": 23.0,
+     "visible": false
+    }
+   ]
+  }
+ },
+ "props": {
+  "plateau": {
+   "type": "platform",
+   "h": 342,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 930,
+     "y": 958,
+     "rot": 0
+    },
+    {
+     "t": 14.6,
+     "visible": true
+    },
+    {
+     "t": 22.6,
+     "x": 930,
+     "y": 958,
+     "rot": 0
+    },
+    {
+     "t": 23.5,
+     "x": 1010,
+     "y": 1330,
+     "rot": 38,
+     "ease": "in"
+    },
+    {
+     "t": 24.2,
+     "visible": false
+    }
+   ]
+  },
+  "etoile0": {
+   "type": "star",
+   "size": 1.2,
+   "keys": [
+    {
+     "t": 0,
+     "x": 430,
+     "y": 620,
+     "shine": true
+    },
+    {
+     "t": 4.6,
+     "x": 430,
+     "y": 620
+    },
+    {
+     "t": 5.0,
+     "attach": "lui.head",
+     "dx": -70,
+     "dy": -160
+    },
+    {
+     "t": 22.6,
+     "attach": "lui.head",
+     "dx": -70,
+     "dy": -160
+    },
+    {
+     "t": 22.7,
+     "attach": null,
+     "x": 800,
+     "y": 640
+    },
+    {
+     "t": 23.9,
+     "x": 832.0,
+     "y": 1280,
+     "ease": "in",
+     "shine": false,
+     "dim": true,
+     "rot": 60
+    },
+    {
+     "t": 25.8,
+     "x": 832.0,
+     "y": 1280
+    },
+    {
+     "t": 27.2,
+     "attach": "elle.head",
+     "dx": -70,
+     "dy": -175,
+     "rot": 0,
+     "dim": false,
+     "shine": true,
+     "ease": "inout"
+    }
+   ]
+  },
+  "etoile1": {
+   "type": "star",
+   "size": 1.2,
+   "keys": [
+    {
+     "t": 0,
+     "x": 560,
+     "y": 560,
+     "shine": true
+    },
+    {
+     "t": 6.199999999999999,
+     "x": 560,
+     "y": 560
+    },
+    {
+     "t": 6.6,
+     "attach": "lui.head",
+     "dx": 0,
+     "dy": -160
+    },
+    {
+     "t": 22.6,
+     "attach": "lui.head",
+     "dx": 0,
+     "dy": -160
+    },
+    {
+     "t": 22.7,
+     "attach": null,
+     "x": 870,
+     "y": 640
+    },
+    {
+     "t": 23.9,
+     "x": 930.0,
+     "y": 1280,
+     "ease": "in",
+     "shine": false,
+     "dim": true,
+     "rot": 60
+    },
+    {
+     "t": 25.8,
+     "x": 930.0,
+     "y": 1280
+    },
+    {
+     "t": 27.2,
+     "attach": "elle.head",
+     "dx": 0,
+     "dy": -175,
+     "rot": 0,
+     "dim": false,
+     "shine": true,
+     "ease": "inout"
+    }
+   ]
+  },
+  "etoile2": {
+   "type": "star",
+   "size": 1.2,
+   "keys": [
+    {
+     "t": 0,
+     "x": 690,
+     "y": 630,
+     "shine": true
+    },
+    {
+     "t": 7.199999999999999,
+     "x": 690,
+     "y": 630
+    },
+    {
+     "t": 7.6,
+     "attach": "lui.head",
+     "dx": 70,
+     "dy": -160
+    },
+    {
+     "t": 22.6,
+     "attach": "lui.head",
+     "dx": 70,
+     "dy": -160
+    },
+    {
+     "t": 22.7,
+     "attach": null,
+     "x": 940,
+     "y": 640
+    },
+    {
+     "t": 23.9,
+     "x": 1028.0,
+     "y": 1280,
+     "ease": "in",
+     "shine": false,
+     "dim": true,
+     "rot": 60
+    },
+    {
+     "t": 25.8,
+     "x": 1028.0,
+     "y": 1280
+    },
+    {
+     "t": 27.2,
+     "attach": "elle.head",
+     "dx": 70,
+     "dy": -175,
+     "rot": 0,
+     "dim": false,
+     "shine": true,
+     "ease": "inout"
+    }
+   ]
+  }
+ },
+ "camera": [
+  {
+   "t": 0,
+   "cx": 560,
+   "cy": 900,
+   "zoom": 1.15
+  },
+  {
+   "t": 2.2,
+   "cx": 560,
+   "cy": 900,
+   "zoom": 1.15
+  },
+  {
+   "t": 3.6,
+   "cx": 560,
+   "cy": 880,
+   "zoom": 1.0
+  },
+  {
+   "t": 5.4,
+   "cx": 560,
+   "cy": 860,
+   "zoom": 1.0
+  },
+  {
+   "t": 6.6,
+   "cx": 600,
+   "cy": 900,
+   "zoom": 0.92
+  },
+  {
+   "t": 9.4,
+   "cx": 600,
+   "cy": 900,
+   "zoom": 0.92
+  },
+  {
+   "t": 10.3,
+   "cx": 545,
+   "cy": 1060,
+   "zoom": 2.0
+  },
+  {
+   "t": 11.9,
+   "cx": 545,
+   "cy": 1060,
+   "zoom": 2.0
+  },
+  {
+   "t": 12.0,
+   "cx": 640,
+   "cy": 930,
+   "zoom": 1.0,
+   "cut": true
+  },
+  {
+   "t": 15.2,
+   "cx": 700,
+   "cy": 880,
+   "zoom": 1.35
+  },
+  {
+   "t": 18.2,
+   "cx": 700,
+   "cy": 920,
+   "zoom": 1.0
+  },
+  {
+   "t": 22.4,
+   "cx": 720,
+   "cy": 940,
+   "zoom": 1.0
+  },
+  {
+   "t": 24.0,
+   "cx": 700,
+   "cy": 980,
+   "zoom": 1.0
+  },
+  {
+   "t": 24.6,
+   "cx": 560,
+   "cy": 1060,
+   "zoom": 1.6
+  },
+  {
+   "t": 26.6,
+   "cx": 600,
+   "cy": 920,
+   "zoom": 1.1
+  },
+  {
+   "t": 29.0,
+   "cx": 640,
+   "cy": 900,
+   "zoom": 1.0
+  }
+ ],
+ "fade": [
+  {
+   "t": 0,
+   "b": 1
+  }
+ ],
+ "texts": [
+  {
+   "lines": [
+    {
+     "text": "IL VOULAIT TOUCHER",
+     "size": 96
+    },
+    {
+     "text": "LES ÉTOILES.",
+     "size": 118
+    }
+   ],
+   "y": 200,
+   "t0": 0,
+   "write": 0.6,
+   "t1": 2.6,
+   "fade": 0.15
+  },
+  {
+   "text": "AN 1",
+   "size": 84,
+   "y": 300,
+   "t0": 2.7,
+   "write": 0.15,
+   "t1": 5.4,
+   "fade": 0.05,
+   "color": "green"
+  },
+  {
+   "text": "AN 2",
+   "size": 84,
+   "y": 300,
+   "t0": 5.5,
+   "write": 0.15,
+   "t1": 11.9,
+   "fade": 0.05,
+   "color": "green"
+  },
+  {
+   "text": "AN 5",
+   "size": 84,
+   "y": 300,
+   "t0": 12.0,
+   "write": 0.15,
+   "t1": 22.4,
+   "fade": 0.05,
+   "color": "green"
+  },
+  {
+   "lines": [
+    {
+     "text": "IL ÉTAIT GRAND...",
+     "size": 96
+    },
+    {
+     "text": "PARCE QU'ELLE LE PORTAIT.",
+     "size": 84
+    }
+   ],
+   "y": 210,
+   "t0": 29.0,
+   "write": 1.6
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.6,
+   "type": "whoosh",
+   "volume": 0.3
+  },
+  {
+   "t": 1.4,
+   "type": "whoosh",
+   "volume": 0.3
+  },
+  {
+   "t": 5.0,
+   "type": "pop",
+   "volume": 0.4
+  },
+  {
+   "t": 6.6,
+   "type": "pop",
+   "volume": 0.4
+  },
+  {
+   "t": 7.6,
+   "type": "pop",
+   "volume": 0.4
+  },
+  {
+   "t": 18.9,
+   "type": "whoosh",
+   "volume": 0.5
+  },
+  {
+   "t": 22.6,
+   "type": "wood",
+   "volume": 0.6
+  },
+  {
+   "t": 23.5,
+   "type": "thud",
+   "volume": 0.8
+  },
+  {
+   "t": 26.6,
+   "type": "heart",
+   "volume": 0.6
+  },
+  {
+   "t": 27.2,
+   "type": "pop",
+   "volume": 0.4
+  }
+ ]
+}

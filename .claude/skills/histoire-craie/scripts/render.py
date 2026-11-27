@@ -227,6 +227,8 @@ POSES = {
     "drink": dict(tilt=-6, sr=35, er=130),
     "dive": dict(sl=178, el=0, sr=176, er=0, hl=-4, hr=4, dy=0),
     "present": dict(sr=70, er=30, sl=10),
+    "lift": dict(tilt=-12, sl=172, el=0, sr=176, er=0),
+    "lift_kneel": dict(lean=12, tilt=-6, hl=88, kl=-88, hr=-12, kr=-78, sl=168, el=0, sr=172, er=0, anim="shiver"),
     "knock": dict(sl=6, el=4, sr=80, er=12, anim="knock"),
     "knock_sad": dict(lean=8, tilt=20, sl=4, el=4, sr=72, er=14, anim="knock"),
     "umbrella": dict(sr=60, er=100),
@@ -723,6 +725,25 @@ class Prop:
                 hw = 24 + 10 * (-top / 90)
                 cv.line(P(-hw + 2, top), P(hw - 2, top), 4.5, sd + 5)
             cv.poly(g, w, sd, closed=True)
+        elif k == "star":
+            pts = []
+            for i in range(11):
+                a = -math.pi / 2 + i * math.pi / 5
+                rr = 34 if i % 2 == 0 else 14
+                pts.append(P(math.cos(a) * rr, math.sin(a) * rr))
+            cv.fill_poly(pts, 0)
+            cv.poly(pts, w * 0.8, sd, val=120 if self.tr.disc("dim", t, False) else 255)
+        elif k == "platform":   # haut plateau sur pied (peut s'écrouler via rot/y)
+            hgt = self.spec.get("h", 260)
+            slab = [P(-110, 0), P(110, 0), P(110, 22), P(-110, 22)]
+            cv.fill_poly(slab, 0)
+            cv.poly(slab, w, sd, closed=True)
+            cv.line(P(-70, 22), P(-60, hgt), w, sd + 1)
+            cv.line(P(70, 22), P(60, hgt), w, sd + 2)
+            cv.line(P(-64, 120), P(64, 180), 3.5, sd + 3, val=170)
+            cv.line(P(64, 120), P(-64, 180), 3.5, sd + 4, val=170)
+            if self.spec.get("label"):
+                cv.label(P(0, 11), self.spec["label"], 26 * s, val=200)
         elif k == "cross":   # grand X « ça ne marche pas »
             cv.line(P(-60, -60), P(60, 60), 12, sd)
             cv.line(P(60, -60), P(-60, 60), 12, sd + 1)
