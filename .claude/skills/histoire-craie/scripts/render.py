@@ -912,6 +912,16 @@ class Scenery:
                 cv.add_glow((wx, y - h + 70), 70, "warm", 200)
             if s.get("label"):
                 cv.label((x, y - h - w2 * 0.8 - 40), s["label"], s.get("label_size", 44))
+        elif k == "pit":   # trou énorme sans fond
+            x, y, w2, dep = s["x"], s.get("y", 1300), s.get("w", 320) / 2, s.get("depth", 4000)
+            cv.fill_poly([(x - w2, y - 3), (x + w2, y - 3), (x + w2 * 0.8, y + dep), (x - w2 * 0.8, y + dep)], 0)
+            cv.poly([(x - w2, y), (x - w2 * 0.95, y + dep * 0.3), (x - w2 * 0.85, y + dep)], 6, sd)
+            cv.poly([(x + w2, y), (x + w2 * 0.95, y + dep * 0.3), (x + w2 * 0.85, y + dep)], 6, sd + 1)
+            for i in range(int(dep / 140)):
+                yy = y + 60 + i * 140
+                for j, sg in enumerate((-1, 1)):
+                    xe = x + sg * w2 * (1 - 0.15 * (yy - y) / dep)
+                    cv.line((xe, yy), (xe - sg * (25 + 25 * rnd(sd, i * 2 + j)), yy + 40), 3, sd + 10 + i * 2 + j, val=130)
         elif k == "burst":
             u = (t - s["t0"]) / s.get("dur", 0.7)
             if 0 <= u <= 1:

@@ -1,0 +1,571 @@
+{
+ "_histoire": "Il a un trou énorme devant lui (son vide). Elle y jette tout ce qu'elle a : le trou n'a pas de fond. Elle arrête, se retourne et s'en va en redevenant lumineuse ; lui reste au bord du vide.",
+ "_legende": "Tu ne peux pas remplir le vide de quelqu'un 🕳️ #couple #stickman #animation #amour",
+ "duration": 16.6,
+ "music": {
+  "mood": "sad",
+  "bpm": 72,
+  "turn": 10.4,
+  "volume": 0.6
+ },
+ "set": [
+  {
+   "type": "ground",
+   "y": 1300
+  },
+  {
+   "type": "pit",
+   "x": 540,
+   "y": 1300,
+   "w": 330,
+   "depth": 5200
+  }
+ ],
+ "actors": {
+  "elle": {
+   "hair": "ponytail",
+   "extras": [
+    "skirt"
+   ],
+   "hud": [
+    {
+     "type": "counter",
+     "label": "DONNÉ",
+     "t1": 9.3,
+     "keys": [
+      {
+       "t": 0,
+       "v": 0
+      },
+      {
+       "t": 1.0,
+       "v": 1,
+       "cut": true
+      },
+      {
+       "t": 2.2,
+       "v": 2,
+       "cut": true
+      },
+      {
+       "t": 3.3,
+       "v": 3,
+       "cut": true
+      },
+      {
+       "t": 4.3,
+       "v": 4,
+       "cut": true
+      },
+      {
+       "t": 5.1,
+       "v": 5,
+       "cut": true
+      },
+      {
+       "t": 5.8,
+       "v": 6,
+       "cut": true
+      }
+     ]
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "x": 290,
+     "ground": 1300,
+     "dir": 1,
+     "pose": "stand",
+     "face": "smile"
+    },
+    {
+     "t": 0.8,
+     "pose": "point"
+    },
+    {
+     "t": 3.0,
+     "face": "neutral"
+    },
+    {
+     "t": 5.0,
+     "face": "worried"
+    },
+    {
+     "t": 6.4,
+     "pose": "sad",
+     "face": "sad"
+    },
+    {
+     "t": 9.6,
+     "pose": "stand",
+     "face": "sad"
+    },
+    {
+     "t": 10.3,
+     "face": "angry"
+    },
+    {
+     "t": 10.8,
+     "dir": -1,
+     "face": "closed"
+    },
+    {
+     "t": 11.0,
+     "x": 290
+    },
+    {
+     "t": 16.0,
+     "x": -120,
+     "ease": "linear"
+    },
+    {
+     "t": 11.2,
+     "glow": 0.0,
+     "flicker": true
+    },
+    {
+     "t": 13.0,
+     "glow": 0.9
+    },
+    {
+     "t": 13.2,
+     "flicker": false,
+     "glow": 1.0
+    },
+    {
+     "t": 12.4,
+     "face": "happy"
+    }
+   ]
+  },
+  "lui": {
+   "hair": "cap",
+   "keys": [
+    {
+     "t": 0,
+     "x": 790,
+     "ground": 1300,
+     "dir": -1,
+     "pose": "look_down",
+     "face": "sad"
+    },
+    {
+     "t": 9.8,
+     "pose": "reach",
+     "face": "worried"
+    },
+    {
+     "t": 11.6,
+     "pose": "sad",
+     "face": "cry"
+    }
+   ]
+  }
+ },
+ "props": {
+  "don0": {
+   "type": "full_heart",
+   "size": 1.3,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 300,
+     "y": 830
+    },
+    {
+     "t": 0.65,
+     "visible": true,
+     "x": 300,
+     "y": 830,
+     "shine": true
+    },
+    {
+     "t": 1.25,
+     "x": 470,
+     "y": 780,
+     "ease": "out",
+     "rot": 40
+    },
+    {
+     "t": 1.85,
+     "x": 540,
+     "y": 1320,
+     "ease": "in",
+     "rot": 160
+    },
+    {
+     "t": 9.4,
+     "y": 2200,
+     "ease": "linear",
+     "rot": 520
+    },
+    {
+     "t": 16.6,
+     "y": 3100,
+     "ease": "linear",
+     "rot": 900
+    }
+   ]
+  },
+  "don1": {
+   "type": "gift",
+   "size": 1.1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 300,
+     "y": 830
+    },
+    {
+     "t": 1.85,
+     "visible": true,
+     "x": 300,
+     "y": 830,
+     "shine": false
+    },
+    {
+     "t": 2.45,
+     "x": 470,
+     "y": 780,
+     "ease": "out",
+     "rot": 40
+    },
+    {
+     "t": 3.0500000000000003,
+     "x": 540,
+     "y": 1320,
+     "ease": "in",
+     "rot": 160
+    },
+    {
+     "t": 9.4,
+     "y": 2460,
+     "ease": "linear",
+     "rot": 520
+    },
+    {
+     "t": 16.6,
+     "y": 3360,
+     "ease": "linear",
+     "rot": 900
+    }
+   ]
+  },
+  "don2": {
+   "type": "flower",
+   "size": 1.1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 300,
+     "y": 830
+    },
+    {
+     "t": 2.9499999999999997,
+     "visible": true,
+     "x": 300,
+     "y": 830,
+     "shine": false
+    },
+    {
+     "t": 3.55,
+     "x": 470,
+     "y": 780,
+     "ease": "out",
+     "rot": 40
+    },
+    {
+     "t": 4.1499999999999995,
+     "x": 540,
+     "y": 1320,
+     "ease": "in",
+     "rot": 160
+    },
+    {
+     "t": 9.4,
+     "y": 2720,
+     "ease": "linear",
+     "rot": 520
+    },
+    {
+     "t": 16.6,
+     "y": 3620,
+     "ease": "linear",
+     "rot": 900
+    }
+   ]
+  },
+  "don3": {
+   "type": "full_heart",
+   "size": 1.3,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 300,
+     "y": 830
+    },
+    {
+     "t": 3.9499999999999997,
+     "visible": true,
+     "x": 300,
+     "y": 830,
+     "shine": true
+    },
+    {
+     "t": 4.55,
+     "x": 470,
+     "y": 780,
+     "ease": "out",
+     "rot": 40
+    },
+    {
+     "t": 5.1499999999999995,
+     "x": 540,
+     "y": 1320,
+     "ease": "in",
+     "rot": 160
+    },
+    {
+     "t": 9.4,
+     "y": 2980,
+     "ease": "linear",
+     "rot": 520
+    },
+    {
+     "t": 16.6,
+     "y": 3880,
+     "ease": "linear",
+     "rot": 900
+    }
+   ]
+  },
+  "don4": {
+   "type": "letter",
+   "size": 1.1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 300,
+     "y": 830
+    },
+    {
+     "t": 4.75,
+     "visible": true,
+     "x": 300,
+     "y": 830,
+     "shine": false
+    },
+    {
+     "t": 5.35,
+     "x": 470,
+     "y": 780,
+     "ease": "out",
+     "rot": 40
+    },
+    {
+     "t": 5.949999999999999,
+     "x": 540,
+     "y": 1320,
+     "ease": "in",
+     "rot": 160
+    },
+    {
+     "t": 9.4,
+     "y": 3240,
+     "ease": "linear",
+     "rot": 520
+    },
+    {
+     "t": 16.6,
+     "y": 4140,
+     "ease": "linear",
+     "rot": 900
+    }
+   ]
+  },
+  "don5": {
+   "type": "ball",
+   "size": 1.1,
+   "keys": [
+    {
+     "t": 0,
+     "visible": false,
+     "x": 300,
+     "y": 830
+    },
+    {
+     "t": 5.45,
+     "visible": true,
+     "x": 300,
+     "y": 830,
+     "shine": false
+    },
+    {
+     "t": 6.05,
+     "x": 470,
+     "y": 780,
+     "ease": "out",
+     "rot": 40
+    },
+    {
+     "t": 6.6499999999999995,
+     "x": 540,
+     "y": 1320,
+     "ease": "in",
+     "rot": 160
+    },
+    {
+     "t": 9.4,
+     "y": 3500,
+     "ease": "linear",
+     "rot": 520
+    },
+    {
+     "t": 16.6,
+     "y": 4400,
+     "ease": "linear",
+     "rot": 900
+    }
+   ]
+  }
+ },
+ "camera": [
+  {
+   "t": 0,
+   "cx": 540,
+   "cy": 1020,
+   "zoom": 1.15
+  },
+  {
+   "t": 6.4,
+   "cx": 540,
+   "cy": 1020,
+   "zoom": 1.15
+  },
+  {
+   "t": 7.0,
+   "cx": 540,
+   "cy": 1250,
+   "zoom": 1.0
+  },
+  {
+   "t": 9.2,
+   "cx": 540,
+   "cy": 2700,
+   "zoom": 0.95,
+   "ease": "in"
+  },
+  {
+   "t": 9.4,
+   "cx": 540,
+   "cy": 1040,
+   "zoom": 1.2,
+   "cut": true
+  },
+  {
+   "t": 12.4,
+   "cx": 480,
+   "cy": 1000,
+   "zoom": 1.05
+  },
+  {
+   "t": 16.6,
+   "cx": 460,
+   "cy": 980,
+   "zoom": 1.0
+  }
+ ],
+ "fade": [
+  {
+   "t": 0,
+   "b": 1
+  }
+ ],
+ "texts": [
+  {
+   "lines": [
+    {
+     "text": "ELLE A TOUT DONNÉ",
+     "size": 96
+    },
+    {
+     "text": "POUR REMPLIR SON VIDE.",
+     "size": 82
+    }
+   ],
+   "y": 220,
+   "t0": 0,
+   "write": 0.6,
+   "t1": 2.6,
+   "fade": 0.15
+  },
+  {
+   "lines": [
+    {
+     "text": "TU NE PEUX PAS",
+     "size": 96
+    },
+    {
+     "text": "REMPLIR SON VIDE.",
+     "size": 110
+    }
+   ],
+   "y": 230,
+   "t0": 13.4,
+   "write": 1.0
+  }
+ ],
+ "sfx": [
+  {
+   "t": 1.85,
+   "type": "whoosh",
+   "volume": 0.3
+  },
+  {
+   "t": 3.0500000000000003,
+   "type": "whoosh",
+   "volume": 0.3
+  },
+  {
+   "t": 4.1499999999999995,
+   "type": "whoosh",
+   "volume": 0.3
+  },
+  {
+   "t": 5.1499999999999995,
+   "type": "whoosh",
+   "volume": 0.3
+  },
+  {
+   "t": 5.949999999999999,
+   "type": "whoosh",
+   "volume": 0.3
+  },
+  {
+   "t": 6.6499999999999995,
+   "type": "whoosh",
+   "volume": 0.3
+  },
+  {
+   "t": 7.2,
+   "type": "drop",
+   "volume": 0.6
+  },
+  {
+   "t": 10.3,
+   "type": "wood",
+   "volume": 0.5
+  },
+  {
+   "t": 12.4,
+   "type": "heart",
+   "volume": 0.6
+  }
+ ]
+}
